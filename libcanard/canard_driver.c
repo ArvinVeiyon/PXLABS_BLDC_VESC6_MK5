@@ -662,7 +662,46 @@ static void handle_esc_raw_command(CanardInstance* ins, CanardRxTransfer* transf
 
 	if (uavcan_equipment_esc_RawCommand_decode_internal(transfer, transfer->payload_len, &cmd, &tmp, 0) >= 0) {
 		if (cmd.cmd.len > app_get_configuration()->uavcan_esc_index) {
-			float raw_val = ((float)cmd.cmd.data[app_get_configuration()->uavcan_esc_index]) / 8192.0;
+			
+// Get raw command value
+const int16_t raw = cmd.cmd.data[app_get_configuration()->uavcan_esc_index];
+
+float raw_val;
+
+// Check if this looks like PX4 rover mode (unsigned 0-8191 with ~4096 neutral)
+// vs standard UAVCAN (signed -8192 to 8191 with 0 neutral)
+// PX4 rover mode: values are always positive (0-8191), with 4096 as neutral
+// Standard mode: values can be negative for reverse
+if (raw >= 0 && raw <= 8191) {
+    // Could be either mode - check if value is near expected neutral points
+    // PX4 rover uses 4096 as neutral, standard uses 0
+    // If we see values consistently > 1000, assume PX4 rover mode
+
+    // PX4 sends 0 when disarmed - treat small values as "stop"
+    // This gives a small deadband at the "full reverse" end to handle disarm
+    if (raw < 100) {
+        // Disarmed or near-zero command - stop motor
+        raw_val = 0.0f;
+    } else {
+        // PX4 rover mode: 100-8191 maps to reverse-forward
+        // 100 = full reverse, 4096 = neutral, 8191 = full forward
+        raw_val = ((float)raw - 4096.0f) / 4095.0f;
+
+        // Clamp to valid range
+        if (raw_val > 1.0f) raw_val = 1.0f;
+        if (raw_val < -1.0f) raw_val = -1.0f;
+
+        // Deadband around neutral to prevent drift
+        if (raw_val > -0.02f && raw_val < 0.02f) {
+            raw_val = 0.0f;
+        }
+    }
+} else {
+    // Standard UAVCAN mode: signed values, 0 = neutral
+    raw_val = (float)raw / 8192.0f;
+}
+
+
 
 			if (ins == &canard_ins) {
 				can1_cmd.rawtime = chVTGetSystemTimeX();
