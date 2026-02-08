@@ -7,9 +7,9 @@
 | **PXLabs Release** | `pxlabs-v6.06-px4-rover` |
 | **Base VESC Version** | 6.06 (development) |
 | **Official VESC Tag** | 6.00 |
-| **Commit Hash** | `6c8f693a183d0e0f89adac0993ca334f6aec21e6` |
+| **Commit Hash** | `879ab45ed65a5c13fbd477bdec90d8b953f1e794` |
 | **Author** | Vinoth Pandiyan <vinothpandiyan@hotmail.com> |
-| **Date** | 2026-02-07 |
+| **Date** | 2026-02-08 |
 
 ---
 
@@ -18,15 +18,15 @@
 ### Branches
 | Branch | Description |
 |--------|-------------|
-| `px4_uavcan_reversible` | Current working branch (active) |
-| `pxlabs/v6.06-px4-rover-fix` | Stable release branch |
+| `pxlabs-6.06-rover-uavcan_main` | Main development branch (active) |
+| `pxlabs-release-6.06-rover-r1` | Stable release branch r1 |
 | `master` | Original upstream VESC |
 | `release_6_06` | Official VESC 6.06 |
 
 ### Tags
 | Tag | Description |
 |-----|-------------|
-| `pxlabs-v6.06-px4-rover` | PXLabs stable release tag |
+| `v6.06.0-pxlabs-rover-r1` | PXLabs stable release tag r1 |
 
 ---
 
@@ -77,7 +77,7 @@ libcanard/canard_driver.c | 43 insertions(+), 2 deletions(-)
 cd /home/pxlabs/motor_source/bldc
 
 # Checkout stable release
-git checkout pxlabs-v6.06-px4-rover
+git checkout pxlabs-release-6.06-rover-r1
 
 # Clean and build for VESC 6 MK5
 make fw_60_mk5_clean && make fw_60_mk5
