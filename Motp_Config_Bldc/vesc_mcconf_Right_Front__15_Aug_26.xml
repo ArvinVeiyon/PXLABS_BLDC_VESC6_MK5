@@ -84,12 +84,12 @@
     <foc_sl_openloop_boost_q>30</foc_sl_openloop_boost_q>
     <foc_sl_openloop_max_q>25</foc_sl_openloop_max_q>
     <foc_hall_table__0>255</foc_hall_table__0>
-    <foc_hall_table__1>0</foc_hall_table__1>
+    <foc_hall_table__1>198</foc_hall_table__1>
     <foc_hall_table__2>134</foc_hall_table__2>
     <foc_hall_table__3>167</foc_hall_table__3>
-    <foc_hall_table__4>67</foc_hall_table__4>
-    <foc_hall_table__5>32</foc_hall_table__5>
-    <foc_hall_table__6>100</foc_hall_table__6>
+    <foc_hall_table__4>66</foc_hall_table__4>
+    <foc_hall_table__5>30</foc_hall_table__5>
+    <foc_hall_table__6>101</foc_hall_table__6>
     <foc_hall_table__7>255</foc_hall_table__7>
     <foc_hall_interp_erpm>250</foc_hall_interp_erpm>
     <foc_sl_erpm_start>0</foc_sl_erpm_start>
@@ -117,12 +117,12 @@
     <foc_hfi_obs_ovr_sec>0.001</foc_hfi_obs_ovr_sec>
     <foc_hfi_samples>1</foc_hfi_samples>
     <foc_offsets_cal_mode>1</foc_offsets_cal_mode>
-    <foc_offsets_current__0>2049.1</foc_offsets_current__0>
-    <foc_offsets_current__1>2057.1</foc_offsets_current__1>
-    <foc_offsets_current__2>2049.53</foc_offsets_current__2>
-    <foc_offsets_voltage__0>-0.0038</foc_offsets_voltage__0>
+    <foc_offsets_current__0>2048.64</foc_offsets_current__0>
+    <foc_offsets_current__1>2056.31</foc_offsets_current__1>
+    <foc_offsets_current__2>2048.99</foc_offsets_current__2>
+    <foc_offsets_voltage__0>-0.004</foc_offsets_voltage__0>
     <foc_offsets_voltage__1>0.0016</foc_offsets_voltage__1>
-    <foc_offsets_voltage__2>0.0021</foc_offsets_voltage__2>
+    <foc_offsets_voltage__2>0.0023</foc_offsets_voltage__2>
     <foc_offsets_voltage_undriven__0>0</foc_offsets_voltage_undriven__0>
     <foc_offsets_voltage_undriven__1>0</foc_offsets_voltage_undriven__1>
     <foc_offsets_voltage_undriven__2>0</foc_offsets_voltage_undriven__2>
@@ -169,7 +169,7 @@
     <m_encoder_sincos_filter_constant>0.5</m_encoder_sincos_filter_constant>
     <m_encoder_sincos_phase_correction>0</m_encoder_sincos_phase_correction>
     <m_sensor_port_mode>0</m_sensor_port_mode>
-    <m_invert_direction>1</m_invert_direction>
+    <m_invert_direction>0</m_invert_direction>
     <m_drv8301_oc_mode>0</m_drv8301_oc_mode>
     <m_drv8301_oc_adj>16</m_drv8301_oc_adj>
     <m_bldc_f_sw_min>3000</m_bldc_f_sw_min>
@@ -193,7 +193,7 @@
     <motor_brand></motor_brand>
     <motor_model></motor_model>
     <motor_weight>0</motor_weight>
-    <motor_sensor_type>1</motor_sensor_type>
+    <motor_sensor_type>0</motor_sensor_type>
     <motor_description></motor_description>
     <motor_quality_bearings>0</motor_quality_bearings>
     <motor_quality_magnets>0</motor_quality_magnets>
