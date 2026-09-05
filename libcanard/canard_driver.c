@@ -66,6 +66,13 @@
 #define ESC_STATUS_TIMEOUT								500 //ms?
 #define RESERVED_FLASH_SPACE_SIZE                       393216
 
+/* [PXLABS] RC brake demand carried in a spare esc.RawCommand slot.
+ * PX4 sends it via UAVCAN_EC_FUNC5 = 407 (RC_AUX1), scaled 0..8191 by
+ * UAVCAN_EC_MIN5/MAX5. 0 = released, which is also what PX4 sends when
+ * disarmed and on RC loss, so brake-off is the failsafe by construction. */
+#define UAVCAN_BRAKE_SLOT                               4      /* 0-based index into cmd.cmd.data[] */
+#define UAVCAN_BRAKE_THRESHOLD                          0.05f  /* below this, brake is released */
+
 /*
  * Node status variables
  */
@@ -719,29 +726,50 @@ if (raw >= 0 && raw <= 8191) {
 
 			app_disable_output(100);
 
-			switch (conf->uavcan_raw_mode) {
-				case UAVCAN_RAW_MODE_CURRENT:
-					mc_interface_set_current_rel(raw_val);
-					break;
+			/* [PXLABS] Brake demand from spare RawCommand slot (0 = released, 8191 = full).
+			 * Guarded on cmd.cmd.len so senders that do not populate the slot still work. */
+			float brake_rel = 0.0f;
+			if (cmd.cmd.len > UAVCAN_BRAKE_SLOT) {
+				int16_t b = cmd.cmd.data[UAVCAN_BRAKE_SLOT];
+				if (b < 0) {
+					b = 0;
+				}
+				brake_rel = (float)b / 8191.0f;
+				if (brake_rel > 1.0f) {
+					brake_rel = 1.0f;
+				}
+			}
 
-				case UAVCAN_RAW_MODE_CURRENT_NO_REV_BRAKE:
-					if (raw_val >= 0.0) {
+			/* [PXLABS] Brake overrides throttle when commanded. Note this is an
+			 * if/else and not an early return: timeout_reset() below must still run
+			 * on both paths, or the command-timeout watchdog fires mid-brake. */
+			if (brake_rel > UAVCAN_BRAKE_THRESHOLD) {
+				mc_interface_set_brake_current_rel(brake_rel);
+			} else {
+				switch (conf->uavcan_raw_mode) {
+					case UAVCAN_RAW_MODE_CURRENT:
 						mc_interface_set_current_rel(raw_val);
-					} else {
-						mc_interface_set_brake_current_rel(-raw_val);
-					}
-					break;
+						break;
 
-				case UAVCAN_RAW_MODE_DUTY:
-					mc_interface_set_duty(raw_val);
-					break;
+					case UAVCAN_RAW_MODE_CURRENT_NO_REV_BRAKE:
+						if (raw_val >= 0.0) {
+							mc_interface_set_current_rel(raw_val);
+						} else {
+							mc_interface_set_brake_current_rel(-raw_val);
+						}
+						break;
 
-				case UAVCAN_RAW_MODE_RPM:
-					mc_interface_set_pid_speed(raw_val * conf->uavcan_raw_rpm_max);
-					break;
+					case UAVCAN_RAW_MODE_DUTY:
+						mc_interface_set_duty(raw_val);
+						break;
 
-				default:
-					break;
+					case UAVCAN_RAW_MODE_RPM:
+						mc_interface_set_pid_speed(raw_val * conf->uavcan_raw_rpm_max);
+						break;
+
+					default:
+						break;
+				}
 			}
 			timeout_reset();
 		}
