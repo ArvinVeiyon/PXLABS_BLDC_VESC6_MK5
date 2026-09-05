@@ -59,10 +59,17 @@ This is the rollback target if a development build misbehaves.
 | 2026-09-05 | `a75a0dbf` | brake-rc | Add RC brake channel via UAVCAN RawCommand spare slot |
 | 2026-09-05 | `e04bc633` | brake-rc | Add RC brake bench test methodology (`PXLABS_RC_BRAKE_TESTING.md`) |
 | 2026-09-05 | `369e5f9d` | brake-rc | Update config folder with current motor and app configs |
+| 2026-09-05 | `da94056f` | brake-rc | Rename `Motp_Config_Bldc/` -> `Motor_Config_Bldc/`, prune 44 -> 8 |
+| 2026-09-05 | `3ae3373f` | brake-rc | Add `Testing_Bin/`; document the fork in `CLAUDE.md` |
 
 **No firmware source changed between 2026-02-07 and 2026-09-05.** Everything in between was
 documentation and VESC Tool configuration data. The brake commit is the first firmware change
 since r1.
+
+### `Testing_Bin/` (brake-rc branch only)
+The built `60_mk5.bin` under bench test, so the companion and bench machines get the exact tested
+artifact from a plain clone rather than a release or a hand-copied file. Holds one binary at a time;
+see its `README.md`. Delete the folder once the feature merges and a tagged release exists.
 
 ### `Motor_Config_Bldc/`
 VESC Tool motor (`mcconf`) and app (`appconf`) configuration XMLs, one pair per wheel.
