@@ -8,7 +8,7 @@ feature on branch `pxlabs-6.06-rover-brake-rc`. Nothing on this branch has been 
 | Branch | `pxlabs-6.06-rover-brake-rc` |
 | Commit under test | `a75a0dbf` — *Add RC brake channel via UAVCAN RawCommand spare slot* |
 | Hardware target | 60_mk5 (VESC 6.0 MK5), ×4 (one per wheel) |
-| Firmware artifact | `60_mk5.bin` (524,280 bytes) |
+| Firmware artifact | [`Testing_Bin/60_mk5.bin`](Testing_Bin/) (524,280 bytes, sha256 `b971e9a7…`) |
 | Base | `pxlabs-6.06-rover-uavcan_main` @ `3b259f89` |
 | Rollback | release `v6.06.0-pxlabs-rover-r1` |
 
@@ -88,7 +88,25 @@ On **all four** VESCs, via VESC Tool over USB:
 
 ### 5. Flashing
 
-Flash `60_mk5.bin` to all four VESCs, then power-cycle and confirm VESC Tool shows commit `a75a0dbf`.
+Flash [`Testing_Bin/60_mk5.bin`](Testing_Bin/) to all four VESCs, then power-cycle and confirm VESC
+Tool shows commit `a75a0dbf`. Verify the checksum first:
+
+```bash
+sha256sum Testing_Bin/60_mk5.bin
+# b971e9a78aada70cfeae91cb120f1e6aa4d3ba7e5641cd311137a03daf644352
+```
+
+Per-wheel identity, for confirming you are talking to the unit you think you are — these are also the
+DroneCAN node IDs (`controller_id`; dynamic allocation is disabled):
+
+| Wheel | `controller_id` | `uavcan_esc_index` |
+|---|---|---|
+| Front right | 10 | 0 |
+| Front left | 11 | 1 |
+| Rear right | 12 | 2 |
+| Rear left | 13 | 3 |
+
+Saved configs for all four are in [`Motor_Config_Bldc/`](Motor_Config_Bldc/).
 
 > VESC Tool's CAN-forward will **not** reach these ESCs — in `CAN_MODE_UAVCAN` the firmware discards
 > all VESC-protocol frames (`comm/comm_can.c:1346`). Flash each VESC over **USB**, or use DroneCAN

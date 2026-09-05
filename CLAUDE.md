@@ -102,3 +102,83 @@ Key hardware defines: `HW_NAME`, pin mappings (`HW_HALL_*`, `HW_ENC_*`), current
 - App configuration struct: `app_configuration`
 - All floating point uses single precision (`float`, not `double`)
 - Build uses `-fsingle-precision-constant -Wdouble-promotion` to catch accidental double usage
+
+---
+
+# PXLABS fork
+
+This repository is a **fork of `vedderb/bldc`** carrying the firmware for the PXLABS rover's four
+wheel motor controllers. Everything above this line is upstream VESC documentation and applies
+unchanged; everything below is specific to this fork.
+
+## Hardware target
+
+**60_mk5** (VESC 6.0 MK5), four units, one per wheel.
+
+```bash
+export PATH=/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
+make fw_60_mk5            # -> build/60_mk5/60_mk5.bin
+```
+
+Toolchain is **ARM GCC 9.3.1** (`9-2020-q2-update`). Do not substitute a newer one — ChibiOS 3.0.5
+has not been validated against it, and a binary built with a different compiler is not the artifact
+any test procedure was written against. That release shipped x86_64 Linux hosts only, so the
+firmware cannot be built on an arm64 machine such as the companion Pi.
+
+> `make fw_60_mk5_clean` **wipes `build/60_mk5/` entirely.** It has destroyed the only local copy of
+> a released binary before. Copy anything you care about out of that directory first.
+
+The firmware embeds the git hash at build time. **Build after committing, not before** — a binary
+compiled from a dirty tree or from staged-but-uncommitted work bakes in the *parent* commit's hash
+and will misreport its version in VESC Tool.
+
+## Branch model
+
+| Branch | Role |
+|---|---|
+| `pxlabs-6.06-rover-uavcan_main` | main dev branch — all work lands here |
+| `pxlabs-6.06-rover-brake-rc` | RC brake feature, awaiting bench test |
+| `pxlabs-release-6.06-rover-r1` | **frozen** stable cut |
+| `master`, `release_6_00`, `release_6_06` | untouched upstream |
+
+**Release branches and tags are frozen.** Never commit to them, never move, delete or recreate a
+published tag, and never branch feature work off them. A new stable state gets a new release branch
+and a new tag. Tags and GitHub releases are for **stable** builds only — a feature awaiting testing
+ships as a branch, with no tag and no release.
+
+## Code conventions
+
+Upstream code being replaced is **commented out and tagged `[UPSTREAM]`**, never deleted. The
+replacement sits directly below, tagged `[PXLABS]`. This keeps the delta against upstream legible
+when merging.
+
+Prefer changes that avoid an `APPCONF_SIGNATURE` bump (`confgenerator.h`). Adding a field to
+`app_configuration` changes the signature, which means VESC Tool refuses to talk to the firmware
+until a matching `parameters_appconf.xml` exists on the tool side. Compile-time `#define`s avoid
+this entirely — see `UAVCAN_BRAKE_SLOT` in `libcanard/canard_driver.c`.
+
+## CAN / DroneCAN
+
+The four VESCs run **`can_mode = CAN_MODE_UAVCAN` at 1 Mbit**, commanded by PX4 over DroneCAN.
+
+**VESC Tool's CAN-forward cannot reach them.** In UAVCAN mode `comm/comm_can.c` discards every
+VESC-protocol frame, and `comm_can_ping()` returns false. Scan CAN finds nothing. Configure and
+flash each unit over **USB**, or use DroneCAN `file.BeginFirmwareUpdate`, which is fully implemented
+in `libcanard/canard_driver.c` — serve the raw `.bin`, the firmware writes its own size+CRC header.
+
+DroneCAN node ID is `controller_id`; dynamic node allocation is disabled.
+
+| Wheel | `controller_id` | `uavcan_esc_index` |
+|---|---|---|
+| Front right | 10 | 0 |
+| Front left | 11 | 1 |
+| Rear right | 12 | 2 |
+| Rear left | 13 | 3 |
+
+## Repository layout additions
+
+- **`PXLABS_VESC_PX4_ROVER_FIX.md`** — the PXLABS release note and change history. `CHANGELOG.md`
+  and `README.md` are pure upstream; do not add PXLABS entries to them.
+- **`PXLABS_RC_BRAKE_TESTING.md`** — bench acceptance procedure for the RC brake feature.
+- **`Motor_Config_Bldc/`** — VESC Tool `mcconf`/`appconf` XML exports, one pair per wheel. Config
+  data only; does not affect the built binary.
