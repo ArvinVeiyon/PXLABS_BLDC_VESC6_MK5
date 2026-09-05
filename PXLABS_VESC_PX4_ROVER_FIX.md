@@ -54,19 +54,32 @@ This is the rollback target if a development build misbehaves.
 | 2026-02-07 | `cfab6c0e` | both | Add docs and bootloader folder |
 | 2026-02-07 | `879ab45e` | both | Remove local-only bldc-bootloader folder from repo |
 | 2026-02-08 | `6fc2cf17` | both | Update docs with r1 release branch and tag info — **tagged r1** |
-| 2026-08-15 | `f80e5781` | dev | Add `Motp_Config_Bldc/` — 43 VESC Tool motor/app config XMLs |
+| 2026-08-15 | `f80e5781` | dev | Add `Motp_Config_Bldc/` — 43 VESC Tool motor/app config XMLs (folder later renamed) |
 | 2026-08-15 | `dcc35366`+`05deb3e8` | release-r1 | Same XMLs added then reverted (a released branch should not gain files post-tag) |
-| 2026-09-05 | `756e5159` | brake-rc | Add RC brake channel via UAVCAN RawCommand spare slot |
+| 2026-09-05 | `a75a0dbf` | brake-rc | Add RC brake channel via UAVCAN RawCommand spare slot |
+| 2026-09-05 | `e04bc633` | brake-rc | Add RC brake bench test methodology (`PXLABS_RC_BRAKE_TESTING.md`) |
+| 2026-09-05 | `369e5f9d` | brake-rc | Update config folder with current motor and app configs |
 
 **No firmware source changed between 2026-02-07 and 2026-09-05.** Everything in between was
 documentation and VESC Tool configuration data. The brake commit is the first firmware change
 since r1.
 
-### `Motp_Config_Bldc/` (dev branch only)
-43 VESC Tool motor (`mcconf`) and app (`appconf`) configuration XMLs, one set per wheel
-(Left/Right x Front/Rear), carrying dated tuning history (`_tested_14_Feb_26`,
-`_tested_06_march_26`, `_15_Aug_26`). Configuration data, not firmware — these do not affect
-the built binary.
+### `Motor_Config_Bldc/`
+VESC Tool motor (`mcconf`) and app (`appconf`) configuration XMLs, one pair per wheel.
+Configuration data, not firmware — these do not affect the built binary.
+
+Renamed from `Motp_Config_Bldc/` (misspelling) and pruned on 2026-09-05 to the current
+set of eight only: four `mcconf` dated 15 Aug 2026 and four `appconf` dated 16 Aug 2026.
+The 36 older/duplicate files removed then remain in git history at `369e5f9d` and earlier.
+
+| Wheel | `controller_id` | `uavcan_esc_index` |
+|---|---|---|
+| Front right | 10 | 0 |
+| Front left | 11 | 1 |
+| Rear right | 12 | 2 |
+| Rear left | 13 | 3 |
+
+All four: `can_mode` UAVCAN, `can_baud_rate` 1M, `uavcan_raw_mode` CURRENT.
 
 ---
 
