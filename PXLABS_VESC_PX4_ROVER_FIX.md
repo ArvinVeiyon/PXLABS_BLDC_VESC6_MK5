@@ -3,7 +3,7 @@
 Custom VESC 6.06 firmware for the PXLabs 4-wheel differential rover, driven by a
 PX4 flight controller over DroneCAN. Four VESC 6 MK5 controllers, one per wheel.
 
-Last updated: 2026-09-05
+Last updated: 2026-09-09
 
 ---
 
@@ -14,6 +14,7 @@ Last updated: 2026-09-05
 | **Current stable release** | `v6.06.0-pxlabs-rover-r1` |
 | **Release commit** | `6fc2cf17337ce6d1e494c47a5969b93acac0661e` |
 | **Release date** | 2026-02-08 |
+| **Current pre-release** | `v6.06.0-pxlabs-rover-r2-alpha1` (RC brake, bench-tested, **not driven**) |
 | **Base VESC Version** | 6.06 (development) |
 | **Hardware target** | `60_mk5` (VESC 6 MK5) |
 | **Author** | Vinoth Pandiyan <vinothpandiyan@hotmail.com> |
@@ -27,7 +28,7 @@ Last updated: 2026-09-05
 |--------|-------------|
 | `pxlabs-6.06-rover-uavcan_main` | **Main development branch (active)** — work here |
 | `pxlabs-release-6.06-rover-r1` | Stable release branch r1 — content-identical to the r1 tag |
-| `pxlabs-6.06-rover-brake-rc` | RC brake feature — implemented, **not yet bench-tested or merged** |
+| `pxlabs-6.06-rover-brake-rc` | RC brake feature — bench-tested 2026-09-09, **merged into dev** |
 | `master` | Original upstream VESC |
 | `release_6_06` | Official VESC 6.06 |
 
@@ -35,8 +36,14 @@ Last updated: 2026-09-05
 | Tag | Commit | Description |
 |-----|--------|-------------|
 | `v6.06.0-pxlabs-rover-r1` | `6fc2cf17` | PXLabs stable release r1 |
+| `v6.06.0-pxlabs-rover-r2-alpha1` | (dev tip) | **Pre-release.** RC brake, bench-tested on stands. Not a stable cut. |
 
-`r1` = release 1. It is the only PXLabs tag; every other tag in this repo is upstream vedderb/bldc.
+`r1` = release 1. Every other tag in this repo is upstream vedderb/bldc.
+
+`r2-alpha1` is a GitHub **pre-release**, not a stable release. It exists so the bench-tested brake
+firmware has a citable, frozen artifact. The stable cut is `v6.06.0-pxlabs-rover-r2`, and it is
+gated on the open items listed under the RC brake section below. Per PXLabs policy, release
+branches and tags are frozen once created — `r2-alpha1` will never be moved or recreated.
 
 ### GitHub Release
 `v6.06.0-pxlabs-rover-r1` carries flashable assets (`60_mk5.bin`, `.hex`, `.elf`, `.map`):
@@ -61,15 +68,20 @@ This is the rollback target if a development build misbehaves.
 | 2026-09-05 | `369e5f9d` | brake-rc | Update config folder with current motor and app configs |
 | 2026-09-05 | `da94056f` | brake-rc | Rename `Motp_Config_Bldc/` -> `Motor_Config_Bldc/`, prune 44 -> 8 |
 | 2026-09-05 | `3ae3373f` | brake-rc | Add `Testing_Bin/`; document the fork in `CLAUDE.md` |
+| 2026-09-05 | `d513e790` | brake-rc | Record the folder rename, prune and `Testing_Bin` in this note |
+| 2026-09-09 | `fa27a6b3` | brake-rc | **Correct docs: flashing this image over DroneCAN bricks the ESC** |
 
-**No firmware source changed between 2026-02-07 and 2026-09-05.** Everything in between was
-documentation and VESC Tool configuration data. The brake commit is the first firmware change
-since r1.
+**The only firmware source change since 2026-02-07 is the brake commit `a75a0dbf`.** Everything
+else is documentation and VESC Tool configuration data, which do not affect the built binary.
 
-### `Testing_Bin/` (brake-rc branch only)
+### `Testing_Bin/`
 The built `60_mk5.bin` under bench test, so the companion and bench machines get the exact tested
-artifact from a plain clone rather than a release or a hand-copied file. Holds one binary at a time;
-see its `README.md`. Delete the folder once the feature merges and a tagged release exists.
+artifact from a plain clone. Holds one binary at a time; see its `README.md`. It is retained through
+the `r2-alpha1` pre-release and **is to be deleted at the stable `r2` cut**, when the tagged release
+carries the flashable assets instead.
+
+⛔ **Flash over USB only. Never over DroneCAN** — see `Testing_Bin/README.md` for the arithmetic;
+the image overruns the staging area into the bootloader sector and bricks the ESC.
 
 ### `Motor_Config_Bldc/`
 VESC Tool motor (`mcconf`) and app (`appconf`) configuration XMLs, one pair per wheel.
@@ -111,10 +123,11 @@ libcanard/canard_driver.c | 41 +++++++++++++++++++++++++++++++++++++--
 
 ---
 
-## RC Brake Channel — IN PROGRESS (branch `pxlabs-6.06-rover-brake-rc`)
+## RC Brake Channel — BENCH-TESTED (`v6.06.0-pxlabs-rover-r2-alpha1`)
 
-> **Status: implemented and builds clean, but NOT bench-tested and NOT merged.**
-> Do not flash to a vehicle in service. Rollback is the r1 release binary.
+> **Status: bench-tested on stands 2026-09-09 and merged to dev. The rover has never been
+> driven under this firmware.** Wheels-off-the-ground only. Do not treat measured deceleration
+> as stopping distance. Rollback is the r1 release binary, over USB, per ESC.
 
 ### Problem
 `uavcan_raw_mode` forces a choice: `UAVCAN_RAW_MODE_CURRENT` gives reverse on the lower half
@@ -148,15 +161,140 @@ libcanard/canard_driver.c | 64 ++++++++++++++++++++++++++++++---------------
 1 file changed, 46 insertions(+), 18 deletions(-)
 ```
 
-### Outstanding before merge
-1. Confirm which physical RC channel is the brake stick (QGC Radio page).
-2. **Fix that channel's trim.** PX4 normalizes as `interpolateNXY(value, {min, trim, max}, {-1,0,+1})`.
-   Channel 3 currently has `RC3_TRIM == RC3_MIN == 1001`, making the first segment zero-width —
-   the curve jumps from −1.0 at the bottom stop to 0.0 just above it, i.e. instant ~50% brake.
-   PX4 auto-repairs this only for the throttle channel. Set `RC3_TRIM` to `(min+max)/2` ≈ 1483.
-3. Set the PX4 parameters below.
-4. Bench-verify with wheels off the ground, including that `esc_status.esc_errorcount` stays 0
-   (the specific check for a missed `timeout_reset()`).
+### 🔴 A hand test cannot measure this brake
+
+`mc_interface_set_brake_current_rel()` resolves to `CONTROL_MODE_CURRENT_BRAKE`
+(`mcpwm_foc.c:832`). That brake makes torque by **opposing rotation**, so its strength scales
+with back-EMF and therefore with wheel speed. At hand-turning speed, 100 % brake and 10 % brake
+both produce approximately nothing.
+
+**Turning a wheel by hand and feeling no resistance is the expected result, and it measures
+nothing.** The brake must be tested against a spinning wheel. Two operator observations from
+2026-09-07 — "the brake applies immediately whatever the throttle is doing" and "I can still
+turn the motor by hand, full stick feels no different from low stick" — are both **correct
+behaviour**, not defects. The first is the intended brake-before-throttle precedence
+(`canard_driver.c:746`); the second is the back-EMF scaling above.
+
+### Bench test results — 2026-09-09
+
+Rover on stands, **wheels off the ground, unloaded**. All four ESCs online. Operator drove the
+wheels under throttle and worked the brake stick. 303 s at 5 Hz: 30,090 `input_rc`,
+4,337 `manual_control_setpoint`, 29,805 `esc_status` messages, captured over DDS on the companion.
+
+| Check | Result |
+|---|---|
+| `esc_status.esc_errorcount` under braking | ✅ **0 = NONE on all four ESCs, every one of 29,805 samples.** No missed `timeout_reset()` signature. |
+| Proportional response | ✅ `aux1` tracks the stick continuously across full travel — not on/off |
+| Bottom stop = brake off | ✅ `aux1` = −1.0000 exactly (n=1303) → slot 5 = 1 → `brake_rel` 0.012 %, under the 0.05f threshold. No residual drag. |
+| All four wheels brake | ✅ FR, FL, RR, RL, both directions, simultaneously |
+
+**Proportionality**, from a steady hold of 53 consecutive samples at one stick position (so there
+is no sampling skew between topics): stick at 1212 µs → `aux1` = −0.5657 measured, against
+−0.5663 predicted from `(1212 − 1487.5) / 486.5`. Agreement to 0.0006.
+
+**Braking authority**, scored only on sustained decelerations — ≥3 consecutive samples of
+monotonic slowdown from |rpm| ≥ 250 with throttle neutral throughout:
+
+| Wheel | Braked (rpm/s) | Free coast (rpm/s) | Ratio |
+|---|---|---|---|
+| Rear right (12) | 429 | 78 | **5.5×** |
+| Rear left (13) | 411 | 85 | **4.8×** |
+| Front right (10) | 432 | *(unusable — see below)* | — |
+| Front left (11) | 422 | *(unusable — see below)* | — |
+
+Braked deceleration is tight across all four at **411–432 rpm/s**. A typical stop is ~340 rpm → 0
+in ≈1.0 s forward, and −413 → −126 rpm in ≈0.6 s in reverse. **On unloaded wheels the brake is
+roughly 5× the free-spin drag.**
+
+> ⚠️ The FR/FL coast figures are contaminated and must not be quoted. FL's rpm telemetry throws
+> single-sample spikes (375 → 1028 → 562 within 0.4 s while the other three read 235 → 346 → 347),
+> and FR was still settling from one. RR and RL are the clean pair.
+>
+> ⚠️ **Method warning.** Scored naively on per-sample pairs, this same dataset says the brake is
+> 1.1× coast — i.e. useless. That is an artifact: rpm spikes and the tail of a braked stop both
+> fall into the coast bucket. You must gate on throttle-neutral and score sustained runs. If a
+> reproduction gives ~1×, this is why.
+
+Full write-up and raw CSV live on the companion at
+`codex-work/bldc_can/evidence/brake_bench_test_20260909.md`.
+
+### RC channel geometry — solved, not read
+
+MAVLink to the FC was down for the whole session (no heartbeat on `tcp:5760`, before and after an
+FC reboot), so no parameter could be read or written. The values below were **solved from the
+logged data**, not read off the flight controller, by inverting PX4's own piecewise map
+`T = (ch3 + MIN·aux1) / (1 + aux1)`:
+
+| Param | Value | How |
+|---|---|---|
+| `RC3_MIN` | 1001 µs | consistent throughout |
+| `RC3_TRIM` | **1487.5 µs** | solved, n=118, median 1487.0; independently confirmed by the steady hold |
+| `RC3_MAX` | ≈1973 µs | solved, n=55; `aux1` saturates at +1.0000 from 1969 µs up |
+| `RC3_REV` | not reversed | behavioural — bottom stop −1.0, top +1.0 |
+
+**The trim blocker did not regress.** `RC3_TRIM` is 1487.5, not 1001, so the 50 %-brake-on-leaving-
+the-bottom-stop bug is not live.
+
+> 🔴 **A QGC RC calibration rewrites TRIM.** If `RC3_TRIM` is ever driven back to `RC3_MIN` = 1001,
+> the first segment of `interpolateNXY` (`Functions.hpp:201`) becomes zero-width: −1.0 at exactly
+> 1001 µs and ~0.0 at 1002 µs, a one-microsecond discontinuity that
+> `output_limit_calc_single` (`mixer_module.cpp:568`) maps onto slot 5 = 4096 = **50 % brake the
+> instant the stick leaves its stop.** Re-read `RC3_TRIM` after any RC calibration, always.
+>
+> ⛔ Do not let `rc_configuration.md` §2.1 talk anyone out of this fix. Its claim that
+> `RCn_TRIM == RCn_MIN` is a harmless QGC artefact PX4 self-corrects is **throttle-only** —
+> `rc_update.cpp:172` scopes the re-centring to `FUNCTION_THROTTLE`. It never applied to ch3.
+
+Minor: full stick reads 2000 µs against a ~1973 µs max, so full brake is a **saturated command**
+and the top ~27 µs of travel is dead. Harmless — PX4 clamps at ±1.0 — and ch2 already has the
+same overshoot.
+
+### Known limitations
+
+- **No holding brake.** Regenerative braking gives ≈0 torque at standstill, so this will not hold
+  the rover on a slope. The firmware already has one: `mc_interface_set_handbrake_rel()` →
+  `CONTROL_MODE_HANDBRAKE`, same `val × |lo_current_min|` scaling, a one-line swap at
+  `canard_driver.c:747`. A hybrid — handbrake below some ERPM, regen above — is likely the right
+  end state, since regen is what cuts coast while moving.
+- **Authority fades silently.** Brake authority is `brake_rel × |lo_current_min|`, and
+  `lo_current_min` is the *runtime-scaled* `l_current_min`. It therefore drops as the motor heats
+  or the pack nears full, with no indication. The 2026-09-09 run was one battery state at one
+  temperature, and authority is not calibrated in amps. Repo values: `l_current_min` −25 A
+  (LF −25.8), `l_in_current_min` −5 A, `l_abs_current_max` 35, `cc_min_current` 0.05 — the −5 A
+  battery regen cap probably binds before the 25 A does. Never verified against live ESCs.
+- **A second, unrelated brake is always active.** `timeout_brake_current` = 2 A at
+  `timeout_msec` = 300 (`timeout.c:225-233`) applies a flat, absolute 2 A on command loss or kill
+  switch. It is a different mechanism, not a weak version of this one. Anyone benchmarking coast
+  is measuring both.
+- **`l_max_erpm_fbrake` (300) and `l_max_erpm_fbrake_cc` (1500) are dead params on this vehicle.**
+  Every use is in `mcpwm.c`, the BLDC path; `motor_type` = 2 = FOC. Do not tune them chasing brake
+  strength.
+- **The collision reflex does not use the brake.** It still only zeroes the setpoint. Wiring it to
+  command the brake is a separate, unmade change — so the number that actually motivates this
+  feature, how much of the ~0.30 m reflex coast at ~0.9 m/s the brake removes, remains unmeasured.
+
+### Open items before the stable `r2` cut
+
+1. **Drive the rover.** Everything so far is unloaded wheels on stands. `rpm/s` bounds the brake;
+   it does not predict stopping distance. Blocked by floor space, not by firmware — the test room
+   has ~2 m² of open floor against a 0.73 × 0.56 m rover.
+2. **Read `uavcan_raw_mode` off a flashed ESC.** All four repo appconfs carry `CURRENT` (0) and
+   nothing observed contradicts it, but no live readback exists. Needs USB + VESC Tool; the
+   companion's CAN path is formally dropped (MCP2515 hat hardware-dead, overlay disabled
+   2026-09-09). If lower-stick braking is ever observed, this param has been changed live.
+3. **Read `UAVCAN_EC_FAIL5`.** Never read, never set. Blocked on the MAVLink link.
+4. **Confirm the flashed firmware hash** on each ESC in VESC Tool. No hash was read back off any
+   unit after flashing; all four are *reported* flashed, method unconfirmed for FR/FL/RR.
+5. **Test the disarm and RC-loss failsafe.** Brake-off on failsafe is correct *by construction*
+   (PX4 has no disarmed parameter, so `_disarmed_value` stays 0, which on the brake slot is below
+   the 0.05f threshold; `NAV_RCL_ACT` = 6 disarms on RC loss) but has never been exercised.
+6. **Set `RC_MAP_PITCH` = 0.** Still 3, the same channel as `RC_MAP_AUX1`. Harmless —
+   `manual_control_setpoint.pitch` has zero references in `src/modules/rover_differential/` — but
+   it is not the intended end state.
+
+> ⚠️ **There is no known-good ESC left to diff against.** All four now run branch firmware. The
+> single-ESC comparison that existed on 2026-09-07 is gone. Rollback is tag
+> `v6.06.0-pxlabs-rover-r1`, flashed over USB, per ESC.
 
 ---
 
@@ -179,14 +317,37 @@ libcanard/canard_driver.c | 64 ++++++++++++++++++++++++++++++---------------
 > on either set.
 
 ### Additional parameters for the RC brake channel
+
+As actually set and read back on 2026-09-07, after `MAV_CMD_PREFLIGHT_STORAGE` returned
+`MAV_RESULT_ACCEPTED` on a freshly rebooted FC:
+
 | Param | Value | Effect |
 |-------|-------|--------|
-| `RC_MAP_AUX1` | brake channel | routes the stick into `manual_control_setpoint.aux1` |
-| `RC_MAP_PITCH` | 0 | frees the channel; `rover_differential` never reads `.pitch` |
+| `RC_MAP_AUX1` | 3 | routes the stick into `manual_control_setpoint.aux1` |
 | `UAVCAN_EC_FUNC5` | 407 (`RC_AUX1`) | passes aux1 through to ESC slot 5 |
-| `UAVCAN_EC_MIN5` | 0 | stick at rest → 0 → brake released |
+| `UAVCAN_EC_MIN5` | **1** | PX4 default, left deliberately — 0.012 % at the bottom stop, safely under the 0.05f engage threshold, so it means "off" correctly |
 | `UAVCAN_EC_MAX5` | 8191 | stick at full → 8191 → full brake |
-| `UAVCAN_EC_FAIL5` | 0 | failsafe = brake released |
+| `UAVCAN_EC_FAIL5` | *not read, not set* | intended 0 (= brake released); **unverified** |
+| `RC_MAP_PITCH` | 3 | pre-existing, unchanged; intended end state is 0 |
+
+Setting `UAVCAN_EC_FUNC5` non-zero is what grows the RawCommand array to 5 elements; PX4 sizes
+it to the highest slot with a non-zero `UAVCAN_EC_FUNCn`. The message is broadcast, so all four
+VESCs see slot 4 — shared braking, which is correct for a rover.
+
+> ⚠️ **Ordering matters. Set `RC_MAP_AUX1` before `UAVCAN_EC_FUNC5`.** With slot 5 assigned while
+> AUX1 is still unmapped, `aux1` reads 0, which maps to mid-scale — **50 % brake demand on the bus.**
+
+> ⛔ **Do not copy the motor-slot convention onto the brake slot.** `UAVCAN_EC_MIN1..4` = 110 and
+> `MAX1..4` = 8082 exist so the four *bipolar* motor slots get an exact 4096 neutral and dodge the
+> VESC's `raw < 100` disarm guard. The brake slot is **unipolar** and needs its minimum to mean
+> OFF. The defaults (1 / 8191) are correct here. 110 would also work; 4096-centred values would not.
+
+> ⚠️ **`ros2_ws/tools/set_param.py` cannot write INT32 params, and fails silently.** It always
+> sends `MAV_PARAM_TYPE_REAL32`; `mavlink_parameters.cpp:129-131` refuses the type mismatch, logs
+> "param types mismatch", and writes nothing. PX4 does `param_set` on the raw 4 bytes, so an INT32
+> must be sent as the integer's *bit pattern* in the float field. `RC_MAP_AUX1` and
+> `UAVCAN_EC_FUNC5` are both INT32 and need a separate writer — the companion has
+> `bldc_can/diag/set_param_int.py`.
 
 Setting `UAVCAN_EC_FUNC5` non-zero is what grows the RawCommand array to 5 elements; PX4 sizes
 it to the highest slot with a non-zero `UAVCAN_EC_FUNCn`. The message is broadcast, so all four
@@ -228,6 +389,11 @@ make fw_60_mk5_clean && make fw_60_mk5
 > the GitHub release above.
 
 ### Flash via VESC Tool
+
+⛔ **USB only, one controller at a time.** VESC Tool's CAN-forward cannot reach these ESCs in
+`CAN_MODE_UAVCAN`, and the DroneCAN firmware-update path **bricks them** (384 KB staging area,
+~512 KB image, no bounds check, bootloader sector never erased — `flash_helper.c:181` → `:120`).
+
 1. Open VESC Tool
 2. Connect to VESC
 3. **Firmware** → **Custom File**

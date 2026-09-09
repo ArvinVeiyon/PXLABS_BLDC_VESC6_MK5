@@ -1,7 +1,22 @@
 # RC Brake — Bench Test Methodology
 
-**Status: UNTESTED. Not merged.** This document is the acceptance procedure for the RC brake
-feature on branch `pxlabs-6.06-rover-brake-rc`. Nothing on this branch has been run on hardware.
+**Status: EXECUTED 2026-09-09 on stands — passed. Merged to dev, pre-released as
+`v6.06.0-pxlabs-rover-r2-alpha1`.** This document is the acceptance procedure for the RC brake
+feature. Results, measured figures and the remaining open items are in
+[`PXLABS_VESC_PX4_ROVER_FIX.md`](PXLABS_VESC_PX4_ROVER_FIX.md); the full write-up and raw CSV are on
+the companion at `codex-work/bldc_can/evidence/brake_bench_test_20260909.md`.
+
+> 🔴 **A hand test cannot measure this brake.** It is regenerative
+> (`CONTROL_MODE_CURRENT_BRAKE`), so its torque comes from back-EMF and scales with wheel speed. At
+> hand-turning speed, 100 % and 10 % brake both produce approximately nothing. **Every step below
+> that measures braking must be run against a spinning wheel**, under throttle, wheels off the
+> ground. Feeling no resistance when turning a wheel by hand is the expected result and proves
+> nothing.
+
+> ⚠️ **Scoring warning.** Scored naively on per-sample pairs, a good dataset can still say the brake
+> is ~1.1× coast, i.e. useless. That is an artifact: rpm telemetry spikes and the tail of a braked
+> stop both fall into the coast bucket. Gate on throttle-neutral and score only sustained runs
+> (≥3 consecutive monotonic samples from |rpm| ≥ 250). The 2026-09-09 run scored 4.8–5.5× that way.
 
 | | |
 |---|---|
