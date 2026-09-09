@@ -163,8 +163,14 @@ The four VESCs run **`can_mode = CAN_MODE_UAVCAN` at 1 Mbit**, commanded by PX4 
 
 **VESC Tool's CAN-forward cannot reach them.** In UAVCAN mode `comm/comm_can.c` discards every
 VESC-protocol frame, and `comm_can_ping()` returns false. Scan CAN finds nothing. Configure and
-flash each unit over **USB**, or use DroneCAN `file.BeginFirmwareUpdate`, which is fully implemented
-in `libcanard/canard_driver.c` — serve the raw `.bin`, the firmware writes its own size+CRC header.
+flash each unit over **USB**, one at a time.
+
+⛔ **Do not flash a full 60_mk5 image over DroneCAN.** `file.BeginFirmwareUpdate` is implemented in
+`libcanard/canard_driver.c`, but the staging area is only 384 KB (sectors 8–10, `NEW_APP_BASE 8` /
+`NEW_APP_SECTORS 3`) while a 60_mk5 build is ~512 KB. `flash_helper_write_new_app_data()`
+(`flash_helper.c:181`) forwards `offset` to an unchecked `FLASH_ProgramByte` loop (`flash_helper.c:120`),
+so the tail programs into sector 11 — the bootloader — which is never erased on that path. Bricks the
+ESC; SWD-only recovery.
 
 DroneCAN node ID is `controller_id`; dynamic node allocation is disabled.
 

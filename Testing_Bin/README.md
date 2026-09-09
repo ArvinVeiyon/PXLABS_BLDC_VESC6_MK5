@@ -40,12 +40,26 @@ VESC Tool's CAN-forward **cannot reach these ESCs** — they run `can_mode = CAN
 that mode the firmware discards every VESC-protocol frame (`comm/comm_can.c`). Scan CAN will find
 nothing.
 
-Use either:
+**Flash over USB, one VESC at a time.** That is the only supported path for this image.
 
-- **USB**, one VESC at a time — simplest, and what the test procedure assumes.
-- **DroneCAN** `file.BeginFirmwareUpdate` from the companion. Serve this `.bin` raw; the firmware
-  writes its own size+CRC header. Node IDs are 10 (front right), 11 (front left), 12 (rear right),
-  13 (rear left).
+### ⛔ DO NOT flash this image over DroneCAN — it will brick the ESC
+
+`file.BeginFirmwareUpdate` exists in `libcanard/canard_driver.c`, but it is **unsafe for an image
+this size**:
+
+| | |
+|---|---|
+| Staging area | sectors 8–10, `0x08080000`–`0x080E0000` = **384 KB** (`NEW_APP_BASE 8`, `NEW_APP_SECTORS 3`) |
+| Sector 11 | `0x080E0000` = `BOOTLOADER_BASE` — starts immediately after staging |
+| This image | **524,280 bytes** |
+| Overflow | **131,064 bytes written into the bootloader sector** |
+
+`flash_helper_write_new_app_data()` (`flash_helper.c:181`) passes `offset` straight to `write_data()`,
+a bare `FLASH_ProgramByte` loop with **no bounds check** (`flash_helper.c:120`). The bootloader sector
+is never erased on this path, and programming into non-erased flash can only clear bits — so the
+bootloader is corrupted in place. Recovery is **SWD only**.
+
+The companion's `flash.py` refuses this image outright. Do not work around it.
 
 ## Rollback
 

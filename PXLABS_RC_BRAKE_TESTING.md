@@ -109,8 +109,12 @@ DroneCAN node IDs (`controller_id`; dynamic allocation is disabled):
 Saved configs for all four are in [`Motor_Config_Bldc/`](Motor_Config_Bldc/).
 
 > VESC Tool's CAN-forward will **not** reach these ESCs — in `CAN_MODE_UAVCAN` the firmware discards
-> all VESC-protocol frames (`comm/comm_can.c:1346`). Flash each VESC over **USB**, or use DroneCAN
-> `file.BeginFirmwareUpdate` from the companion.
+> all VESC-protocol frames (`comm/comm_can.c:1346`). Flash each VESC over **USB**, one at a time.
+>
+> ⛔ **Never flash this image over DroneCAN.** The 524,280-byte image overflows the 384 KB staging
+> area (sectors 8–10) by 131,064 bytes into sector 11, the bootloader, which that path never erases
+> and `write_data()` never bounds-checks (`flash_helper.c:181`, `:120`). Result is a bricked ESC
+> recoverable only over SWD. See [`Testing_Bin/README.md`](Testing_Bin/README.md).
 
 ---
 
