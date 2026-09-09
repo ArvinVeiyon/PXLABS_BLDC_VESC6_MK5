@@ -2,9 +2,9 @@
 
 **Status: EXECUTED 2026-09-09 — passed. Merged to dev, pre-released as
 `v6.06.0-pxlabs-rover-r2-alpha1`.** This document is the acceptance procedure for the RC brake
-feature. **Operator-attested conditions: the rover was on the floor, loaded, under its own weight** —
-the first loaded vehicle data under this firmware. Braking is quantified motor-side only; no
-`esc_current` and no vehicle-motion source was logged, so stopping distance remains unmeasured.
+feature. **Tested on the floor under load. The loaded condition is measured, not attested** —
+`esc_current` −12.06…+8.18 A moving vs ±1.7 A noise at rest, corroborated by `/odom` (0.943 m/s
+peak) and the IMU. **The brake stops the rover in 0.30–0.50 m from ~0.8 m/s, at 0.69 m/s² median.**
 Results, measured figures, the conditions history and the remaining open items are in
 [`PXLABS_VESC_PX4_ROVER_FIX.md`](PXLABS_VESC_PX4_ROVER_FIX.md); the full write-up and raw CSV are on
 the companion at `codex-work/bldc_can/evidence/brake_bench_test_20260909.md`.

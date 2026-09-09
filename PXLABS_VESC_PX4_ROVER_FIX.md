@@ -125,11 +125,11 @@ libcanard/canard_driver.c | 41 +++++++++++++++++++++++++++++++++++++--
 
 ## RC Brake Channel — TESTED ON THE FLOOR, LOADED (`v6.06.0-pxlabs-rover-r2-alpha1`)
 
-> **Status: tested 2026-09-09 and merged to dev. Operator-attested conditions: the rover was on
-> the floor, loaded, under its own weight.** This is the first loaded vehicle data under the brake
-> firmware — not a bench run. Braking is quantified motor-side only (rpm/s); **stopping distance
-> in m/s² is still unmeasured**, because no vehicle-motion source was recorded. Rollback is the r1
-> release binary, over USB, per ESC.
+> **Status: tested on the floor under load 2026-09-09, merged to dev.** Two runs: a first
+> (motor-side only) and an instrumented re-run with body-motion telemetry. **The loaded condition
+> is now measured, not attested.** Headline: the brake stops the rover in **0.30–0.50 m from
+> ~0.8 m/s**, at **0.69 m/s² median / 0.94 m/s² peak**. Rollback is the r1 release binary, over
+> USB, per ESC.
 >
 > ⚠️ **The `v6.06.0-pxlabs-rover-r2-alpha1` tag annotation is wrong on this point.** It describes
 > the run as a bench test on stands with the rover never driven. That was based on a report later
@@ -222,6 +222,70 @@ account that fits without special pleading.
 > existed. **Record `esc_current`, `/odom`, `vehicle_local_position` and `sensor_combined` on every
 > future run.**
 
+### Instrumented floor run — 2026-09-09 (the vehicle-side numbers)
+
+A second, instrumented run on the floor under load, recorded with the operator's explicit go-ahead.
+115.8 s, 579 rows at 5 Hz, armed, `nav_state` 0 (Manual), no failsafe, kill switch safe throughout.
+Six topics, each verified to have a non-zero baseline before scoring, after a 4 s DDS discovery
+warm-up: `esc_status` (now including **`esc_current`**), `input_rc`, `manual_control_setpoint`,
+`/odom`, `vehicle_local_position_v1`, `sensor_combined`. The recorder fails loudly on a silent topic
+rather than letting an empty column read as "no motion".
+
+Companion artifacts: raw `~/brake_run_20260909_floor2.csv`, recorder
+`bldc_can/diag/brake_run_record.py`, analysis `bldc_can/diag/brake_run_analyse.py`, write-up
+`bldc_can/evidence/brake_floor_test_20260909.md`.
+
+#### Loaded condition — now measured, not inferred
+
+| Evidence | Value |
+|---|---|
+| `esc_current`, stationary | −1.00 … +1.68 A (n=1748) — sensor noise |
+| `esc_current`, moving | −12.06 … +8.18 A (n=301) |
+| … driving | median **+5.16 A**, peak +8.18 A |
+| … **regen (braking)** | median **−3.56 A**, peak **−12.06 A** |
+| `/odom` forward velocity | peak **0.943 m/s**, 118 samples above 0.05 m/s |
+| IMU accelerometer, x | −3.33 … +3.57 m/s² |
+
+Unloaded wheels need a fraction of an amp to hold speed. This is a loaded vehicle, unambiguously.
+The IMU is the witness that cannot be fooled by wheel slip — a wheel spinning on a stand produces no
+body acceleration.
+
+> ⚠️ **`/odom` drifts at standstill** — ~0.38 m of phantom travel in a minute with all four wheels at
+> 0 rpm (the camera-gyro dead-reckoning term). Use it for *change during a run*, corroborated by the
+> IMU. Never as a ruler.
+
+#### Braking performance
+
+| Metric | Value |
+|---|---|
+| **Braked deceleration** | **0.69 m/s² median**, 0.94 peak (n=9) |
+| Coasting deceleration | 0.20 m/s² median (n=2) — ⚠️ **provisional**, see below |
+| **Stopping distance from ~0.8 m/s** | **0.30 – 0.50 m** |
+
+Worked stops, throttle-neutral gated:
+
+| From | To | Time | Decel | Distance |
+|---|---|---|---|---|
+| 0.85 m/s | 0.03 m/s | 1.0 s | 0.81 m/s² | 0.44 m |
+| 0.83 m/s | 0.00 m/s | 1.2 s | 0.69 m/s² | 0.50 m |
+| 0.76 m/s | 0.00 m/s | 0.8 s | 0.94 m/s² | 0.30 m |
+
+**`esc_errorcount` = 0 = NONE on all four ESCs, every sample — now under load as well as
+free-spinning.** The `timeout_reset()` check has passed in both conditions.
+
+> ⚠️ **The coast baseline is weak and the derived figures are provisional.** Coast is n=2, both
+> segments only 0.4 s, and **neither ran to a stop** — the rover was still doing 0.63 m/s when each
+> ended. So the brake-vs-coast ratio (~3.4×) and the extrapolation to 0.9 m/s (coast ~2.00 m, braked
+> ~0.59 m, saving ~1.4 m) **must be treated as provisional**. The *braked* figures do not inherit
+> this weakness — 9 runs, 3 of them to a complete stop. One clean coast-to-stop closes it.
+
+> 🔴 **Do not compare braking against the "~0.30 m coast at ~0.9 m/s" figure.** That number is
+> **distance-before-contact** from a standoff test in which the rover *hit* the obstacle — 0.345 m
+> standoff, ~0.30 m consumed, 0.020 m remaining at contact. It is not a stopping distance. Read as
+> one it implies ~1.35 m/s², roughly twice what the brake achieves, and would wrongly suggest the
+> brake makes stopping worse. The only sound comparison is a coast-to-stop measured the same way as
+> the braked runs.
+
 ### RC channel geometry — solved, not read
 
 MAVLink to the FC was down for the whole session (no heartbeat on `tcp:5760`, before and after an
@@ -273,30 +337,34 @@ same overshoot.
 - **`l_max_erpm_fbrake` (300) and `l_max_erpm_fbrake_cc` (1500) are dead params on this vehicle.**
   Every use is in `mcpwm.c`, the BLDC path; `motor_type` = 2 = FOC. Do not tune them chasing brake
   strength.
-- **The collision reflex does not use the brake.** It still only zeroes the setpoint. Wiring it to
-  command the brake is a separate, unmade change — so the number that actually motivates this
-  feature, how much of the ~0.30 m reflex coast at ~0.9 m/s the brake removes, remains unmeasured.
+- **The collision reflex does not use the brake.** It still only zeroes the setpoint; everything
+  measured here is the manual ch3 brake. Wiring the reflex to command the brake is a separate,
+  unmade change — now backed by 0.69 m/s² braked vs 0.20 m/s² coasting.
+- **Authority measured at one battery state and one temperature.** Not calibrated in amps across
+  conditions.
 
 ### Open items before the stable `r2` cut
 
-1. **Quantify stopping distance.** The rover *has* been driven under this firmware, but braking is
-   measured motor-side only (411–432 rpm/s). There is no vehicle-side figure — no m/s², no stopping
-   distance, and therefore no answer to the question that motivates the feature: how much of the
-   ~0.30 m collision-reflex coast at ~0.9 m/s the brake actually removes.
-2. **Instrumented re-run** logging `esc_current` alongside rpm, plus `/odom`,
-   `vehicle_local_position` and `sensor_combined` for independent body motion. This produces the
-   m/s² figure above and closes the recording gap that made the test conditions ambiguous.
-3. **Read `uavcan_raw_mode` off a flashed ESC.** All four repo appconfs carry `CURRENT` (0) and
+1. **One clean coast-to-stop run.** The cheapest remaining item. Coast is n=2 with neither segment
+   running to a stop, so the brake-vs-coast ratio and the ~1.4 m saving stay provisional until a
+   coast-to-stop is measured the same way as the braked runs.
+2. **Wire the collision reflex to the brake.** It still only zeroes the setpoint; everything measured
+   here is the *manual* ch3 brake. **0.69 m/s² braked against 0.20 m/s² coasting is now the
+   quantitative argument for making that change.**
+3. **Explain the −12.06 A regen peak against a repo `l_in_current_min` of −5 A.** Either the live
+   config differs from the repo XMLs, or that cap is per-motor rather than pack-side. Needs USB +
+   VESC Tool to read the live `mcconf`.
+4. **Read `uavcan_raw_mode` off a flashed ESC.** All four repo appconfs carry `CURRENT` (0) and
    nothing observed contradicts it, but no live readback exists. Needs USB + VESC Tool; the
    companion's CAN path is formally dropped (MCP2515 hat hardware-dead, overlay disabled
    2026-09-09). If lower-stick braking is ever observed, this param has been changed live.
-4. **Read `UAVCAN_EC_FAIL5`.** Never read, never set. Blocked on the MAVLink link.
-5. **Confirm the flashed firmware hash** on each ESC in VESC Tool. No hash was read back off any
+5. **Read `UAVCAN_EC_FAIL5`.** Never read, never set. Blocked on the MAVLink link.
+6. **Confirm the flashed firmware hash** on each ESC in VESC Tool. No hash was read back off any
    unit after flashing; all four are *reported* flashed, method unconfirmed for FR/FL/RR.
-6. **Test the disarm and RC-loss failsafe.** Brake-off on failsafe is correct *by construction*
+7. **Test the disarm and RC-loss failsafe.** Brake-off on failsafe is correct *by construction*
    (PX4 has no disarmed parameter, so `_disarmed_value` stays 0, which on the brake slot is below
    the 0.05f threshold; `NAV_RCL_ACT` = 6 disarms on RC loss) but has never been exercised.
-7. **Set `RC_MAP_PITCH` = 0.** Still 3, the same channel as `RC_MAP_AUX1`. Harmless —
+8. **Set `RC_MAP_PITCH` = 0.** Still 3, the same channel as `RC_MAP_AUX1`. Harmless —
    `manual_control_setpoint.pitch` has zero references in `src/modules/rover_differential/` — but
    it is not the intended end state.
 
