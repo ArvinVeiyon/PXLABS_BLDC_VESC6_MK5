@@ -123,12 +123,18 @@ libcanard/canard_driver.c | 41 +++++++++++++++++++++++++++++++++++++--
 
 ---
 
-## RC Brake Channel — BENCH-TESTED (`v6.06.0-pxlabs-rover-r2-alpha1`)
+## RC Brake Channel — TESTED ON THE FLOOR, LOADED (`v6.06.0-pxlabs-rover-r2-alpha1`)
 
-> **Status: bench-tested 2026-09-09 and merged to dev. The rover has never been driven under
-> this firmware.** Motor data indicates free-spinning, unloaded wheels — see *Test conditions:
-> inferred, not verified* below; the physical setup was never attested by anyone. Do not treat
-> measured deceleration as stopping distance. Rollback is the r1 release binary, over USB, per ESC.
+> **Status: tested 2026-09-09 and merged to dev. Operator-attested conditions: the rover was on
+> the floor, loaded, under its own weight.** This is the first loaded vehicle data under the brake
+> firmware — not a bench run. Braking is quantified motor-side only (rpm/s); **stopping distance
+> in m/s² is still unmeasured**, because no vehicle-motion source was recorded. Rollback is the r1
+> release binary, over USB, per ESC.
+>
+> ⚠️ **The `v6.06.0-pxlabs-rover-r2-alpha1` tag annotation is wrong on this point.** It describes
+> the run as a bench test on stands with the rover never driven. That was based on a report later
+> retracted (see below). The tag is frozen and will not be rewritten — **this document supersedes
+> its annotation.**
 
 ### Problem
 `uavcan_raw_mode` forces a choice: `UAVCAN_RAW_MODE_CURRENT` gives reverse on the lower half
@@ -176,77 +182,45 @@ turn the motor by hand, full stick feels no different from low stick" — are bo
 behaviour**, not defects. The first is the intended brake-before-throttle precedence
 (`canard_driver.c:746`); the second is the back-EMF scaling above.
 
-### Bench test results — 2026-09-09
+### Test results — 2026-09-09
 
 All four ESCs online. Operator drove the wheels under throttle and worked the brake stick.
 303 s at 5 Hz: 30,090 `input_rc`, 4,337 `manual_control_setpoint`, 29,805 `esc_status` messages,
 captured over DDS on the companion.
 
-#### ⚠️ Test conditions: inferred, not verified
+#### Test conditions: operator-attested — on the floor, loaded
 
-**No one attested the physical setup.** An earlier draft of this note said "rover on stands, wheels
-off the ground". That phrasing originated as a *suggestion* made to the operator before the run, was
-never confirmed by them, and was never measured — it was then mistakenly recorded as an observed
-condition. It has been withdrawn.
+**The rover was on the floor, under its own weight, as confirmed directly by the operator.**
 
-What the motor data indicates, by inference from five independent indicators that agree and do not
-contradict each other:
+This corrects two earlier accounts in this document's history, both wrong. The first said "rover on
+stands, wheels off the ground"; that phrasing began as a suggestion made to the operator before the
+run, was never confirmed and never measured, and was mistakenly recorded as observed. The second
+replaced it with an inference that the wheels were free-spinning, built on five indicators. That
+inference was also wrong, and its central argument was arithmetically invalid:
 
-| Indicator | Value | Reading |
-|---|---|---|
-| Implied path length if loaded | **51.7 m** over 303 s (49.3 m moving) | The test room has ~2 m² of open floor. 51.7 m of travel is not physically available. |
-| Direction reversals | 49 | A loaded rover reversing 49 times in that space would hit a wall on nearly every one. No impact signature in the log. |
-| Peak implied ground speed | 1.74 m/s (445 rpm median, `ERPM_TO_MS` 0.003900) | ≈2× the fastest speed ever measured on this rover on the floor (~0.9 m/s at a 0.25 command). |
-| Cross-wheel rpm spread | median 0, p90 23 rpm | Near-lockstep. On the floor, traction differences and yaw decorrelate a skid-steer's wheels. |
-| Coast decay, clean pair | 78–85 rpm/s | Consistent with free-spin drag. |
+- **The headline claim was that 51.7 m of implied path is impossible in a room with ~2 m² of floor.**
+  But the same analysis counted **49 direction reversals**, and 51.7 m across 49 reversals is
+  **~1.05 m per leg**. Drive a metre, brake, reverse a metre, brake, repeat — that is not merely
+  possible in a small room, it is precisely what brake testing in a small room looks like. The run
+  never required 51.7 m of clear floor.
+- **Cross-wheel rpm lockstep (median 0, p90 23) does not discriminate** and is withdrawn. Wheels
+  decorrelate on the floor mainly in *turns*; in straight forward/reverse runs a loaded skid-steer
+  also tracks closely.
+- **Peak implied 1.74 m/s** is high against the ~0.9 m/s measured from a 0.25 command, but full
+  stick was commanded and this vehicle's speed response is known to be non-linear.
+- **Coast decay 78–85 rpm/s is ambiguous either way** — a loaded rover has more rolling resistance
+  but also far more inertia.
 
-**This is not proof.** The recorder logged only `input_rc`, `manual_control_setpoint` and
-`esc_status`. The two things that would have settled it were not captured: **`esc_current`** (a
-current step at constant rpm is the clean discriminator, and it is available in `esc_status`) and
-**any vehicle-motion source at all** — no `/odom`, no IMU, no local position, all of which were
-available on DDS. No segment of the run shows conditions changing, but with neither current nor
-odometry, the ability to detect a mid-session change is weak: read that as *nothing visible*, not
-*nothing happened*.
+The operator's direct account of what was physically done outranks all of it, and is also the only
+account that fits without special pleading.
 
-**A 60 s re-run logging `esc_current` alongside rpm, plus `/odom`, would settle this permanently**
-and is worth doing before the stable `r2`.
-
-| Check | Result |
-|---|---|
-| `esc_status.esc_errorcount` under braking | ✅ **0 = NONE on all four ESCs, every one of 29,805 samples.** No missed `timeout_reset()` signature. |
-| Proportional response | ✅ `aux1` tracks the stick continuously across full travel — not on/off |
-| Bottom stop = brake off | ✅ `aux1` = −1.0000 exactly (n=1303) → slot 5 = 1 → `brake_rel` 0.012 %, under the 0.05f threshold. No residual drag. |
-| All four wheels brake | ✅ FR, FL, RR, RL, both directions, simultaneously |
-
-**Proportionality**, from a steady hold of 53 consecutive samples at one stick position (so there
-is no sampling skew between topics): stick at 1212 µs → `aux1` = −0.5657 measured, against
-−0.5663 predicted from `(1212 − 1487.5) / 486.5`. Agreement to 0.0006.
-
-**Braking authority**, scored only on sustained decelerations — ≥3 consecutive samples of
-monotonic slowdown from |rpm| ≥ 250 with throttle neutral throughout:
-
-| Wheel | Braked (rpm/s) | Free coast (rpm/s) | Ratio |
-|---|---|---|---|
-| Rear right (12) | 429 | 78 | **5.5×** |
-| Rear left (13) | 411 | 85 | **4.8×** |
-| Front right (10) | 432 | *(unusable — see below)* | — |
-| Front left (11) | 422 | *(unusable — see below)* | — |
-
-Braked deceleration is tight across all four at **411–432 rpm/s**. A typical stop is ~340 rpm → 0
-in ≈1.0 s forward, and −413 → −126 rpm in ≈0.6 s in reverse. **On unloaded wheels the brake is
-roughly 5× the free-spin drag.**
-
-> ⚠️ The FR/FL coast figures are contaminated and must not be quoted. FL's rpm telemetry throws
-> single-sample spikes (375 → 1028 → 562 within 0.4 s while the other three read 235 → 346 → 347),
-> and FR was still settling from one. RR and RL are the clean pair.
->
-> ⚠️ **Method warning.** Scored naively on per-sample pairs, this same dataset says the brake is
-> 1.1× coast — i.e. useless. That is an artifact: rpm spikes and the tail of a braked stop both
-> fall into the coast bucket. You must gate on throttle-neutral and score sustained runs. If a
-> reproduction gives ~1×, this is why.
-
-Full write-up and raw CSV live on the companion at
-`codex-work/bldc_can/evidence/brake_bench_test_20260909.md`.
+> **Recording gap, and the reason this went wrong at all.** The session logged only `input_rc`,
+> `manual_control_setpoint` and `esc_status`. **`esc_current` was inside `esc_status` the whole time
+> and was not used** — a current step at constant rpm is the clean loaded/unloaded discriminator.
+> No vehicle-motion source was subscribed at all: no `/odom`, no IMU, no local position, all of
+> which were available on DDS. Had any one of them been recorded, none of this ambiguity would have
+> existed. **Record `esc_current`, `/odom`, `vehicle_local_position` and `sensor_combined` on every
+> future run.**
 
 ### RC channel geometry — solved, not read
 
@@ -305,11 +279,13 @@ same overshoot.
 
 ### Open items before the stable `r2` cut
 
-1. **Drive the rover.** Everything so far indicates unloaded, free-spinning wheels. `rpm/s` bounds
-   the brake; it does not predict stopping distance. Blocked by floor space, not by firmware — the
-   test room has ~2 m² of open floor against a 0.73 × 0.56 m rover.
-2. **Re-run 60 s logging `esc_current` and `/odom`** to settle the loaded/unloaded question by
-   measurement rather than inference, and to close the recording gap for future runs.
+1. **Quantify stopping distance.** The rover *has* been driven under this firmware, but braking is
+   measured motor-side only (411–432 rpm/s). There is no vehicle-side figure — no m/s², no stopping
+   distance, and therefore no answer to the question that motivates the feature: how much of the
+   ~0.30 m collision-reflex coast at ~0.9 m/s the brake actually removes.
+2. **Instrumented re-run** logging `esc_current` alongside rpm, plus `/odom`,
+   `vehicle_local_position` and `sensor_combined` for independent body motion. This produces the
+   m/s² figure above and closes the recording gap that made the test conditions ambiguous.
 3. **Read `uavcan_raw_mode` off a flashed ESC.** All four repo appconfs carry `CURRENT` (0) and
    nothing observed contradicts it, but no live readback exists. Needs USB + VESC Tool; the
    companion's CAN path is formally dropped (MCP2515 hat hardware-dead, overlay disabled

@@ -2,9 +2,10 @@
 
 **Status: EXECUTED 2026-09-09 — passed. Merged to dev, pre-released as
 `v6.06.0-pxlabs-rover-r2-alpha1`.** This document is the acceptance procedure for the RC brake
-feature. Test conditions were **inferred from motor data, not verified** — nobody attested whether
-the wheels were raised, and neither `esc_current` nor any vehicle-motion source was logged. Results,
-measured figures, the conditions evidence and the remaining open items are in
+feature. **Operator-attested conditions: the rover was on the floor, loaded, under its own weight** —
+the first loaded vehicle data under this firmware. Braking is quantified motor-side only; no
+`esc_current` and no vehicle-motion source was logged, so stopping distance remains unmeasured.
+Results, measured figures, the conditions history and the remaining open items are in
 [`PXLABS_VESC_PX4_ROVER_FIX.md`](PXLABS_VESC_PX4_ROVER_FIX.md); the full write-up and raw CSV are on
 the companion at `codex-work/bldc_can/evidence/brake_bench_test_20260909.md`.
 
@@ -12,8 +13,8 @@ the companion at `codex-work/bldc_can/evidence/brake_bench_test_20260909.md`.
 > (`CONTROL_MODE_CURRENT_BRAKE`), so its torque comes from back-EMF and scales with wheel speed. At
 > hand-turning speed, 100 % and 10 % brake both produce approximately nothing. **Every step below
 > that measures braking must be run against a spinning wheel**, under throttle, wheels off the
-> ground. Feeling no resistance when turning a wheel by hand is the expected result and proves
-> nothing.
+> ground, or on the floor under load. Feeling no resistance when turning a wheel by hand is the
+> expected result and proves nothing.
 
 > ⚠️ **Scoring warning.** Scored naively on per-sample pairs, a good dataset can still say the brake
 > is ~1.1× coast, i.e. useless. That is an artifact: rpm telemetry spikes and the tail of a braked
