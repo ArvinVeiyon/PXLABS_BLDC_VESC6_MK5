@@ -125,9 +125,10 @@ libcanard/canard_driver.c | 41 +++++++++++++++++++++++++++++++++++++--
 
 ## RC Brake Channel — BENCH-TESTED (`v6.06.0-pxlabs-rover-r2-alpha1`)
 
-> **Status: bench-tested on stands 2026-09-09 and merged to dev. The rover has never been
-> driven under this firmware.** Wheels-off-the-ground only. Do not treat measured deceleration
-> as stopping distance. Rollback is the r1 release binary, over USB, per ESC.
+> **Status: bench-tested 2026-09-09 and merged to dev. The rover has never been driven under
+> this firmware.** Motor data indicates free-spinning, unloaded wheels — see *Test conditions:
+> inferred, not verified* below; the physical setup was never attested by anyone. Do not treat
+> measured deceleration as stopping distance. Rollback is the r1 release binary, over USB, per ESC.
 
 ### Problem
 `uavcan_raw_mode` forces a choice: `UAVCAN_RAW_MODE_CURRENT` gives reverse on the lower half
@@ -177,9 +178,38 @@ behaviour**, not defects. The first is the intended brake-before-throttle preced
 
 ### Bench test results — 2026-09-09
 
-Rover on stands, **wheels off the ground, unloaded**. All four ESCs online. Operator drove the
-wheels under throttle and worked the brake stick. 303 s at 5 Hz: 30,090 `input_rc`,
-4,337 `manual_control_setpoint`, 29,805 `esc_status` messages, captured over DDS on the companion.
+All four ESCs online. Operator drove the wheels under throttle and worked the brake stick.
+303 s at 5 Hz: 30,090 `input_rc`, 4,337 `manual_control_setpoint`, 29,805 `esc_status` messages,
+captured over DDS on the companion.
+
+#### ⚠️ Test conditions: inferred, not verified
+
+**No one attested the physical setup.** An earlier draft of this note said "rover on stands, wheels
+off the ground". That phrasing originated as a *suggestion* made to the operator before the run, was
+never confirmed by them, and was never measured — it was then mistakenly recorded as an observed
+condition. It has been withdrawn.
+
+What the motor data indicates, by inference from five independent indicators that agree and do not
+contradict each other:
+
+| Indicator | Value | Reading |
+|---|---|---|
+| Implied path length if loaded | **51.7 m** over 303 s (49.3 m moving) | The test room has ~2 m² of open floor. 51.7 m of travel is not physically available. |
+| Direction reversals | 49 | A loaded rover reversing 49 times in that space would hit a wall on nearly every one. No impact signature in the log. |
+| Peak implied ground speed | 1.74 m/s (445 rpm median, `ERPM_TO_MS` 0.003900) | ≈2× the fastest speed ever measured on this rover on the floor (~0.9 m/s at a 0.25 command). |
+| Cross-wheel rpm spread | median 0, p90 23 rpm | Near-lockstep. On the floor, traction differences and yaw decorrelate a skid-steer's wheels. |
+| Coast decay, clean pair | 78–85 rpm/s | Consistent with free-spin drag. |
+
+**This is not proof.** The recorder logged only `input_rc`, `manual_control_setpoint` and
+`esc_status`. The two things that would have settled it were not captured: **`esc_current`** (a
+current step at constant rpm is the clean discriminator, and it is available in `esc_status`) and
+**any vehicle-motion source at all** — no `/odom`, no IMU, no local position, all of which were
+available on DDS. No segment of the run shows conditions changing, but with neither current nor
+odometry, the ability to detect a mid-session change is weak: read that as *nothing visible*, not
+*nothing happened*.
+
+**A 60 s re-run logging `esc_current` alongside rpm, plus `/odom`, would settle this permanently**
+and is worth doing before the stable `r2`.
 
 | Check | Result |
 |---|---|
@@ -275,20 +305,22 @@ same overshoot.
 
 ### Open items before the stable `r2` cut
 
-1. **Drive the rover.** Everything so far is unloaded wheels on stands. `rpm/s` bounds the brake;
-   it does not predict stopping distance. Blocked by floor space, not by firmware — the test room
-   has ~2 m² of open floor against a 0.73 × 0.56 m rover.
-2. **Read `uavcan_raw_mode` off a flashed ESC.** All four repo appconfs carry `CURRENT` (0) and
+1. **Drive the rover.** Everything so far indicates unloaded, free-spinning wheels. `rpm/s` bounds
+   the brake; it does not predict stopping distance. Blocked by floor space, not by firmware — the
+   test room has ~2 m² of open floor against a 0.73 × 0.56 m rover.
+2. **Re-run 60 s logging `esc_current` and `/odom`** to settle the loaded/unloaded question by
+   measurement rather than inference, and to close the recording gap for future runs.
+3. **Read `uavcan_raw_mode` off a flashed ESC.** All four repo appconfs carry `CURRENT` (0) and
    nothing observed contradicts it, but no live readback exists. Needs USB + VESC Tool; the
    companion's CAN path is formally dropped (MCP2515 hat hardware-dead, overlay disabled
    2026-09-09). If lower-stick braking is ever observed, this param has been changed live.
-3. **Read `UAVCAN_EC_FAIL5`.** Never read, never set. Blocked on the MAVLink link.
-4. **Confirm the flashed firmware hash** on each ESC in VESC Tool. No hash was read back off any
+4. **Read `UAVCAN_EC_FAIL5`.** Never read, never set. Blocked on the MAVLink link.
+5. **Confirm the flashed firmware hash** on each ESC in VESC Tool. No hash was read back off any
    unit after flashing; all four are *reported* flashed, method unconfirmed for FR/FL/RR.
-5. **Test the disarm and RC-loss failsafe.** Brake-off on failsafe is correct *by construction*
+6. **Test the disarm and RC-loss failsafe.** Brake-off on failsafe is correct *by construction*
    (PX4 has no disarmed parameter, so `_disarmed_value` stays 0, which on the brake slot is below
    the 0.05f threshold; `NAV_RCL_ACT` = 6 disarms on RC loss) but has never been exercised.
-6. **Set `RC_MAP_PITCH` = 0.** Still 3, the same channel as `RC_MAP_AUX1`. Harmless —
+7. **Set `RC_MAP_PITCH` = 0.** Still 3, the same channel as `RC_MAP_AUX1`. Harmless —
    `manual_control_setpoint.pitch` has zero references in `src/modules/rover_differential/` — but
    it is not the intended end state.
 

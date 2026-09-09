@@ -1,8 +1,10 @@
 # RC Brake — Bench Test Methodology
 
-**Status: EXECUTED 2026-09-09 on stands — passed. Merged to dev, pre-released as
+**Status: EXECUTED 2026-09-09 — passed. Merged to dev, pre-released as
 `v6.06.0-pxlabs-rover-r2-alpha1`.** This document is the acceptance procedure for the RC brake
-feature. Results, measured figures and the remaining open items are in
+feature. Test conditions were **inferred from motor data, not verified** — nobody attested whether
+the wheels were raised, and neither `esc_current` nor any vehicle-motion source was logged. Results,
+measured figures, the conditions evidence and the remaining open items are in
 [`PXLABS_VESC_PX4_ROVER_FIX.md`](PXLABS_VESC_PX4_ROVER_FIX.md); the full write-up and raw CSV are on
 the companion at `codex-work/bldc_can/evidence/brake_bench_test_20260909.md`.
 
