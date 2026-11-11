@@ -1,0 +1,75 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    NC DRILL Log                                                     )
+(                                                                     )
+(    Drawing          : VESC_6_MK5_BRD_11_NOV_25_TEKPA.brd            )
+(    Software Version : unreleased                                    )
+(    Date/Time        : Tue Nov 11 13:09:52 2025                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+
+ Processing NC Parameters file 'nc_param.txt' ...
+
+ NC PARAMETERS
+ -------------
+
+ FORMAT   		2.5
+ MACHINE-OFFSET		x:0.00000	y:0.00000   (inch)
+ FEEDRATE		1
+ COORDINATES		ABSOLUTE
+ OUTPUT-UNITS		ENGLISH
+ TOOL-ORDER		INCREASING
+ REPEAT-CODES		YES
+ SUPPRESS-LEAD-ZEROES	YES
+ SUPPRESS-TRAIL-ZEROES	NO
+ SUPPRESS-EQUAL		NO
+ TOOL-SELECT		YES
+ HEADER			none
+ LEADER			12
+ CODE			ASCII
+ SEPARATE		NO
+ SEPARATE-ROUTING	NO
+ OPTIMIZE_DRILLING	NO
+ ENHANCED_EXCELLON	YES
+ SCALE			1.000000
+
+ WARNING(SPMHMF-360): Design precision is greater than that of the drill output file data.
+ WARNING(SPMHMF-361): Data rounding errors are very possible.
+ WARNING(SPMHMF-368): Cannot find NC Drill tool file 'nc_tools.txt'
+ WARNING(SPMHMF-369): ... will auto-generate tool file 'nc_tools_auto.txt'.
+
+
+     Auto-generating tool file 'nc_tools_auto.txt' ...
+
+           Size  Plating  Tool        + Tolerance  - Tolerance
+
+         10.000  P        T01            3.000000    10.000000
+         32.000  P        T02            0.000000     0.000000
+         40.000  P        T03            3.000000     3.000000
+         44.000  P        T04            3.000000     3.000000
+        160.000  P        T05            3.000000     3.000000
+        125.000  N        T06            2.000000     2.000000
+
+
+ Drill files being output to directory 'E:/WORKING/vinoth/VESC_6_MK5/layout' ...
+
+
+
+     'VESC_6_MK5_BRD_11_NOV_25_TEKPA-1-4.drl' created for holes connecting TOP and BOTTOM
+     ------------------------------------------------------------------------------------
+
+     Tool  Num     Size      +/- Tolerance     Plating   Quantity
+
+     T01    1.  10.0000    3.0000/ 10.0000      PLATED        774
+     T02    2.  32.0000    0.0000/  0.0000      PLATED         12
+     T03    3.  40.0000    3.0000/  3.0000      PLATED          3
+     T04    4.  44.0000    3.0000/  3.0000      PLATED          4
+     T05    5. 160.0000    3.0000/  3.0000      PLATED          5
+     T06    6. 125.0000    2.0000/  2.0000  NON_PLATED          3
+
+     ---- Total holes:                                        801
+
+     ---- Total head travel:              24.38 feet (7.43 meters)
+

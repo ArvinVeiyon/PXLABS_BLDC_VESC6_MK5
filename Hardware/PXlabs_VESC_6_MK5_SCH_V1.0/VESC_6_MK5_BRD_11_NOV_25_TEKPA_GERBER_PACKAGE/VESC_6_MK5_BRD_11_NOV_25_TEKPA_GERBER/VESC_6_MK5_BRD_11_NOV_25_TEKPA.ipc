@@ -1,0 +1,1793 @@
+P  JOB   E:/.../VESC_6_MK5/layout/VESC_6_MK5_BRD_11_NOV_25_TEKPA.brd            
+P  CODE  00                                                                     
+P  UNITS CUST 0                                                                 
+P  TITLE E:/.../VESC_6_MK5/layout/VESC_6_MK5_BRD_11_NOV_25_TEKPA.brd            
+P  NUM   001                                                                    
+P  REV   A                                                                      
+P  VER IPC-D-356A                                                               
+C                                                                               
+C  IPC-D-356 Ouptut File from Allegro                                           
+C  IPC File Date: Tue Nov 11 13:10:07 2025                                      
+C  Login Name:    Admin                                                         
+C                                                                               
+C                                                                               
+C  Board File:             VESC_6_MK5_BRD_11_NOV_25_TEKPA.brd                   
+C  Design Rule Status:     UP TO DATE                                           
+C  Unit of Measure:        mils                                                 
+C  Decimal Place Accuracy: 3                                                    
+C  Number of etch Layers:  4                                                    
+C  Board Thickness(mils):  28.800000                                            
+C  Drawing Extents(mils):  -87450933  -97668539  974503665  945988169           
+C                                                                               
+C                                                                               
+C  BOARD LAYER INFORMATION                                                      
+C                                                                               
+C     Layer      Layer            Layer             Film  Layer                 
+C     Name       Material         Type              Type  Number                
+C  ---------------------------------------------------------                    
+C  TOP           COPPER           CONDUCTOR         POS     1                   
+C  LYR_02_GND    COPPER           CONDUCTOR         POS     2                   
+C  LYR_03_PWR    COPPER           CONDUCTOR         POS     3                   
+C  BOTTOM        COPPER           CONDUCTOR         POS     4                   
+C                                                                               
+C                                                                               
+C  PADSTACK INFORMATION                                                         
+C                                                                               
+C     Padstack          First     Last                                          
+C     Name              Layer     Layer     Width     Height                    
+C  ---------------------------------------------------------                    
+C  70X134               TOP       TOP           74000    138000                 
+C  32X100               TOP       TOP           36000    104000                 
+C  32X110               TOP       TOP           36000    114000                 
+C  40X110               TOP       BOTTOM        66000    114000                 
+C  200C120D             TOP       BOTTOM       244000    244000                 
+C  42X73                TOP       TOP           41500     72988                 
+C  115C125DNP           TOP       BOTTOM       145984    145984                 
+C  94C44DP              TOP       BOTTOM        98000     98000                 
+C  250C125DP            TOP       BOTTOM       256000    256000                 
+C  82C52DP              TOP       BOTTOM        86000     86000                 
+C  107C67DP             TOP       BOTTOM       111000    111000                 
+C  58S38D               TOP       BOTTOM        62000     62000                 
+C  58C38D               TOP       BOTTOM        62000     62000                 
+C  130C90DP             TOP       BOTTOM       134551    134551                 
+C  57S37DP              TOP       BOTTOM        61402     61402                 
+C  57C37DP              TOP       BOTTOM        61402     61402                 
+C  150C80DP             TOP       BOTTOM       154000    154000                 
+C  OBL_70X142D110X182DP TOP       BOTTOM       114000    186000                 
+C  244C106DP            TOP       BOTTOM       224000    224000                 
+C  260C125DP            TOP       BOTTOM       266000    266000                 
+C  52C102DP             TOP       BOTTOM       106000    106000                 
+C  160C80DP             TOP       BOTTOM       164000    164000                 
+C  96C46DP              TOP       BOTTOM       100000    100000                 
+C  63C33D               TOP       BOTTOM        67000     67000                 
+C  100C60DP             TOP       BOTTOM       104000    104000                 
+C  70S40DP              TOP       BOTTOM        74000     74000                 
+C  200C100D             TOP       BOTTOM       204000    204000                 
+C  62C32D               TOP       BOTTOM        66000     66000                 
+C  102S52DP             TOP       BOTTOM       106000    106000                 
+C  102C52DP             TOP       BOTTOM       106000    106000                 
+C  74C44DP              TOP       BOTTOM        78000     78000                 
+C  320X220OBL200X100DNP TOP       BOTTOM       324000    224000                 
+C  120C60DP             TOP       BOTTOM       134000    134000                 
+C  70C82DNP             TOP       BOTTOM       154000    154000                 
+C  MTH_3MM              TOP       BOTTOM       130000    130000                 
+C  60C30DP              TOP       BOTTOM        64000     64000                 
+C  64C44DP              TOP       BOTTOM        68000     68000                 
+C  60C32DP              TOP       BOTTOM        64000     64000                 
+C  86C46DP              TOP       BOTTOM        90000     90000                 
+C  90C40DP              TOP       BOTTOM        94000     94000                 
+C  104C64DP             TOP       BOTTOM       108000    108000                 
+C  76C36DP              TOP       BOTTOM        80000     80000                 
+C  OBL_78X110           TOP       BOTTOM        82000    114000                 
+C  78X110S43DP          TOP       BOTTOM        82000    114000                 
+C  56C36DP              TOP       BOTTOM        60000     60000                 
+C  60S40DP              TOP       BOTTOM        64020     64020                 
+C  60C40DP              TOP       BOTTOM        64000     64000                 
+C  52C32DP              TOP       BOTTOM        56000     56000                 
+C  66S36DP              TOP       BOTTOM        70000     70000                 
+C  66C36DP              TOP       BOTTOM        70000     70000                 
+C  80C40DP              TOP       BOTTOM        84000     84000                 
+C  70C40DP              TOP       BOTTOM        74000     74000                 
+C  70C40D               TOP       BOTTOM        73370     73370                 
+C  80C42DP              TOP       BOTTOM        84000     84000                 
+C  45C20DP              TOP       BOTTOM        44000     44000                 
+C  T_L60_130_260_M260_1 TOP       BOTTOM       102362     51181                 
+C  T_L60_110_220_M220_1 TOP       BOTTOM        86614     43307                 
+C  52OBL28D             TOP       BOTTOM        74000     42000                 
+C  OBL_102X51_83X27     TOP       BOTTOM       102362     51181                 
+C  OBL_87X43_63X27DP    TOP       BOTTOM        86614     43307                 
+C  VIA8D16P             TOP       BOTTOM        16000     16000                 
+C  VIA12D24P            TOP       BOTTOM        24000     24000                 
+C  90C100DNP            TOP       BOTTOM       120000    120000                 
+C  76C86DNP             TOP       BOTTOM        90000     90000                 
+C  120C125DNP           TOP       BOTTOM       129000    129000                 
+C  60S40D               TOP       BOTTOM        64000     64000                 
+C  60C40D               TOP       BOTTOM        64000     64000                 
+C  39X67OBL24X51P       TOP       BOTTOM        43386     70945                 
+C  57C34DP              TOP       BOTTOM        61000     61000                 
+C  TP_VIA10D30P         TOP       BOTTOM        36000     36000                 
+C  VIA10D20P            TOP       BOTTOM        20000     20000                 
+C  140X55               TOP       TOP          144000     59000                 
+C  44X40                TOP       TOP           47307     43370                 
+C  25X67                TOP       TOP           29000     71000                 
+C  315X106              TOP       TOP          318961    110299                 
+C  34X44                TOP       TOP           38000     48000                 
+C  28X52                TOP       TOP           32000     56000                 
+C  44X67                TOP       TOP           48000     71000                 
+C  22X14_SP             TOP       TOP           21654     13780                 
+C  50X16                TOP       TOP           54000     20000                 
+C  142X250_SP           TOP       TOP          146000    254000                 
+C  12X61                TOP       TOP           16000     65000                 
+C  50X18_SP             TOP       TOP           52000     19701                 
+C  165X118              TOP       TOP          169000    122000                 
+C  70X16                TOP       TOP           74000     20000                 
+C  112X264              TOP       TOP          116000    268000                 
+C  90C60DP              TOP       TOP          204000    204000                 
+C  70X15                TOP       TOP           74000     18961                 
+C  213X138              TOP       TOP          216598    141799                 
+C  78X134               TOP       TOP           82000    138000                 
+C  70X142               TOP       TOP           74000    146000                 
+C  40X115               TOP       TOP           44000    119000                 
+C  50X12                TOP       TOP           54000     12000                 
+C  6X10_SP              TOP       TOP            7870      9449                 
+C  158X46               TOP       TOP          162000     50000                 
+C  40X106               TOP       TOP           44000    110000                 
+C  24X70                TOP       TOP           28000     74000                 
+C  118X118              TOP       TOP          122110    122110                 
+C  59X79                TOP       TOP           63000     83000                 
+C  40X126               TOP       TOP           43370    129984                 
+C  52X53                TOP       TOP           55339     56677                 
+C  60X108               TOP       TOP           64000    112000                 
+C  275X275_SP           TOP       TOP          279000    279000                 
+C  44X18_SP             TOP       TOP           47307     19717                 
+C  51X65                TOP       TOP           55000     69000                 
+C  12X39_SP             TOP       TOP           12000     39000                 
+C  15X63                TOP       TOP           19000     67000                 
+C  83X28                TOP       TOP           87000     32000                 
+C  55X40                TOP       TOP           59000     44000                 
+C  71X106               TOP       TOP           74984    109984                 
+C  XPINBOTTOMML3        BOTTOM    BOTTOM            8         8                 
+C  XPINTOPML3           TOP       TOP               8         8                 
+C  RECT55X100           TOP       TOP           43307     94488                 
+C  69X34                TOP       TOP           73213     37622                 
+C  69X32                TOP       TOP           73213     35811                 
+C  80X35                TOP       TOP           84000     39000                 
+C  60X25                TOP       TOP           64000     29000                 
+C  158X54               TOP       TOP          162000     58000                 
+C  740X250              TOP       TOP          744000    254000                 
+C  235X226              TOP       TOP          239000    230000                 
+C  34X130_SP            TOP       TOP           36000    134000                 
+C  50X90                TOP       TOP           54000     94000                 
+C  205X66_SP            TOP       TOP          209039     69433                 
+C  237X77_SP            TOP       TOP          240535     81244                 
+C  130X50               TOP       TOP          134000     54000                 
+C  35X60                TOP       TOP           41000     66000                 
+C  C_40                 TOP       TOP           40000     40000                 
+C  60X18                TOP       TOP           64000     22000                 
+C  C60                  TOP       TOP           64000     64000                 
+C  43X75                TOP       TOP           47307     78803                 
+C  440X390_SP           TOP       TOP          444000    394000                 
+C  40X170               TOP       TOP           44000    174000                 
+C  118X110              TOP       TOP          122110    114236                 
+C  200X200              TOP       TOP          204000    204000                 
+C  213X115              TOP       TOP          216598    118173                 
+C  120X120              TOP       TOP          124000    124000                 
+C  138X48               TOP       TOP          142000     52000                 
+C  16X23_SP             TOP       TOP           15748     22835                 
+C  70X30                TOP       TOP           74000     34000                 
+C  55X11_SP             TOP       TOP           59000     13000                 
+C  62X24                TOP       TOP           65039     27638                 
+C  27X8_SP              TOP       TOP           27559      7874                 
+C  59X8_SP              TOP       TOP           59055      7874                 
+C  118X102_SP           TOP       TOP          122000    106000                 
+C  24X12                TOP       TOP           23622     11811                 
+C  24X41                TOP       TOP           27638     45354                 
+C  24X24                TOP       TOP           30000     30000                 
+C  138X98_SP            TOP       TOP          141795    102425                 
+C  120X160              TOP       TOP          124000    164000                 
+C  276X158              TOP       TOP          279591    161480                 
+C  208X78               TOP       TOP          212661     82740                 
+C  51X55                TOP       TOP           55181     59118                 
+C  300X80_SP            TOP       TOP          306000     86000                 
+C  181X99               TOP       TOP          181230     98421                 
+C  63X138               TOP       TOP           67000    141799                 
+C  480X384              TOP       TOP          484299    387902                 
+C  50X145               TOP       TOP           54000    149000                 
+C  69X217               TOP       TOP           73000    221000                 
+C  60X130               TOP       TOP           64000    134000                 
+C  85X42                TOP       TOP           89000     46000                 
+C  425X275_SP           TOP       TOP          429000    279000                 
+C  255X106              TOP       TOP          255000    106000                 
+C  52X60                TOP       TOP           74000     59000                 
+C  30X75                TOP       TOP           33921     79197                 
+C  S_2_IRREG            TOP       TOP          175196     78740                 
+C  62X20                TOP       TOP           23685     65811                 
+C  SMD63REC106          TOP       TOP           66992    109008                 
+C  98X67                TOP       TOP          102441     70945                 
+C  SQUARE96             TOP       TOP           96457     96457                 
+C  SHE11X32             TOP       TOP           41740     16544                 
+C  35X18                TOP       TOP           39433     21717                 
+C  334X157SP            TOP       TOP          334650    157480                 
+C  80X64                TOP       TOP           84000     68000                 
+C  20X47                TOP       TOP           23685     51244                 
+C  44X96                TOP       TOP           48000    100000                 
+C  205X205_SP           TOP       TOP          208724    208724                 
+C  36X12_SP             TOP       TOP           39000     14000                 
+C  60X126               TOP       TOP           64000    130000                 
+C  102X50               TOP       TOP          106000     54000                 
+C  42X109               TOP       TOP           45496    112425                 
+C  199X215              TOP       TOP          202976    218724                 
+C  50X68                TOP       TOP           54000     72000                 
+C  36X16                TOP       TOP           40000     20000                 
+C  91X132               TOP       TOP           95000    136000                 
+C  91X42                TOP       TOP           95000     46000                 
+C  63X14                TOP       TOP           67000     18000                 
+C  32X45                TOP       TOP           36000     49000                 
+C  16X41_SP             TOP       TOP           15748     45496                 
+C  33X41                TOP       TOP           37000     45496                 
+C  71X71                TOP       TOP           74866     74866                 
+C  SQ_40                TOP       TOP           43370     43370                 
+C  24X61                TOP       TOP           27622     65024                 
+C  47X71                TOP       TOP           51244     74866                 
+C  24X32                TOP       TOP           27622     35496                 
+C  134X157_SP           TOP       TOP          137858    161480                 
+C  71X47                TOP       TOP           74866     51244                 
+C  61X24                TOP       TOP           65024     28000                 
+C  R39X98               TOP       TOP           43370    161480                 
+C  44X48                TOP       TOP           48000     52000                 
+C  67X26                TOP       TOP           70929     29591                 
+C  32X10                TOP       TOP           36000     14000                 
+C  122X122_SP           TOP       TOP          126000    126000                 
+C  CIR13_SP             TOP       TOP           12598     12598                 
+C  15C                  TOP       TOP           17717     17717                 
+C  34X99                TOP       TOP           38000    103000                 
+C  17X15-SP             TOP       TOP           17720     15748                 
+C  CIR35                TOP       TOP           39429     39429                 
+C  30X56                TOP       TOP           34000     60000                 
+C  220X82_SP            TOP       TOP          224472     86677                 
+C  140X177              TOP       TOP          141795    181165                 
+C  C180                 TOP       TOP          184000    184000                 
+C  R78X118              TOP       TOP           82839    157169                 
+C  R39X59               TOP       TOP           43370    122110                 
+C  S_R100_70_M100_70_P1 TOP       TOP           39370     27559                 
+C  S_R30_70_M30_70_P30_ TOP       TOP           11811     27559                 
+C  R91X64_TP            TOP       TOP           91331     64559                 
+C  R24X12               TOP       TOP           28000     16000                 
+C  SQR196               TOP       TOP          200850    200850                 
+C  16X10_SP             TOP       TOP           15748      9839                 
+C  16X28_SP1            TOP       TOP           19685     31496                 
+C  26X30                TOP       TOP           30000     34000                 
+C  S_R48_48             TOP       TOP           18898     18898                 
+C  S_R20_13             TOP       TOP            7874      5118                 
+C  20X24                TOP       TOP           24000     28000                 
+C  40X28                TOP       TOP           39370     27559                 
+C  12X28                TOP       TOP           11811     27559                 
+C  32X32                TOP       TOP           36000     36000                 
+C  95X45_SP             TOP       TOP           95000     45000                 
+C  SHA_14X34_SP         TOP       TOP           35110     13790                 
+C  41X24                TOP       TOP           45354     27638                 
+C  FIDU40               TOP       TOP           80000     80000                 
+C  50X54                TOP       TOP           54000     58000                 
+C  R032X020S            TOP       TOP           52000     40000                 
+C  12X19_SP             TOP       TOP           11811     19291                 
+C  12X21_SP             TOP       TOP           11811     20472                 
+C  98X86                TOP       TOP          102441     90630                 
+C  24X71                TOP       TOP           28000     75000                 
+C  32X36                TOP       TOP           36000     40000                 
+C  20X63                TOP       TOP           67000     24000                 
+C  40X55                TOP       TOP           44000     59000                 
+C  C_50                 TOP       TOP           54000     54000                 
+C  CIR19                TOP       TOP           21000     21000                 
+C  11X27                TOP       TOP           15811     31559                 
+C  30X48                TOP       TOP           33543     51260                 
+C  52X29                TOP       TOP           56000     33000                 
+C  40X34                TOP       TOP           43370     37461                 
+C  44X75                TOP       TOP           47299     78799                 
+C  21X22                TOP       TOP           25000     26000                 
+C  59X75                TOP       TOP           63055     78803                 
+C  16X53                TOP       TOP           17764     57165                 
+C  28X36                TOP       TOP           32000     40000                 
+C  40X54                TOP       TOP           44000     58000                 
+C  SMD30CIR             TOP       TOP           36000     36000                 
+C                                                                               
+C                                                                               
+C  ****************************************                                     
+C      SIGNAL PINS & VIAS ON THE BOARD                                          
+C  ****************************************                                     
+C                                                                               
+327N490506          U4    -31         A01X+024572Y+024876X0320Y1100R090 S1      
+327N490506          U15   -33         A01X+023085Y+035576X0550Y0110R180 S1      
+317N490506          VIA   -    MD0100PA00X+022500Y+035600X0200Y         S0      
+317N490506          VIA   -    MD0100PA00X+021450Y+035500X0200Y         S0      
+327N490496          U4    -32         A01X+024572Y+024443X0320Y1100R090 S1      
+327N490496          U15   -20         A01X+026186Y+036315X0550Y0110R270 S1      
+317N490496          VIA   -    MD0100PA00X+026200Y+035850X0200Y         S0      
+317N490496          VIA   -    MD0100PA00X+021450Y+036500X0200Y         S0      
+317N490274          VIA   -    MD0100PA00X+030100Y+031600X0200Y         S0      
+327N490274          U3    -4          A01X+031369Y+031816X0351Y0138     S1      
+317N490274          VIA   -    MD0100PA00X+026100Y+032400X0200Y         S0      
+327N490274          U15   -61         A01X+026186Y+031885X0550Y0110R270 S1      
+327N490262          U3    -1          A01X+031369Y+032584X0351Y0138     S1      
+317N490262          VIA   -    MD0100PA00X+031000Y+032650X0200Y         S0      
+317N490262          VIA   -    MD0100PA00X+026450Y+032400X0200Y         S0      
+327N490262          U15   -62         A01X+026383Y+031885X0550Y0110R270 S1      
+317N488742          VIA   -    MD0100PA00X+025000Y+039200X0200Y         S0      
+327N488742          R50   -1          A01X+025000Y+038835X0320Y0320R270 S1      
+317N488742          VIA   -    MD0100PA00X+021700Y+038550X0200Y         S0      
+327N488742          U2    -14         A01X+021103Y+028894X0217Y0138R090 S1      
+327N488742          R17   -1   M      A01X+020950Y+029665X0320Y0320R090 S1      
+317N114106          VIA   -    MD0100PA00X+033600Y+036746X0200Y         S0      
+327N114106          P2    -3          A01X+034174Y+036746X0250Y0670R270 S1      
+327N114106          R6    -2          A01X+033185Y+036850X0320Y0320     S1      
+327N114106          U15   -38         A01X+023085Y+034592X0550Y0110R180 S1      
+317N114106          VIA   -    MD0100PA00X+024100Y+034400X0200Y         S0      
+317N114102          VIA   -    MD0100PA00X+033600Y+037238X0200Y         S0      
+327N114102          P2    -2          A01X+034174Y+037238X0250Y0670R270 S1      
+327N114102          R7    -2          A01X+033185Y+037500X0320Y0320     S1      
+317N114102          VIA   -    MD0100PA00X+023755Y+034395X0200Y         S0      
+327N114102          U15   -39         A01X+023085Y+034395X0550Y0110R180 S1      
+327N119428          R13   -1          A01X+032565Y+028400X0320Y0320     S1      
+327N119428          C4    -2   M      A01X+032565Y+029050X0320Y0320R180 S1      
+317N119428          VIA   -    MD0100PA00X+032550Y+029550X0200Y         S0      
+317N119428          VIA   -    MD0100PA00X+025350Y+030300X0200Y         S0      
+327N119428          U15   -58         A01X+025595Y+031885X0550Y0110R270 S1      
+327N316080          C78   -2   M      A04X+027550Y+033835X0320Y0320R270 S2      
+317N316080          VIA   -    MD0100PA00X+026950Y+033750X0200Y         S0      
+327N316080          U15   -7          A01X+027515Y+033805X0550Y0110R180 S1      
+317N316080          VIA   -    MD0100PA00X+034224Y+026226X0200Y         S0      
+327N316080          P5    -1          A01X+034224Y+025984X0250Y0670R270 S1      
+327N316068          P5    -2          A01X+034224Y+025492X0250Y0670R270 S1      
+317N316068          VIA   -    MD0100PA00X+033700Y+025500X0200Y         S0      
+317N316068          VIA   -    MD0100PA00X+023750Y+033050X0200Y         S0      
+327N316068          U15   -46         A01X+023085Y+033017X0550Y0110R180 S1      
+327N316048          U15   -49         A01X+023824Y+031885X0550Y0110R270 S1      
+317N316048          VIA   -    MD0100PA00X+023800Y+031450X0200Y         S0      
+317N316048          VIA   -    MD0100PA00X+033300Y+025450X0200Y         S0      
+327N316048          P5    -4          A01X+034224Y+024508X0250Y0670R270 S1      
+327N317032          D6    -A          A01X+025950Y+039365X0433Y0394R090 S1      
+327N317032          U15   -27         A01X+024808Y+036315X0550Y0110R270 S1      
+327N317096          D7    -A          A01X+026700Y+039365X0433Y0394R090 S1      
+327N317096          U15   -26         A01X+025005Y+036315X0550Y0110R270 S1      
+327+5V              U5    -3          A01X+021344Y+024020X0910Y0420R270 S1      
+327+5V              C30   -2          A01X+020350Y+024050X0400Y0540R090 S1      
+317+5V              VIA   -    MD0100PA00X+016550Y+024050X0200Y         S0      
+317+5V              VIA   -    MD0100PA00X+010376Y+034476X0200Y         S0      
+327+5V              Q1    -1          A01X+010376Y+034156X0260Y0300R270 S1      
+317+5V              VIA   -    MD0100PA00X+022335Y+039515X0200Y         S0      
+327+5V              R1    -2          A04X+022700Y+039515X0320Y0320R090 S2      
+317+5V              VIA   -    MD0100PA00X+028978Y+040400X0200Y         S0      
+327+5V              P3    -1          A01X+028978Y+039824X0250Y0670     S1      
+317+5V              VIA   -    MD0100PA00X+030150Y+031950X0200Y         S0      
+327+5V              C8    -1   M      A04X+030600Y+031950X0400Y0540R090 S2      
+327+5V              U3    -3          A01X+031369Y+032072X0351Y0138     S1      
+317+5V              VIA   -    MD0100PA00X+031000Y+032050X0200Y         S0      
+327+5V              C72   -2          A04X+031400Y+031985X0320Y0320R270 S2      
+317+5V              VIA   -    MD0100PA00X+033712Y+031512X0200Y         S0      
+327+5V              P6    -4          A01X+034224Y+031512X0250Y0670R270 S1      
+317+5V              VIA   -    MD0100PA00X+033704Y+028746X0200Y         S0      
+327+5V              P4    -2          A01X+034224Y+028746X0250Y0670R270 S1      
+317+5V              J4    -1    D0400PA00X+031528Y+037237X0600Y0600R270 S3      
+317+5V              VIA   -    MD0100PA00X+020650Y+025300X0200Y         S0      
+317+5V              VIA   -    MD0100PA00X+021000Y+025300X0200Y         S0      
+317+5V              VIA   -    MD0100PA00X+020650Y+024700X0200Y         S0      
+317+5V              VIA   -    MD0100PA00X+021000Y+024700X0200Y         S0      
+317+5V              VIA   -    MD0100PA00X+021000Y+025000X0200Y         S0      
+317+5V              VIA   -    MD0100PA00X+020650Y+025000X0200Y         S0      
+327+5V              C17   -P          A01X+018100Y+024710X1400Y0550R270 S1      
+327+5V              C18   -P          A01X+014700Y+024710X1400Y0550R270 S1      
+327+5V              L1    -1          A01X+011000Y+024657X3150Y1063     S1      
+327+5V              D10   -K          A01X+010600Y+023187X0984Y0669R270 S1      
+327+5V              C16   -1          A01X+011800Y+022900X0400Y0540R270 S1      
+327+5V              R24   -2          A01X+019335Y+028450X0320Y0320     S1      
+327VCC              U11   -6          A01X+002430Y+024272X0500Y0160     S1      
+317VCC              VIA   -    MD0100PA00X+001950Y+024200X0200Y         S0      
+327VCC              U11   -7          A01X+002430Y+024528X0500Y0160     S1      
+317VCC              VIA   -    MD0100PA00X+001950Y+024528X0200Y         S0      
+327VCC              C41   -2   M      A04X+001350Y+023800X0400Y0540R180 S2      
+327VCC              C52   -2   M      A04X+001335Y+024550X0320Y0320R180 S2      
+327VCC              U10   -6          A01X+002430Y+031172X0500Y0160     S1      
+317VCC              VIA   -    MD0100PA00X+002000Y+031100X0200Y         S0      
+327VCC              U10   -7          A01X+002430Y+031428X0500Y0160     S1      
+317VCC              VIA   -    MD0100PA00X+001972Y+031428X0200Y         S0      
+327VCC              C80   -2   M      A04X+001485Y+031450X0320Y0320R180 S2      
+327VCC              C40   -2   M      A04X+001450Y+030700X0400Y0540R180 S2      
+327VCC              U9    -6          A01X+002480Y+038091X0500Y0160     S1      
+317VCC              VIA   -    MD0100PA00X+002050Y+038050X0200Y         S0      
+327VCC              U9    -7          A01X+002480Y+038346X0500Y0160     S1      
+317VCC              VIA   -    MD0100PA00X+002054Y+038346X0200Y         S0      
+327VCC              C71   -1          A04X+001485Y+038468X0320Y0320     S2      
+327VCC              C39   -2          A04X+001450Y+037768X0400Y0540R180 S2      
+327VCC              U4    -12         A01X+031128Y+027474X0320Y1100R270 S1      
+327VCC              U13   -5          A01X-000132Y+028695X0360Y0160R180 S1      
+317VCC              VIA   -    MD0100PA00X-000200Y+028300X0200Y         S0      
+327VCC              C53   -2          A04X-000235Y+028650X0320Y0320     S2      
+317VCC              VIA   -    MD0100PA00X+022250Y+027900X0200Y         S0      
+327VCC              U12   -5          A01X-000132Y+035564X0360Y0160R180 S1      
+317VCC              VIA   -    MD0100PA00X-000482Y+035568X0200Y         S0      
+327VCC              C54   -2          A04X-000135Y+035568X0320Y0320     S2      
+327VCC              U14   -5          A01X-000082Y+022295X0360Y0160R180 S1      
+317VCC              VIA   -    MD0100PA00X+000065Y+021965X0200Y         S0      
+327VCC              C55   -2          A04X+000065Y+022300X0320Y0320     S2      
+317VCC              VIA   -    MD0100PA00X+009700Y+033150X0200Y         S0      
+327VCC              R47   -2          A01X+008565Y+032500X0320Y0320R180 S1      
+317VCC              VIA   -    MD0100PA00X+033150Y+024400X0200Y         S0      
+327VCC              P5    -5          A01X+034224Y+024016X0250Y0670R270 S1      
+317VCC              VIA   -    MD0100PA00X+027885Y+039365X0200Y         S0      
+327VCC              D5    -A          A01X+027450Y+039365X0433Y0394R090 S1      
+317VCC              VIA   -    MD0100PA00X+033350Y+027500X0200Y         S0      
+327VCC              C9    -2          A04X+032850Y+027550X0400Y0540R270 S2      
+317VCC              VIA   -    MD0100PA00X+033350Y+027850X0200Y         S0      
+327VCC              C12   -2   M      A01X+032850Y+027485X0320Y0320R090 S1      
+327VCC              C11   -2   M      A01X+032200Y+027485X0320Y0320R090 S1      
+317VCC              VIA   -    MD0100PA00X+032850Y+030900X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+032850Y+031250X0200Y         S0      
+327VCC              C7    -1   M      A01X+032500Y+031050X0400Y0540R180 S1      
+327VCC              U3    -5          A01X+032531Y+031816X0351Y0138R180 S1      
+317VCC              VIA   -    MD0100PA00X+022550Y+027900X0200Y         S0      
+327VCC              U2    -8          A01X+021743Y+028255X0217Y0138     S1      
+327VCC              C5    -1   M      A01X+022550Y+028300X0400Y0540R090 S1      
+317VCC              VIA   -    MD0100PA00X+020900Y+026300X0200Y         S0      
+327VCC              C6    -1   M      A01X+020900Y+026800X0400Y0540     S1      
+327VCC              C10   -2   M      A01X+020865Y+027550X0320Y0320R180 S1      
+327VCC              U2    -5          A01X+021103Y+028206X0217Y0138R090 S1      
+317VCC              VIA   -    MD0100PA00X+027980Y+031100X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+028000Y+031400X0200Y         S0      
+327VCC              C63   -2   M      A01X+026800Y+031035X0320Y0320R090 S1      
+327VCC              C83   -2   M      A01X+027550Y+031100X0400Y0540R090 S1      
+327VCC              U15   -64  M      A01X+026776Y+031885X0550Y0110R270 S1      
+327VCC              U15   -1          A01X+027515Y+032624X0550Y0110R180 S1      
+317VCC              VIA   -    MD0100PA00X+022650Y+031100X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+022650Y+031450X0200Y         S0      
+327VCC              C57   -2   M      A01X+022250Y+031250X0400Y0540     S1      
+327VCC              U15   -48         A01X+023085Y+032624X0550Y0110R180 S1      
+327VCC              C67   -2   M      A01X+022235Y+032000X0320Y0320     S1      
+317VCC              VIA   -    MD0100PA00X+022800Y+037090X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+022450Y+037090X0200Y         S0      
+327VCC              C81   -2   M      A01X+022650Y+037450X0400Y0540R270 S1      
+327VCC              U15   -32         A01X+023824Y+036315X0550Y0110R270 S1      
+327VCC              C62   -2   M      A01X+023400Y+037465X0320Y0320R270 S1      
+317VCC              VIA   -    MD0100PA00X+026500Y+037600X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+026250Y+037600X0200Y         S0      
+327VCC              C56   -1          A01X+026400Y+038000X0400Y0540     S1      
+327VCC              U15   -19         A01X+026383Y+036315X0550Y0110R270 S1      
+327VCC              C64   -2          A01X+026415Y+037250X0320Y0320R180 S1      
+317VCC              VIA   -    MD0100PA00X+030250Y+036000X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+029900Y+036000X0200Y         S0      
+327VCC              C58   -2   M      A01X+030100Y+035600X0400Y0540R090 S1      
+327VCC              C59   -2   M      A01X+029250Y+035600X0400Y0540R090 S1      
+327VCC              U15   -13         A01X+027515Y+034986X0550Y0110R180 S1      
+327VCC              C65   -2   M      A01X+028500Y+035435X0320Y0320R090 S1      
+317VCC              VIA   -    MD0100PA00X+018450Y+035950X0200Y         S0      
+327VCC              U8    -5          A01X+016982Y+036505X0360Y0160     S1      
+327VCC              C82   -2   M      A01X+017600Y+036585X0320Y0320R090 S1      
+317VCC              VIA   -    MD0100PA00X+017935Y+035235X0200Y         S0      
+327VCC              U7    -5          A01X+016982Y+035205X0360Y0160     S1      
+327VCC              C73   -2   M      A01X+017600Y+035235X0320Y0320R090 S1      
+317VCC              VIA   -    MD0100PA00X+017935Y+033885X0200Y         S0      
+327VCC              U6    -5          A01X+016982Y+033905X0360Y0160     S1      
+327VCC              C2    -2   M      A01X+017600Y+033885X0320Y0320R090 S1      
+317VCC              VIA   -    MD0100PA00X+021215Y+030335X0200Y         S0      
+327VCC              R17   -2          A01X+020950Y+030335X0320Y0320R090 S1      
+317VCC              VIA   -    MD0100PA00X+029470Y+039320X0200Y         S0      
+327VCC              P3    -2          A01X+029470Y+039824X0250Y0670     S1      
+317VCC              VIA   -    MD0100PA00X+032550Y+034500X0200Y         S0      
+327VCC              R8    -2          A01X+032550Y+034865X0320Y0320R270 S1      
+317VCC              VIA   -    MD0100PA00X+021550Y+029150X0200Y         S0      
+327VCC              U2    -12         A01X+021497Y+028894X0217Y0138R090 S1      
+317VCC              VIA   -    MD0100PA00X+021915Y+030335X0200Y         S0      
+327VCC              R18   -2          A01X+021600Y+030335X0320Y0320R090 S1      
+317VCC              J4    -3    D0400PA00X+031528Y+035237X0600Y    R270 S3      
+317VCC              VIA   -    MD0100PA00X+013620Y+028470X0200Y         S0      
+327VCC              U1    -49         A01X+014159Y+028470X0120Y0610R270 S1      
+317VCC              VIA   -    MD0100PA00X+022250Y+025550X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+021750Y+026150X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+021750Y+025850X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+022000Y+025550X0200Y         S0      
+317VCC              VIA   -    MD0100PA00X+021750Y+025550X0200Y         S0      
+327VCC              U5    -2          A01X+022250Y+024020X0910Y0420R270 S1      
+327VCC              U5    -4          A01X+022250Y+021580X0910Y1320R270 S1      
+327VCC              C32   -2          A01X+022100Y+025150X0400Y0540R180 S1      
+327VCC              C31   -2          A01X+022100Y+026000X0400Y0540R180 S1      
+327PH_A             U9    -1          A01X+000720Y+038603X0500Y0160     S1      
+327PH_A             R38   -1   M      A01X+000631Y+039868X0700Y1340     S1      
+317PH_A             VIA   -    MD0100PA00X-002700Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002700Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002400Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002400Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002100Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002100Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001800Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001800Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001500Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001500Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001200Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001200Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000900Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000900Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000600Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000600Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000300Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000300Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X+000000Y+041350X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X+000000Y+041700X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X+000050Y+038450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X+000050Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X+000050Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X+000050Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000250Y+038450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000250Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000250Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000250Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000550Y+038450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000550Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000550Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000550Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000850Y+038450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000850Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000850Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-000850Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001150Y+038450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001150Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001150Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001150Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001450Y+038450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001450Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001450Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001450Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001750Y+038450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001750Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001750Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-001750Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002050Y+038450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002050Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002050Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002050Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002350Y+038450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002350Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002350Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002350Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002650Y+037450X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002650Y+037800X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002650Y+038100X0200Y         S0      
+317PH_A             VIA   -    MD0100PA00X-002650Y+038450X0200Y         S0      
+317PH_A             P8    -1   MD1600PA00X-001650Y+039868X2400Y         S3      
+327PH_B             U10   -1          A01X+000670Y+031684X0500Y0160     S1      
+327PH_B             R39   -1   M      A01X+000581Y+032950X0700Y1340     S1      
+317PH_B             VIA   -    MD0100PA00X-002650Y+034700X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-002650Y+034350X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-002300Y+034350X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-002300Y+034700X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001950Y+034350X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001950Y+034700X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001600Y+034350X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001600Y+034700X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001250Y+034350X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001250Y+034700X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000900Y+034350X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000900Y+034700X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000550Y+034350X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000550Y+034700X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000550Y+031500X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000550Y+031150X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000550Y+030800X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000900Y+031500X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000900Y+031150X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-000900Y+030800X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001250Y+031500X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001250Y+031150X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001250Y+030800X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001600Y+031500X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001600Y+031150X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001600Y+030800X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001950Y+031500X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001950Y+031150X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-001950Y+030800X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-002300Y+031500X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-002300Y+031150X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-002300Y+030800X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-002650Y+030800X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-002650Y+031150X0200Y         S0      
+317PH_B             VIA   -    MD0100PA00X-002650Y+031500X0200Y         S0      
+317PH_B             P9    -1   MD1600PA00X-001650Y+032950X2400Y         S3      
+327PH_C             U11   -1          A01X+000670Y+024784X0500Y0160     S1      
+327PH_C             R40   -1   M      A01X+000581Y+026050X0700Y1340     S1      
+317PH_C             VIA   -    MD0100PA00X-002700Y+027750X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-002700Y+027400X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-002350Y+027400X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-002350Y+027750X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001950Y+027400X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001950Y+027750X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001600Y+027400X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001600Y+027750X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001250Y+027400X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001250Y+027750X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000850Y+027400X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000850Y+027750X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000500Y+027400X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000500Y+027750X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000450Y+024700X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000450Y+024350X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000450Y+024000X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000800Y+024700X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000800Y+024350X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-000800Y+024000X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001200Y+024700X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001200Y+024350X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001200Y+024000X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001550Y+024700X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001550Y+024350X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001550Y+024000X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001900Y+024700X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001900Y+024350X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-001900Y+024000X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-002300Y+024700X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-002300Y+024350X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-002300Y+024000X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-002650Y+024000X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-002650Y+024350X0200Y         S0      
+317PH_C             VIA   -    MD0100PA00X-002650Y+024700X0200Y         S0      
+317PH_C             P10   -1   MD1600PA00X-001650Y+026050X2400Y         S3      
+327N4906060         D8    -A          A01X+029200Y+030735X0433Y0394R270 S1      
+327N4906060         R20   -1          A01X+028500Y+030735X0320Y0320R270 S1      
+327N490522          U4    -17         A01X+028500Y+028626X0320Y1100     S1      
+327N490522          R20   -2          A01X+028500Y+030065X0320Y0320R270 S1      
+327C_A              R44   -2          A01X+002650Y+036254X0320Y0320R090 S1      
+327C_A              U9    -5          A01X+002480Y+037834X0500Y0160     S1      
+327N405958          Q6    -7          A01X+006386Y+033050X0280Y0520     S1      
+317N405958          VIA   -    MD0100PA00X+006515Y+032615X0200Y         S0      
+327N405958          R42   -2          A04X+006515Y+033050X0320Y0320     S2      
+327N379550          U15   -31         A01X+024020Y+036315X0550Y0110R270 S1      
+327N379550          C60   -1          A01X+024150Y+037500X0400Y0540R090 S1      
+327N415177          U13   -2          A01X+000732Y+028950X0360Y0160R180 S1      
+327N415177          C46   -1          A01X+001350Y+028715X0320Y0320R090 S1      
+327N413411          U12   -2          A01X+000732Y+035818X0360Y0160R180 S1      
+327N413411          C45   -1          A01X+001350Y+035584X0320Y0320R090 S1      
+327C_C              R46   -2          A01X+002700Y+022985X0320Y0320R090 S1      
+327C_C              U11   -5          A01X+002430Y+024016X0500Y0160     S1      
+327N379578          U15   -47         A01X+023085Y+032820X0550Y0110R180 S1      
+327N379578          C61   -1          A01X+022250Y+032750X0400Y0540R180 S1      
+327N383040          C19   -2          A04X+018935Y+029700X0320Y0320R180 S2      
+317N383040          VIA   -    MD0100PA00X+019250Y+029700X0200Y         S0      
+327N383040          U1    -14         A01X+017141Y+029652X0120Y0610R270 S1      
+327N405714          R35   -2          A04X+006515Y+030050X0320Y0320     S2      
+317N405714          VIA   -    MD0100PA00X+006450Y+029450X0200Y         S0      
+327N405714          Q4    -7          A01X+006386Y+029850X0280Y0520     S1      
+317N488738          VIA   -    MD0100PA00X+024050Y+031300X0200Y         S0      
+317N488738          VIA   -    MD0100PA00X+022200Y+030300X0200Y         S0      
+327N488738          U2    -13         A01X+021300Y+028894X0217Y0138R090 S1      
+327N488738          R18   -1   M      A01X+021600Y+029665X0320Y0320R090 S1      
+327N488738          U15   -50         A01X+024020Y+031885X0550Y0110R270 S1      
+327N383228          U1    -38         A01X+014159Y+030636X0120Y0610R270 S1      
+327N383228          C23   -1          A01X+012800Y+030765X0320Y0320R090 S1      
+327N399151          R36   -2          A04X+006565Y+036968X0320Y0320     S2      
+317N399151          VIA   -    MD0100PA00X+006550Y+036550X0200Y         S0      
+327N399151          Q2    -7          A01X+006436Y+037018X0280Y0520     S1      
+327N383264          Q1    -3          A01X+011224Y+033900X0260Y0300R270 S1      
+327N383264          R27   -2          A01X+012215Y+033950X0320Y0320R180 S1      
+327N406713          R37   -2          A04X+006765Y+023650X0320Y0320     S2      
+317N406713          VIA   -    MD0100PA00X+006386Y+023636X0200Y         S0      
+327N406713          Q3    -7          A01X+006386Y+022950X0280Y0520     S1      
+327N440238          C79   -2          A01X+028565Y+032350X0320Y0320R180 S1      
+327N440238          U15   -5          A01X+027515Y+033411X0550Y0110R180 S1      
+327N440238          Y1    -1   M      A01X+028563Y+033028X0709Y0472     S1      
+327N382210          U1    -56         A01X+014159Y+027093X0120Y0610R270 S1      
+327N382210          C69   -2          A01X+014165Y+026450X0320Y0320R180 S1      
+327N440256          C51   -2          A01X+030900Y+033985X0320Y0320R090 S1      
+327N440256          Y1    -3   M      A01X+030137Y+033972X0709Y0472     S1      
+327N440256          U15   -6          A01X+027515Y+033608X0550Y0110R180 S1      
+327N399081          R41   -2          A04X+006565Y+039968X0320Y0320     S2      
+317N399081          VIA   -    MD0100PA00X+006565Y+039650X0200Y         S0      
+327N399081          Q5    -7          A01X+006436Y+040218X0280Y0520     S1      
+327N383358          C25   -2          A01X+018400Y+033300X0400Y0540R180 S1      
+327N383358          U1    -27         A01X+017141Y+032211X0120Y0610R270 S1      
+327N383358          C75   -2   M      A01X+018415Y+032550X0320Y0320R180 S1      
+327N383358          U1    -24         A01X+017141Y+031620X0120Y0610R270 S1      
+327N488562          U3    -6          A01X+032531Y+032072X0351Y0138R180 S1      
+327N488562          R19   -1   M      A01X+033250Y+031865X0320Y0320R090 S1      
+327N488562          P6    -2          A01X+034224Y+032496X0250Y0670R270 S1      
+327N488558          U3    -7          A01X+032531Y+032328X0351Y0138R180 S1      
+327N488558          R19   -2   M      A01X+033250Y+032535X0320Y0320R090 S1      
+317N488558          VIA   -    MD0100PA00X+033550Y+032500X0200Y         S0      
+317N488558          VIA   -    MD0100PA00X+034746Y+032004X0200Y         S0      
+327N488558          P6    -3          A01X+034224Y+032004X0250Y0670R270 S1      
+327N476249          R50   -2          A01X+025000Y+038165X0320Y0320R270 S1      
+327N476249          U15   -28         A01X+024611Y+036315X0550Y0110R270 S1      
+327N476249          TP1   -1   M      A01X+025000Y+037500X0500Y    R180 S1      
+327N406957          R43   -2          A04X+006715Y+026600X0320Y0320     S2      
+317N406957          VIA   -    MD0100PA00X+006386Y+026586X0200Y         S0      
+327N406957          Q7    -7          A01X+006386Y+026150X0280Y0520     S1      
+327N382740          R25   -2          A04X+017385Y+028250X0320Y0320R180 S2      
+317N382740          VIA   -    MD0100PA00X+017726Y+028274X0200Y         S0      
+327N382740          U1    -7          A01X+017141Y+028274X0120Y0610R270 S1      
+327N383044          U1    -43         A01X+014159Y+029652X0120Y0610R270 S1      
+327N383044          C20   -1          A01X+012800Y+029615X0320Y0320R090 S1      
+327C_B              U10   -5          A01X+002430Y+030916X0500Y0160     S1      
+327C_B              R45   -2          A01X+002650Y+029385X0320Y0320R090 S1      
+327N453874          U7    -1          A01X+016118Y+035205X0360Y0160     S1      
+327N453874          C28   -2          A01X+015400Y+035185X0320Y0320R090 S1      
+327N415727          U14   -2          A01X+000782Y+022550X0360Y0160R180 S1      
+327N415727          C47   -1          A01X+001400Y+022315X0320Y0320R090 S1      
+327N382374          C68   -1          A01X+018665Y+026650X0320Y0320     S1      
+327N382374          U1    -2          A01X+017141Y+027289X0120Y0610R270 S1      
+327N382374          R23   -2   M      A01X+018665Y+027250X0320Y0320R180 S1      
+327N475951          R49   -2          A01X+026000Y+030385X0320Y0320R090 S1      
+327N475951          U15   -60         A01X+025989Y+031885X0550Y0110R270 S1      
+327N475951          TP2   -1   M      A01X+026000Y+031050X0500Y    R180 S1      
+317N483659          VIA   -    MD0100PA00X+000600Y+023250X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-000800Y+023250X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+000950Y+021450X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-001150Y+028700X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-000650Y+036800X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-001400Y+036800X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-002500Y+036750X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+001600Y+041050X0200Y         S0      
+317N483659          P11   -1   MD1600PA00X+019700Y+040768X2400Y         S3      
+317N483659          VIA   -    MD0100PA00X+005450Y+039418X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005150Y+039418X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+034068X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+034068X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+032318X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+032318X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+027118X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+027118X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+026868X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+026868X0200Y         S0      
+327N483659          Q5    -11         A01X+005885Y+040898X0340Y0440R270 S1      
+327N483659          Q5    -12         A01X+004782Y+040898X0340Y0440R270 S1      
+317N483659          VIA   -    MD0100PA00X+005400Y+025368X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+025368X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+032568X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+032568X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005450Y+039668X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005150Y+039668X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+017350Y+040500X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+013300Y+040550X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+008950Y+040400X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+018100Y+041600X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+015500Y+041650X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+013650Y+041650X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+011450Y+041700X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+009000Y+041650X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+009150Y+035150X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+008300Y+034800X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+008350Y+033300X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-002650Y+022500X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+001600Y+041750X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+002050Y+037000X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+000400Y+036800X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-001350Y+035300X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-002500Y+035350X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+001800Y+034450X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-001600Y+029950X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-002650Y+028600X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+003300Y+028600X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+001550Y+027550X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+011700Y+030550X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+010300Y+031350X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+008450Y+028450X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+008550Y+025550X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+008500Y+023700X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+008500Y+021850X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+008400Y+020800X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+007400Y+020800X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005600Y+020800X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+003500Y+020800X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+001500Y+020850X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X-000050Y+020800X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+013611Y+030439X0200Y         S0      
+327N483659          U1    -39         A01X+014159Y+030439X0120Y0610R270 S1      
+317N483659          VIA   -    MD0100PA00X+013400Y+029500X0200Y         S0      
+327N483659          U1    -44         A01X+014159Y+029455X0120Y0610R270 S1      
+317N483659          VIA   -    MD0100PA00X+013488Y+031523X0200Y         S0      
+327N483659          U1    -34         A01X+014159Y+031423X0120Y0610R270 S1      
+317N483659          VIA   -    MD0100PA00X+008300Y+031650X0200Y         S0      
+327N483659          C48   -2   M      A01X+008500Y+031200X0400Y0540R180 S1      
+317N483659          VIA   -    MD0100PA00X+008300Y+032000X0200Y         S0      
+327N483659          R48   -1   M      A01X+008565Y+031900X0320Y0320     S1      
+317N483659          VIA   -    MD0100PA00X+000735Y+022015X0200Y         S0      
+327N483659          C55   -1   M      A04X+000735Y+022300X0320Y0320     S2      
+317N483659          VIA   -    MD0100PA00X+002050Y+023300X0200Y         S0      
+327N483659          C44   -2   M      A01X+002050Y+022985X0320Y0320R090 S1      
+317N483659          VIA   -    MD0100PA00X+001400Y+023300X0200Y         S0      
+327N483659          C47   -2   M      A01X+001400Y+022985X0320Y0320R090 S1      
+317N483659          VIA   -    MD0100PA00X+000782Y+023032X0200Y         S0      
+327N483659          U14   -3   M      A01X+000782Y+022805X0360Y0160R180 S1      
+327N483659          C52   -1   M      A04X+000665Y+024550X0320Y0320R180 S2      
+327N483659          C41   -1   M      A04X+000550Y+023800X0400Y0540R180 S2      
+317N483659          VIA   -    MD0100PA00X+000150Y+024150X0200Y         S0      
+327N483659          U11   -3   M      A01X+000670Y+024272X0500Y0160     S1      
+317N483659          VIA   -    MD0100PA00X+000128Y+024528X0200Y         S0      
+327N483659          U11   -2   M      A01X+000670Y+024528X0500Y0160     S1      
+317N483659          VIA   -    MD0100PA00X+000400Y+028300X0200Y         S0      
+327N483659          C53   -1   M      A04X+000435Y+028650X0320Y0320     S2      
+317N483659          VIA   -    MD0100PA00X+002000Y+029700X0200Y         S0      
+327N483659          C43   -2   M      A01X+002000Y+029385X0320Y0320R090 S1      
+317N483659          VIA   -    MD0100PA00X+001350Y+029700X0200Y         S0      
+327N483659          C46   -2   M      A01X+001350Y+029385X0320Y0320R090 S1      
+317N483659          VIA   -    MD0100PA00X+000732Y+029482X0200Y         S0      
+327N483659          U13   -3   M      A01X+000732Y+029205X0360Y0160R180 S1      
+327N483659          C40   -1   M      A04X+000650Y+030700X0400Y0540R180 S2      
+327N483659          C80   -1   M      A04X+000815Y+031450X0320Y0320R180 S2      
+317N483659          VIA   -    MD0100PA00X+000222Y+031172X0200Y         S0      
+327N483659          U10   -3   M      A01X+000670Y+031172X0500Y0160     S1      
+317N483659          VIA   -    MD0100PA00X+000200Y+031500X0200Y         S0      
+327N483659          U10   -2   M      A01X+000670Y+031428X0500Y0160     S1      
+327N483659          C39   -1   M      A04X+000650Y+037768X0400Y0540R180 S2      
+327N483659          C71   -2   M      A04X+000815Y+038468X0320Y0320     S2      
+317N483659          VIA   -    MD0100PA00X+002000Y+036550X0200Y         S0      
+327N483659          C42   -2   M      A01X+002000Y+036254X0320Y0320R090 S1      
+317N483659          VIA   -    MD0100PA00X+001350Y+036550X0200Y         S0      
+327N483659          C45   -2   M      A01X+001350Y+036254X0320Y0320R090 S1      
+327N483659          C54   -1   M      A04X+000535Y+035568X0320Y0320     S2      
+317N483659          VIA   -    MD0100PA00X+000400Y+036100X0200Y         S0      
+327N483659          U12   -3   M      A01X+000732Y+036074X0360Y0160R180 S1      
+317N483659          VIA   -    MD0100PA00X+000350Y+038050X0200Y         S0      
+327N483659          U9    -3   M      A01X+000720Y+038091X0500Y0160     S1      
+317N483659          VIA   -    MD0100PA00X+000350Y+038346X0200Y         S0      
+327N483659          U9    -2   M      A01X+000720Y+038346X0500Y0160     S1      
+327N483659          C33   -2   M      A04X+005048Y+038650X0500Y0680R180 S2      
+327N483659          C34   -2   M      A04X+005048Y+037650X0500Y0680R180 S2      
+327N483659          C36   -2          A04X+005030Y+029950X0500Y0680R180 S2      
+327N483659          C74   -2          A04X+005030Y+030950X0500Y0680R180 S2      
+327N483659          C77   -2   M      A04X+005030Y+023250X0500Y0680R180 S2      
+327N483659          C76   -2   M      A04X+005030Y+024300X0500Y0680R180 S2      
+317N483659          VIA   -    MD0100PA00X+005100Y+025618X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+025618X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+025868X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+025868X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+026118X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+026118X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+026368X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+026368X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+026618X0200Y         S0      
+327N483659          Q7    -8          A01X+005835Y+025471X0340Y0440R270 S1      
+327N483659          Q7    -9          A01X+005835Y+025924X0340Y0440R270 S1      
+327N483659          Q7    -10         A01X+005835Y+026376X0340Y0440R270 S1      
+327N483659          Q7    -11         A01X+005835Y+026829X0340Y0440R270 S1      
+327N483659          Q7    -12         A01X+004732Y+026829X0340Y0440R270 S1      
+327N483659          Q7    -13         A01X+004732Y+026376X0340Y0440R270 S1      
+327N483659          Q7    -14         A01X+004732Y+025924X0340Y0440R270 S1      
+327N483659          Q7    -15         A01X+004732Y+025471X0340Y0440R270 S1      
+317N483659          VIA   -    MD0100PA00X+005400Y+026618X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+032818X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+032818X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+033068X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+033068X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+033318X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+033318X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005400Y+033568X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+033568X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005100Y+033818X0200Y         S0      
+327N483659          Q6    -8          A01X+005835Y+032371X0340Y0440R270 S1      
+327N483659          Q6    -9          A01X+005835Y+032824X0340Y0440R270 S1      
+327N483659          Q6    -10         A01X+005835Y+033276X0340Y0440R270 S1      
+327N483659          Q6    -11         A01X+005835Y+033729X0340Y0440R270 S1      
+327N483659          Q6    -12         A01X+004732Y+033729X0340Y0440R270 S1      
+327N483659          Q6    -13         A01X+004732Y+033276X0340Y0440R270 S1      
+327N483659          Q6    -14         A01X+004732Y+032824X0340Y0440R270 S1      
+327N483659          Q6    -15         A01X+004732Y+032371X0340Y0440R270 S1      
+317N483659          VIA   -    MD0100PA00X+005400Y+033818X0200Y         S0      
+317N483659          C49   -N   MD0440PA00X+010450Y+040603X0940Y    R090 S3      
+317N483659          C50   -N   MD0440PA00X+015650Y+040603X0940Y    R090 S3      
+317N483659          VIA   -    MD0100PA00X+005450Y+040918X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005150Y+040918X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005150Y+040668X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005450Y+040668X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005450Y+040418X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005150Y+040418X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005150Y+040168X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005450Y+040168X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005450Y+039918X0200Y         S0      
+317N483659          VIA   -    MD0100PA00X+005150Y+039918X0200Y         S0      
+327N483659          Q5    -8          A01X+005885Y+039539X0340Y0440R270 S1      
+327N483659          Q5    -9          A01X+005885Y+039992X0340Y0440R270 S1      
+327N483659          Q5    -10         A01X+005885Y+040445X0340Y0440R270 S1      
+327N483659          Q5    -13         A01X+004782Y+040445X0340Y0440R270 S1      
+327N483659          Q5    -14         A01X+004782Y+039992X0340Y0440R270 S1      
+327N483659          Q5    -15         A01X+004782Y+039539X0340Y0440R270 S1      
+327N483651          R41   -1          A04X+007235Y+039968X0320Y0320     S2      
+317N483651          VIA   -    MD0100PA00X+009450Y+029700X0200Y         S0      
+327N483651          U1    -45         A01X+014159Y+029258X0120Y0610R270 S1      
+327N382386          U1    -1          A01X+017141Y+027093X0120Y0610R270 S1      
+327N382386          R22   -2          A01X+018665Y+026050X0320Y0320R180 S1      
+317N483635          VIA   -    MD0100PA00X+009100Y+029300X0200Y         S0      
+327N483635          U1    -47         A01X+014159Y+028864X0120Y0610R270 S1      
+327N483635          R36   -1          A04X+007235Y+036968X0320Y0320     S2      
+327N382848          C15   -1          A04X+012900Y+028615X0320Y0320R270 S2      
+317N382848          VIA   -    MD0100PA00X+013250Y+028750X0200Y         S0      
+327N382848          U1    -48         A01X+014159Y+028667X0120Y0610R270 S1      
+327N382270          R23   -1          A01X+019335Y+027250X0320Y0320R180 S1      
+327N382270          C66   -1          A01X+019950Y+027215X0320Y0320R090 S1      
+327N382652          C14   -2          A01X+013050Y+027565X0320Y0320R270 S1      
+327N382652          U1    -52         A01X+014159Y+027880X0120Y0610R270 S1      
+327N382656          U1    -50         A01X+014159Y+028274X0120Y0610R270 S1      
+327N382656          C14   -1          A01X+013050Y+028235X0320Y0320R270 S1      
+327N382656          D9    -K          A01X+011375Y+028450X0984Y0866R180 S1      
+327N382656          L1    -2          A01X+011000Y+026743X3150Y1063R180 S1      
+327N382656          U1    -51         A01X+014159Y+028077X0120Y0610R270 S1      
+327N383316          C35   -2          A04X+017385Y+031450X0320Y0320R180 S2      
+327N383316          C24   -2          A01X+018450Y+031800X0400Y0540R180 S1      
+317N383316          VIA   -    MD0100PA00X+017900Y+031450X0200Y         S0      
+327N383316          U1    -23         A01X+017141Y+031423X0120Y0610R270 S1      
+327N453854          U6    -1          A01X+016118Y+033905X0360Y0160     S1      
+327N453854          C27   -2          A01X+015400Y+033885X0320Y0320R090 S1      
+327N382956          C21   -2          A04X+017350Y+030650X0400Y0540R180 S2      
+327N382956          C22   -2   M      A04X+017350Y+029800X0400Y0540R180 S2      
+327N382956          C38   -2   M      A04X+017385Y+029100X0320Y0320R180 S2      
+317N382956          VIA   -    MD0100PA00X+017750Y+029300X0200Y         S0      
+327N382956          U1    -13         A01X+017141Y+029455X0120Y0610R270 S1      
+327N382306          R24   -1          A01X+018665Y+028450X0320Y0320     S1      
+327N382306          U1    -3          A01X+017141Y+027486X0120Y0610R270 S1      
+327N382306          R21   -2   M      A01X+018665Y+027850X0320Y0320R180 S1      
+327N383064          U1    -15         A01X+017141Y+029848X0120Y0610R270 S1      
+317N383064          VIA   -    MD0100PA00X+017950Y+029700X0200Y         S0      
+327N383064          C19   -1          A04X+018265Y+029700X0320Y0320R180 S2      
+327N453894          U8    -1          A01X+016118Y+036505X0360Y0160     S1      
+327N453894          C29   -2          A01X+015400Y+036485X0320Y0320R090 S1      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+036600X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+036350X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+036350X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+036600X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+014950Y+039100X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+014850Y+038500X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+018000Y+038450X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+016950Y+038450X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+018450Y+039150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+017500Y+039150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+016500Y+039150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+011400Y+039150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+012100Y+039150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+012950Y+039150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+014000Y+039150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+011450Y+038450X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+012150Y+038450X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+013000Y+038450X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+014050Y+038450X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+017650Y+037750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+016450Y+037750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+015150Y+037750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+014050Y+037750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+013000Y+037750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+012150Y+037750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+011450Y+037750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+010600Y+037750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+009850Y+037750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+009700Y+038250X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+009700Y+038800X0200Y         S0      
+317BT_HV            P7    -1   MD1600PA00X+019750Y+037868X2400Y         S3      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+023150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+022900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+022900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+023150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+024000X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+024000X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+023750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+023750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+029200X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+029200X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007600Y+030400X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007600Y+030650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007850Y+030650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007850Y+030400X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007600Y+029550X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007600Y+029800X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007850Y+029800X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007850Y+029550X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007850Y+028800X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007850Y+029050X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007850Y+029300X0200Y         S0      
+327BT_HV            Q4    -3          A01X+007272Y+030716X0440Y0670     S1      
+327BT_HV            Q4    -2          A01X+007272Y+029850X0440Y0670     S1      
+327BT_HV            Q4    -1          A01X+007272Y+028984X0440Y0670     S1      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+037150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+036900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+036900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+037150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+029450X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+029450X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003150Y+037650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003400Y+037650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003150Y+037900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003400Y+037900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003150Y+038150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003400Y+038150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+030950X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+030700X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+030700X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+030950X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+013550Y+027730X0200Y         S0      
+327BT_HV            U1    -53         A01X+014159Y+027683X0120Y0610R270 S1      
+327BT_HV            U1    -54         A01X+014159Y+027486X0120Y0610R270 S1      
+317BT_HV            VIA   -    MD0100PA00X+013550Y+027450X0200Y         S0      
+327BT_HV            C13   -2   M      A04X+014120Y+027500X0500Y0680     S2      
+317BT_HV            VIA   -    MD0100PA00X+013700Y+032900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+013700Y+032650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+013400Y+032900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+013400Y+032650X0200Y         S0      
+327BT_HV            C26   -2   M      A01X+012880Y+033150X0500Y0680     S1      
+327BT_HV            R27   -1          A01X+012885Y+033950X0320Y0320R180 S1      
+327BT_HV            C37   -2   M      A01X+012885Y+032350X0320Y0320     S1      
+327BT_HV            U1    -29         A01X+014159Y+032407X0120Y0610R270 S1      
+317BT_HV            VIA   -    MD0100PA00X+007600Y+029300X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007600Y+029050X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007600Y+028800X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+022650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+022400X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+022150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+021900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+021900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+022150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+022400X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+022650X0200Y         S0      
+327BT_HV            Q3    -1          A01X+007272Y+022084X0440Y0670     S1      
+327BT_HV            Q3    -2          A01X+007272Y+022950X0440Y0670     S1      
+327BT_HV            Q3    -3          A01X+007272Y+023816X0440Y0670     S1      
+327BT_HV            C33   -1   M      A04X+003988Y+038650X0500Y0680R180 S2      
+327BT_HV            C34   -1   M      A04X+003988Y+037650X0500Y0680R180 S2      
+327BT_HV            C36   -1   M      A04X+003970Y+029950X0500Y0680R180 S2      
+327BT_HV            C74   -1   M      A04X+003970Y+030950X0500Y0680R180 S2      
+327BT_HV            C77   -1          A04X+003970Y+023250X0500Y0680R180 S2      
+327BT_HV            C76   -1          A04X+003970Y+024300X0500Y0680R180 S2      
+327BT_HV            Q3    -4          A01X+003728Y+023816X0440Y0670     S1      
+327BT_HV            Q3    -5          A01X+003728Y+022950X0440Y0670     S1      
+327BT_HV            Q3    -6          A01X+003728Y+022084X0440Y0670     S1      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+023500X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+023250X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+023000X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+022750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+022750X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+023000X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+023250X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+023500X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+030450X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+030200X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+029950X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003100Y+029700X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+029700X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+029950X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+030200X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003350Y+030450X0200Y         S0      
+327BT_HV            Q4    -4          A01X+003728Y+030716X0440Y0670     S1      
+327BT_HV            Q4    -5          A01X+003728Y+029850X0440Y0670     S1      
+327BT_HV            Q4    -6          A01X+003728Y+028984X0440Y0670     S1      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+038150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+037900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+037650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007650Y+037400X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+037400X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+037650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+037900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+007900Y+038150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003150Y+036650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003400Y+036650X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003150Y+036900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003400Y+036900X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003150Y+037150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003400Y+037150X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003150Y+037400X0200Y         S0      
+317BT_HV            VIA   -    MD0100PA00X+003400Y+037400X0200Y         S0      
+317BT_HV            C49   -P   MD0440PA00X+010450Y+038634X0940Y    R090 S3      
+317BT_HV            C50   -P   MD0440PA00X+015650Y+038634X0940Y    R090 S3      
+327BT_HV            Q2    -4          A01X+003778Y+037885X0440Y0670     S1      
+327BT_HV            Q2    -5          A01X+003778Y+037018X0440Y0670     S1      
+327BT_HV            Q2    -6          A01X+003778Y+036152X0440Y0670     S1      
+327BT_HV            Q2    -1          A01X+007322Y+036152X0440Y0670     S1      
+327BT_HV            Q2    -2          A01X+007322Y+037018X0440Y0670     S1      
+327BT_HV            Q2    -3          A01X+007322Y+037885X0440Y0670     S1      
+327SHUTDOWN         R10   -1          A04X+018835Y+025850X0320Y0320     S2      
+327SHUTDOWN         U15   -25         A01X+025202Y+036315X0550Y0110R270 S1      
+317SHUTDOWN         VIA   -    MD0100PA00X+023150Y+027200X0200Y         S0      
+327N421455          U15   -44         A01X+023085Y+033411X0550Y0110R180 S1      
+317N421455          VIA   -    MD0100PA00X+022300Y+038950X0200Y         S0      
+327N421455          R2    -2          A04X+023350Y+039515X0320Y0320R090 S2      
+317N421471          VIA   -    MD0100PA00X+021900Y+038900X0200Y         S0      
+327N421471          U15   -45         A01X+023085Y+033214X0550Y0110R180 S1      
+327N421471          R3    -2          A04X+024000Y+039515X0320Y0320R090 S2      
+327N496293          R43   -1          A04X+007385Y+026600X0320Y0320     S2      
+317N496293          VIA   -    MD0100PA00X+009950Y+030750X0200Y         S0      
+327N496293          U1    -35         A01X+014159Y+031226X0120Y0610R270 S1      
+327N496289          U11   -8          A01X+002430Y+024784X0500Y0160     S1      
+327N496289          R40   -2   M      A01X+002619Y+026050X0700Y1340     S1      
+317N496289          VIA   -    MD0100PA00X+007600Y+027650X0200Y         S0      
+317N496289          VIA   -    MD0100PA00X+009667Y+030450X0200Y         S0      
+327N496289          Q3    -8   M      A01X+005835Y+022271X0340Y0440R270 S1      
+327N496289          Q3    -9   M      A01X+005835Y+022724X0340Y0440R270 S1      
+327N496289          Q3    -10  M      A01X+005835Y+023176X0340Y0440R270 S1      
+327N496289          Q3    -11  M      A01X+005835Y+023629X0340Y0440R270 S1      
+327N496289          Q3    -12  M      A01X+004732Y+023629X0340Y0440R270 S1      
+327N496289          Q3    -13  M      A01X+004732Y+023176X0340Y0440R270 S1      
+327N496289          Q3    -14  M      A01X+004732Y+022724X0340Y0440R270 S1      
+327N496289          Q3    -15  M      A01X+004732Y+022271X0340Y0440R270 S1      
+327N496289          Q7    -1          A01X+007272Y+025284X0440Y0670     S1      
+327N496289          Q7    -2          A01X+007272Y+026150X0440Y0670     S1      
+327N496289          Q7    -3          A01X+007272Y+027016X0440Y0670     S1      
+327N496289          Q7    -4          A01X+003728Y+027016X0440Y0670     S1      
+327N496289          Q7    -5          A01X+003728Y+026150X0440Y0670     S1      
+327N496289          Q7    -6          A01X+003728Y+025284X0440Y0670     S1      
+317N496289          VIA   -    MD0100PA00X+012250Y+031435X0200Y         S0      
+327N496289          C23   -2   M      A01X+012800Y+031435X0320Y0320R090 S1      
+327N496289          U1    -36         A01X+014159Y+031030X0120Y0610R270 S1      
+317N496289          VIA   -    MD0100PA00X+013100Y+035150X0200Y         S0      
+327N496289          R31   -1          A01X+014100Y+036485X0320Y0320R270 S1      
+317N496285          VIA   -    MD0100PA00X+013150Y+030900X0200Y         S0      
+327N496285          U1    -37         A01X+014159Y+030833X0120Y0610R270 S1      
+317N496285          VIA   -    MD0100PA00X+012150Y+030950X0200Y         S0      
+317N496285          VIA   -    MD0100PA00X+010500Y+030450X0200Y         S0      
+327N496285          R37   -1          A04X+007435Y+023650X0320Y0320     S2      
+317N496277          VIA   -    MD0100PA00X+013331Y+030431X0200Y         S0      
+327N496277          U1    -40         A01X+014159Y+030242X0120Y0610R270 S1      
+317N496277          VIA   -    MD0100PA00X+012100Y+030350X0200Y         S0      
+317N496277          VIA   -    MD0100PA00X+008650Y+030300X0200Y         S0      
+327N496277          R42   -1          A04X+007185Y+033050X0320Y0320     S2      
+327N496273          U10   -8          A01X+002430Y+031684X0500Y0160     S1      
+327N496273          R39   -2   M      A01X+002619Y+032950X0700Y1340     S1      
+317N496273          VIA   -     D0100PA00X+005500Y+028800X0200Y         S0      
+327N496273          Q4    -8   M      A01X+005835Y+029171X0340Y0440R270 S1      
+327N496273          Q4    -9   M      A01X+005835Y+029624X0340Y0440R270 S1      
+327N496273          Q4    -10  M      A01X+005835Y+030076X0340Y0440R270 S1      
+327N496273          Q4    -11  M      A01X+005835Y+030529X0340Y0440R270 S1      
+327N496273          Q4    -12  M      A01X+004732Y+030529X0340Y0440R270 S1      
+327N496273          Q4    -13  M      A01X+004732Y+030076X0340Y0440R270 S1      
+327N496273          Q4    -14  M      A01X+004732Y+029624X0340Y0440R270 S1      
+327N496273          Q4    -15  M      A01X+004732Y+029171X0340Y0440R270 S1      
+327N496273          Q6    -2          A01X+007272Y+033050X0440Y0670     S1      
+327N496273          Q6    -1          A01X+007272Y+032184X0440Y0670     S1      
+327N496273          Q6    -3          A01X+007272Y+033916X0440Y0670     S1      
+327N496273          Q6    -4          A01X+003728Y+033916X0440Y0670     S1      
+327N496273          Q6    -5          A01X+003728Y+033050X0440Y0670     S1      
+327N496273          Q6    -6          A01X+003728Y+032184X0440Y0670     S1      
+327N496273          U1    -41         A01X+014159Y+030045X0120Y0610R270 S1      
+327N496273          C20   -2   M      A01X+012800Y+030285X0320Y0320R090 S1      
+317N496273          VIA   -    MD0100PA00X+012500Y+030285X0200Y         S0      
+317N496273          VIA   -    MD0100PA00X+013735Y+035185X0200Y         S0      
+327N496273          R30   -1          A01X+014100Y+035185X0320Y0320R270 S1      
+317N496269          VIA   -    MD0100PA00X+013350Y+029950X0200Y         S0      
+327N496269          U1    -42         A01X+014159Y+029848X0120Y0610R270 S1      
+317N496269          VIA   -    MD0100PA00X+012400Y+029700X0200Y         S0      
+317N496269          VIA   -    MD0100PA00X+008700Y+029700X0200Y         S0      
+327N496269          R35   -1          A04X+007185Y+030050X0320Y0320     S2      
+327N495777          R47   -1   M      A01X+009235Y+032500X0320Y0320R180 S1      
+317N495777          VIA   -    MD0100PA00X+009250Y+032800X0200Y         S0      
+317N495777          VIA   -    MD0100PA00X+026965Y+036315X0200Y         S0      
+327N495777          U15   -17         A01X+026776Y+036315X0550Y0110R270 S1      
+327N495777          R48   -2   M      A01X+009235Y+031900X0320Y0320     S1      
+327N495777          C48   -1          A01X+009300Y+031200X0400Y0540R180 S1      
+327N495765          U15   -10         A01X+027515Y+034395X0550Y0110R180 S1      
+317N495765          VIA   -    MD0100PA00X+023584Y+025234X0200Y         S0      
+317N495765          VIA   -    MD0100PA00X+002700Y+021950X0200Y         S0      
+327N495765          R46   -1   M      A01X+002700Y+022315X0320Y0320R090 S1      
+327N495765          C44   -1   M      A01X+002050Y+022315X0320Y0320R090 S1      
+327N495765          U14   -1          A01X+000782Y+022295X0360Y0160R180 S1      
+317N495753          VIA   -    MD0100PA00X+002650Y+028300X0200Y         S0      
+327N495753          R45   -1   M      A01X+002650Y+028715X0320Y0320R090 S1      
+327N495753          C43   -1   M      A01X+002000Y+028715X0320Y0320R090 S1      
+327N495753          U13   -1          A01X+000732Y+028695X0360Y0160R180 S1      
+317N495753          VIA   -    MD0100PA00X+023500Y+026900X0200Y         S0      
+327N495753          U15   -9          A01X+027515Y+034198X0550Y0110R180 S1      
+327N495741          R44   -1   M      A01X+002650Y+035584X0320Y0320R090 S1      
+327N495741          C42   -1   M      A01X+002000Y+035584X0320Y0320R090 S1      
+327N495741          U12   -1          A01X+000732Y+035564X0360Y0160R180 S1      
+317N495741          VIA   -    MD0100PA00X+011100Y+035450X0200Y         S0      
+317N495741          VIA   -    MD0100PA00X+026000Y+033550X0200Y         S0      
+327N495741          U15   -8          A01X+027515Y+034002X0550Y0110R180 S1      
+317N495729          VIA   -    MD0100PA00X+023800Y+025500X0200Y         S0      
+327N495729          U12   -4          A01X-000132Y+036074X0360Y0160R180 S1      
+317N495729          VIA   -    MD0100PA00X-000495Y+036074X0200Y         S0      
+317N495729          VIA   -    MD0100PA00X-000550Y+029200X0200Y         S0      
+327N495729          U13   -4          A01X-000132Y+029205X0360Y0160R180 S1      
+327N495729          U14   -4          A01X-000082Y+022805X0360Y0160R180 S1      
+317N495729          VIA   -    MD0100PA00X-000082Y+023100X0200Y         S0      
+327N495729          U15   -54         A01X+024808Y+031885X0550Y0110R270 S1      
+327N495725          U15   -2          A01X+027515Y+032820X0550Y0110R180 S1      
+317N495725          VIA   -    MD0100PA00X+026850Y+032800X0200Y         S0      
+327N495725          U6    -4          A01X+016982Y+033395X0360Y0160     S1      
+317N495725          VIA   -    MD0100PA00X+016605Y+033405X0200Y         S0      
+317N495725          VIA   -    MD0100PA00X+016605Y+035995X0200Y         S0      
+327N495725          U8    -4          A01X+016982Y+035995X0360Y0160     S1      
+317N495725          VIA   -    MD0100PA00X+016605Y+034695X0200Y         S0      
+327N495725          U7    -4          A01X+016982Y+034695X0360Y0160     S1      
+327EN_BUCK          R9    -2          A04X+016600Y+025535X0320Y0320R270 S2      
+327EN_BUCK          C70   -2   M      A04X+015950Y+025535X0320Y0320R270 S2      
+327EN_BUCK          D3    -K   M      A04X+015200Y+025550X0440Y0480R270 S2      
+327EN_BUCK          R5    -2   M      A04X+014450Y+025585X0320Y0320R270 S2      
+317EN_BUCK          VIA   -    MD0100PA00X+013650Y+026750X0200Y         S0      
+327EN_BUCK          U1    -55         A01X+014159Y+027289X0120Y0610R270 S1      
+327N495721          U15   -11         A01X+027515Y+034592X0550Y0110R180 S1      
+317N495721          VIA   -    MD0100PA00X+026300Y+034800X0200Y         S0      
+317N495721          VIA   -    MD0100PA00X+009415Y+033615X0200Y         S0      
+327N495721          R28   -1   M      A01X+009800Y+033615X0320Y0320R090 S1      
+327N495721          Q1    -2          A01X+010376Y+033644X0260Y0300R270 S1      
+327N317100          D7    -K          A01X+026700Y+040035X0433Y0394R090 S1      
+327N317100          R16   -1          A01X+026700Y+040915X0320Y0320R090 S1      
+327N495717          U15   -16         A01X+027515Y+035576X0550Y0110R180 S1      
+317N495717          VIA   -    MD0100PA00X+025400Y+035400X0200Y         S0      
+317N495717          VIA   -    MD0100PA00X+017000Y+035600X0200Y         S0      
+327N495717          R31   -2          A01X+014100Y+035815X0320Y0320R270 S1      
+327N495717          C29   -1   M      A01X+015400Y+035815X0320Y0320R090 S1      
+327N495717          R34   -1   M      A01X+014750Y+035815X0320Y0320R090 S1      
+327N320696          D2    -A          A04X+017300Y+025603X0320Y0360R180 S2      
+327N320696          R10   -2   M      A04X+018165Y+025850X0320Y0320     S2      
+327N320696          D4    -K   M      A04X+018147Y+025150X0320Y0360R090 S2      
+327N320696          C1    -2          A04X+018150Y+024300X0400Y0540     S2      
+327N495713          U15   -15         A01X+027515Y+035380X0550Y0110R180 S1      
+317N495713          VIA   -    MD0100PA00X+025000Y+035150X0200Y         S0      
+317N495713          VIA   -    MD0100PA00X+016900Y+034295X0200Y         S0      
+327N495713          R30   -2          A01X+014100Y+034515X0320Y0320R270 S1      
+327N495713          C28   -1   M      A01X+015400Y+034515X0320Y0320R090 S1      
+327N495713          R33   -1   M      A01X+014750Y+034515X0320Y0320R090 S1      
+317N495709          VIA   -    MD0100PA00X+016600Y+033000X0200Y         S0      
+327N495709          R29   -2          A01X+014100Y+033215X0320Y0320R270 S1      
+327N495709          C27   -1   M      A01X+015400Y+033215X0320Y0320R090 S1      
+327N495709          R32   -1   M      A01X+014750Y+033215X0320Y0320R090 S1      
+317N495709          VIA   -    MD0100PA00X+025850Y+034750X0200Y         S0      
+327N495709          U15   -14         A01X+027515Y+035183X0550Y0110R180 S1      
+317CONN_SW          VIA   -    MD0100PA00X+032422Y+038978X0200Y         S0      
+327CONN_SW          P3    -8          A01X+032422Y+039824X0250Y0670     S1      
+317CONN_SW          VIA   -    MD0100PA00X+008835Y+027235X0200Y         S0      
+327CONN_SW          R12   -1          A01X+008835Y+026850X0320Y0320R180 S1      
+327N113958          R7    -1          A01X+032515Y+037500X0320Y0320     S1      
+327N113958          R6    -1   M      A01X+032515Y+036850X0320Y0320     S1      
+327N113958          R4    -1   M      A01X+032515Y+036200X0320Y0320     S1      
+317N113958          J4    -2   MD0400PA00X+031528Y+036237X0600Y    R270 S3      
+317N113958          VIA   -    MD0100PA00X+033630Y+035270X0200Y         S0      
+327N113958          P2    -6          A01X+034174Y+035270X0250Y0670R270 S1      
+327N495168          U15   -40         A01X+023085Y+034198X0550Y0110R180 S1      
+317N495168          VIA   -    MD0100PA00X+022250Y+034450X0200Y         S0      
+317N495168          VIA   -    MD0100PA00X+020900Y+034400X0200Y         S0      
+327N495168          U1    -8          A01X+017141Y+028470X0120Y0610R270 S1      
+327N316972          D5    -K          A01X+027450Y+040035X0433Y0394R090 S1      
+327N316972          R14   -1          A01X+027450Y+040915X0320Y0320R090 S1      
+327N495164          U1    -11         A01X+017141Y+029061X0120Y0610R270 S1      
+317N495164          VIA   -    MD0100PA00X+019700Y+029800X0200Y         S0      
+317N495164          VIA   -    MD0100PA00X+023850Y+030900X0200Y         S0      
+327N495164          U15   -51         A01X+024217Y+031885X0550Y0110R270 S1      
+327SH_A             U9    -8          A01X+002480Y+038603X0500Y0160     S1      
+327SH_A             R38   -2   M      A01X+002669Y+039868X0700Y1340     S1      
+327SH_A             C15   -2   M      A04X+012900Y+029285X0320Y0320R270 S2      
+317SH_A             VIA   -    MD0100PA00X+013715Y+033885X0200Y         S0      
+327SH_A             R29   -1          A01X+014100Y+033885X0320Y0320R270 S1      
+317SH_A             VIA   -    MD0100PA00X+013511Y+029061X0200Y         S0      
+327SH_A             U1    -46         A01X+014159Y+029061X0120Y0610R270 S1      
+317SH_A             VIA   -    MD0100PA00X+009050Y+029700X0200Y         S0      
+317SH_A             VIA   -    MD0100PA00X+006000Y+035950X0200Y         S0      
+327SH_A             Q2    -8   M      A01X+005885Y+036339X0340Y0440R270 S1      
+327SH_A             Q2    -9   M      A01X+005885Y+036792X0340Y0440R270 S1      
+327SH_A             Q2    -10  M      A01X+005885Y+037245X0340Y0440R270 S1      
+327SH_A             Q2    -11  M      A01X+005885Y+037698X0340Y0440R270 S1      
+327SH_A             Q2    -12  M      A01X+004782Y+037698X0340Y0440R270 S1      
+327SH_A             Q2    -13  M      A01X+004782Y+037245X0340Y0440R270 S1      
+327SH_A             Q2    -14  M      A01X+004782Y+036792X0340Y0440R270 S1      
+327SH_A             Q2    -15  M      A01X+004782Y+036339X0340Y0440R270 S1      
+327SH_A             Q5    -1          A01X+007322Y+039352X0440Y0670     S1      
+327SH_A             Q5    -2          A01X+007322Y+040218X0440Y0670     S1      
+327SH_A             Q5    -3          A01X+007322Y+041085X0440Y0670     S1      
+327SH_A             Q5    -4          A01X+003778Y+041085X0440Y0670     S1      
+327SH_A             Q5    -5          A01X+003778Y+040218X0440Y0670     S1      
+327SH_A             Q5    -6          A01X+003778Y+039352X0440Y0670     S1      
+327SH_A             D1    -A          A04X+013700Y+025650X0440Y0480R090 S2      
+327N495160          U1    -9          A01X+017141Y+028667X0120Y0610R270 S1      
+317N495160          VIA   -    MD0100PA00X+020200Y+029550X0200Y         S0      
+317N495160          VIA   -    MD0100PA00X+024150Y+029800X0200Y         S0      
+327N495160          U15   -56         A01X+025202Y+031885X0550Y0110R270 S1      
+327N495156          U1    -10         A01X+017141Y+028864X0120Y0610R270 S1      
+317N495156          VIA   -    MD0100PA00X+020050Y+029850X0200Y         S0      
+317N495156          VIA   -    MD0100PA00X+024100Y+030100X0200Y         S0      
+327N495156          U15   -55         A01X+025005Y+031885X0550Y0110R270 S1      
+327N494760          R26   -2          A04X+018265Y+030300X0320Y0320     S2      
+317N494760          VIA   -    MD0100PA00X+017895Y+030045X0200Y         S0      
+327N494760          U1    -16         A01X+017141Y+030045X0120Y0610R270 S1      
+317N494760          VIA   -    MD0100PA00X+024450Y+029700X0200Y         S0      
+327N494760          U15   -57         A01X+025398Y+031885X0550Y0110R270 S1      
+327N494756          U1    -6          A01X+017141Y+028077X0120Y0610R270 S1      
+317N494756          VIA   -    MD0100PA00X+020275Y+029125X0200Y         S0      
+317N494756          VIA   -    MD0100PA00X+024750Y+029700X0200Y         S0      
+327N494756          U15   -59         A01X+025792Y+031885X0550Y0110R270 S1      
+317N494376          VIA   -    MD0100PA00X+022250Y+034800X0200Y         S0      
+317N494376          VIA   -    MD0100PA00X+020850Y+034700X0200Y         S0      
+327N494376          U15   -36         A01X+023085Y+034986X0550Y0110R180 S1      
+327N494376          U1    -22         A01X+017141Y+031226X0120Y0610R270 S1      
+327N494372          U15   -35         A01X+023085Y+035183X0550Y0110R180 S1      
+317N494372          VIA   -    MD0100PA00X+022500Y+035150X0200Y         S0      
+317N494372          VIA   -    MD0100PA00X+020450Y+034750X0200Y         S0      
+327N494372          U1    -20         A01X+017141Y+030833X0120Y0610R270 S1      
+327N494368          U15   -34         A01X+023085Y+035380X0550Y0110R180 S1      
+317N494368          VIA   -    MD0100PA00X+022200Y+035300X0200Y         S0      
+317N494368          VIA   -    MD0100PA00X+020450Y+034450X0200Y         S0      
+327N494368          U1    -18         A01X+017141Y+030439X0120Y0610R270 S1      
+327N494364          U15   -43         A01X+023085Y+033608X0550Y0110R180 S1      
+317N494364          VIA   -    MD0100PA00X+022350Y+033600X0200Y         S0      
+317N494364          VIA   -    MD0100PA00X+019750Y+033850X0200Y         S0      
+327N494364          U1    -21         A01X+017141Y+031030X0120Y0610R270 S1      
+327N494360          U15   -42         A01X+023085Y+033805X0550Y0110R180 S1      
+317N494360          VIA   -    MD0100PA00X+022200Y+033850X0200Y         S0      
+317N494360          VIA   -    MD0100PA00X+020100Y+034200X0200Y         S0      
+327N494360          U1    -19         A01X+017141Y+030636X0120Y0610R270 S1      
+327N421403          P1    -1          A01X+022862Y+039824X0250Y0670     S1      
+317N421403          VIA   -    MD0100PA00X+022700Y+040550X0200Y         S0      
+327N421403          R1    -1          A04X+022700Y+040185X0320Y0320R090 S2      
+317N494356          VIA   -    MD0100PA00X+020580Y+034200X0200Y         S0      
+317N494356          VIA   -    MD0100PA00X+022600Y+034002X0200Y         S0      
+327N494356          U15   -41         A01X+023085Y+034002X0550Y0110R180 S1      
+327N494356          U1    -17         A01X+017141Y+030242X0120Y0610R270 S1      
+327N492258          P3    -4          A01X+030454Y+039824X0250Y0670     S1      
+317N492258          VIA   -    MD0100PA00X+030454Y+039300X0200Y         S0      
+317N492258          VIA   -    MD0100PA00X+030400Y+038300X0200Y         S0      
+327N492258          U15   -21         A01X+025989Y+036315X0550Y0110R270 S1      
+317N492170          VIA   -    MD0100PA00X+025350Y+039550X0200Y         S0      
+327N492170          U15   -30         A01X+024217Y+036315X0550Y0110R270 S1      
+317N492170          VIA   -    MD0100PA00X+030946Y+039300X0200Y         S0      
+327N492170          P3    -5          A01X+030946Y+039824X0250Y0670     S1      
+317N492166          VIA   -    MD0100PA00X+024414Y+035900X0200Y         S0      
+317N492166          VIA   -    MD0100PA00X+025595Y+035850X0200Y         S0      
+327N492166          P3    -6          A01X+031438Y+039824X0250Y0670     S1      
+327N492166          U15   -29         A01X+024414Y+036315X0550Y0110R270 S1      
+327N492166          U15   -23  M      A01X+025595Y+036315X0550Y0110R270 S1      
+327N421435          P1    -2          A01X+023354Y+039824X0250Y0670     S1      
+317N421435          VIA   -    MD0100PA00X+023350Y+040550X0200Y         S0      
+327N421435          R2    -1          A04X+023350Y+040185X0320Y0320R090 S2      
+327N492162          P3    -7          A01X+031930Y+039824X0250Y0670     S1      
+327N492162          U15   -22         A01X+025792Y+036315X0550Y0110R270 S1      
+327N321457          D1    -K          A04X+013700Y+024350X0440Y0480R090 S2      
+327N321457          R5    -1          A04X+014450Y+024915X0320Y0320R270 S2      
+317N320425          VIA   -    MD0100PA00X+009000Y+025850X0200Y         S0      
+327N320425          R11   -2          A01X+008835Y+026200X0320Y0320     S1      
+327N320425          D2    -K   M      A04X+017300Y+024697X0320Y0360R180 S2      
+327N320425          R9    -1          A04X+016600Y+024865X0320Y0320R270 S2      
+327N421467          P1    -3          A01X+023846Y+039824X0250Y0670     S1      
+317N421467          VIA   -    MD0100PA00X+024000Y+040550X0200Y         S0      
+327N421467          R3    -1          A04X+024000Y+040185X0320Y0320R090 S2      
+327N320494          R11   -1          A01X+008165Y+026200X0320Y0320     S1      
+327N320494          R12   -2          A01X+008165Y+026850X0320Y0320R180 S1      
+327N317036          D6    -K          A01X+025950Y+040035X0433Y0394R090 S1      
+327N317036          R15   -1          A01X+025950Y+040915X0320Y0320R090 S1      
+327N119424          P4    -3          A01X+034224Y+028254X0250Y0670R270 S1      
+327N119424          R13   -2          A01X+033235Y+028400X0320Y0320     S1      
+317N114110          VIA   -    MD0100PA00X+033600Y+036254X0200Y         S0      
+327N114110          P2    -4          A01X+034174Y+036254X0250Y0670R270 S1      
+327N114110          R4    -2          A01X+033185Y+036200X0320Y0320     S1      
+327N114110          U15   -37         A01X+023085Y+034789X0550Y0110R180 S1      
+317N114110          VIA   -    MD0100PA00X+024450Y+034400X0200Y         S0      
+327N114114          U15   -24         A01X+025398Y+036315X0550Y0110R270 S1      
+317N114114          VIA   -    MD0100PA00X+025350Y+036800X0200Y         S0      
+317N114114          VIA   -    MD0100PA00X+027500Y+036900X0200Y         S0      
+327N114114          R8    -1   M      A01X+032550Y+035535X0320Y0320R270 S1      
+327N114114          P2    -5          A01X+034174Y+035762X0250Y0670R270 S1      
+327N114114          C3    -1   M      A01X+033200Y+035535X0320Y0320R270 S1      
+327N490514          U4    -16         A01X+028933Y+028626X0320Y1100     S1      
+317N490514          VIA   -    MD0100PA00X+028950Y+029400X0200Y         S0      
+317N490514          VIA   -    MD0100PA00X+024500Y+030950X0200Y         S0      
+327N490514          U15   -53         A01X+024611Y+031885X0550Y0110R270 S1      
+327N490510          U4    -15         A01X+029366Y+028626X0320Y1100     S1      
+317N490510          VIA   -    MD0100PA00X+029350Y+029400X0200Y         S0      
+317N490510          VIA   -    MD0100PA00X+024150Y+030850X0200Y         S0      
+327N490510          U15   -52         A01X+024414Y+031885X0550Y0110R270 S1      
+3170                VIA   -    MD0100PA00X+015600Y+026500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+026450X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016400Y+026450X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016400Y+026800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016400Y+027250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016400Y+027750X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016400Y+028200X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016400Y+032300X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016400Y+031950X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016400Y+031600X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016400Y+031250X0200Y         S0      
+3270                U5    -1          A01X+023156Y+024020X0910Y0420R270 S1      
+3170                VIA   -    MD0100PA00X+013350Y+021950X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016600Y+022200X0200Y         S0      
+3170                VIA   -    MD0100PA00X+019550Y+023050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+020250Y+021800X0200Y         S0      
+3270                C30   -1   M      A01X+020350Y+023250X0400Y0540R090 S1      
+3170                VIA   -    MD0100PA00X+019500Y+034650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+021200Y+032300X0200Y         S0      
+3170                VIA   -    MD0100PA00X+026600Y+033650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+026300Y+033050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+024500Y+032500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+020150Y+030550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+019900Y+030350X0200Y         S0      
+3270                U4    -1   M      A01X+031128Y+022710X0320Y1100R270 S1      
+3270                U4    -11  M      A01X+031128Y+027041X0320Y1100R270 S1      
+3170                VIA   -    MD0100PA00X+035050Y+024650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+033300Y+022900X0200Y         S0      
+3170                VIA   -    MD0100PA00X+027900Y+026500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+027550Y+023500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+029150Y+022950X0200Y         S0      
+3170                VIA   -    MD0100PA00X+026100Y+023100X0200Y         S0      
+3170                VIA   -    MD0100PA00X+029550Y+025700X0200Y         S0      
+3170                VIA   -    MD0100PA00X+026200Y+025650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+031450Y+029050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+029300Y+027450X0200Y         S0      
+3170                VIA   -    MD0100PA00X+026000Y+027350X0200Y         S0      
+3170                VIA   -    MD0100PA00X+013200Y+026500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+017450Y+026250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+029800Y+036500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+032000Y+038550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+033100Y+038250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+034250Y+038650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+035900Y+039300X0200Y         S0      
+3170                VIA   -    MD0100PA00X+035950Y+037650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+035950Y+035250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+032000Y+033900X0200Y         S0      
+3170                VIA   -    MD0100PA00X+033900Y+034000X0200Y         S0      
+3170                VIA   -    MD0100PA00X+035900Y+032850X0200Y         S0      
+3170                VIA   -    MD0100PA00X+035950Y+031550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+035950Y+029300X0200Y         S0      
+3170                VIA   -    MD0100PA00X+035900Y+028400X0200Y         S0      
+3170                VIA   -    MD0100PA00X+035950Y+025900X0200Y         S0      
+3170                VIA   -    MD0100PA00X+036000Y+024050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+032400Y+023800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+032250Y+025550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+024500Y+028350X0200Y         S0      
+3170                VIA   -    MD0100PA00X+025450Y+032850X0200Y         S0      
+3170                VIA   -    MD0100PA00X+021350Y+037250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+021600Y+039650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+033200Y+039550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+031450Y+041650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+029250Y+041650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+029000Y+037750X0200Y         S0      
+3170                VIA   -    MD0100PA00X+027650Y+036300X0200Y         S0      
+3170                VIA   -    MD0100PA00X+018850Y+036650X0200Y         S0      
+3170                VIA   -    MD0100PA00X+019050Y+035850X0200Y         S0      
+3170                VIA   -    MD0100PA00X+020550Y+035450X0200Y         S0      
+3170                VIA   -    MD0100PA00X+018450Y+035050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+023100Y+020800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+021100Y+020800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+019100Y+020800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+017100Y+020800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+020800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+013100Y+020800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+011100Y+020800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+009100Y+020800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+009850Y+032750X0200Y         S0      
+3170                VIA   -    MD0100PA00X+009900Y+032050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+011700Y+034550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+011900Y+035800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+011750Y+036750X0200Y         S0      
+3170                VIA   -    MD0100PA00X+009900Y+036200X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+026800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+026800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+026800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+027250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+027250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+027750X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+027750X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+028200X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+028200X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+028200X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+032300X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+032300X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+032300X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+031950X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+031950X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+031950X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+031600X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+031600X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+031600X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+031250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+031250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+031250X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015450Y+023550X0200Y         S0      
+3270                D3    -A   M      A04X+015200Y+024250X0440Y0480R270 S2      
+3170                VIA   -    MD0100PA00X+016000Y+023600X0200Y         S0      
+3270                C70   -1   M      A04X+015950Y+024865X0320Y0320R270 S2      
+3170                VIA   -    MD0100PA00X+017550Y+022200X0200Y         S0      
+3170                VIA   -    MD0100PA00X+017550Y+022550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+020300Y+022750X0200Y         S0      
+3170                VIA   -    MD0100PA00X+018550Y+022150X0200Y         S0      
+3170                VIA   -    MD0100PA00X+019000Y+022150X0200Y         S0      
+3170                VIA   -    MD0100PA00X+019000Y+022550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+018550Y+022550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+011200Y+021700X0200Y         S0      
+3170                VIA   -    MD0100PA00X+009950Y+021700X0200Y         S0      
+3170                VIA   -    MD0100PA00X+012450Y+022100X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+022050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015150Y+022050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+022500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015150Y+022500X0200Y         S0      
+3270                C17   -N   M      A01X+018100Y+022090X1400Y0550R270 S1      
+3270                C18   -N   M      A01X+014700Y+022090X1400Y0550R270 S1      
+3270                D10   -A   M      A01X+010600Y+021613X0984Y0669R270 S1      
+3270                C16   -2   M      A01X+011800Y+022100X0400Y0540R270 S1      
+3170                VIA   -    MD0100PA00X+017935Y+035915X0200Y         S0      
+3270                C82   -1   M      A01X+017600Y+035915X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+015800Y+035900X0200Y         S0      
+3270                U8    -3   M      A01X+016118Y+035995X0360Y0160     S1      
+3170                VIA   -    MD0100PA00X+015800Y+036250X0200Y         S0      
+3270                U8    -2   M      A01X+016118Y+036250X0360Y0160     S1      
+3170                VIA   -    MD0100PA00X+014750Y+036800X0200Y         S0      
+3270                R34   -2   M      A01X+014750Y+036485X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+015015Y+035185X0200Y         S0      
+3270                R33   -2   M      A01X+014750Y+035185X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+010050Y+027800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+009800Y+027750X0200Y         S0      
+3170                VIA   -    MD0100PA00X+009400Y+027750X0200Y         S0      
+3270                D9    -A   M      A01X+009525Y+028450X0984Y0866R180 S1      
+3170                VIA   -    MD0100PA00X+009800Y+034650X0200Y         S0      
+3270                R28   -2   M      A01X+009800Y+034285X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+011900Y+032350X0200Y         S0      
+3270                C37   -1   M      A01X+012215Y+032350X0320Y0320     S1      
+3170                VIA   -    MD0100PA00X+011350Y+033000X0200Y         S0      
+3170                VIA   -    MD0100PA00X+011350Y+033400X0200Y         S0      
+3270                C26   -1   M      A01X+011820Y+033150X0500Y0680     S1      
+3270                U1    -33         A01X+014159Y+031620X0120Y0610R270 S1      
+3170                VIA   -    MD0100PA00X+013667Y+031817X0200Y         S0      
+3270                U1    -32  M      A01X+014159Y+031817X0120Y0610R270 S1      
+3270                U1    -31  M      A01X+014159Y+032014X0120Y0610R270 S1      
+3170                VIA   -    MD0100PA00X+013600Y+032150X0200Y         S0      
+3270                U1    -30         A01X+014159Y+032211X0120Y0610R270 S1      
+3170                VIA   -    MD0100PA00X+015800Y+033650X0200Y         S0      
+3270                U6    -2   M      A01X+016118Y+033650X0360Y0160     S1      
+3170                VIA   -    MD0100PA00X+015850Y+033300X0200Y         S0      
+3270                U6    -3   M      A01X+016118Y+033395X0360Y0160     S1      
+3170                VIA   -    MD0100PA00X+015015Y+033885X0200Y         S0      
+3270                R32   -2   M      A01X+014750Y+033885X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+015800Y+034950X0200Y         S0      
+3270                U7    -2   M      A01X+016118Y+034950X0360Y0160     S1      
+3170                VIA   -    MD0100PA00X+015800Y+034650X0200Y         S0      
+3270                U7    -3   M      A01X+016118Y+034695X0360Y0160     S1      
+3170                VIA   -    MD0100PA00X+026700Y+036850X0200Y         S0      
+3270                U15   -18         A01X+026580Y+036315X0550Y0110R270 S1      
+3170                VIA   -    MD0100PA00X+019350Y+033750X0200Y         S0      
+3170                VIA   -    MD0100PA00X+019050Y+033750X0200Y         S0      
+3270                C25   -1   M      A01X+019200Y+033300X0400Y0540R180 S1      
+3170                VIA   -    MD0100PA00X+019400Y+032600X0200Y         S0      
+3270                C75   -1   M      A01X+019085Y+032550X0320Y0320R180 S1      
+3170                VIA   -    MD0100PA00X+019400Y+032200X0200Y         S0      
+3170                VIA   -    MD0100PA00X+019100Y+032200X0200Y         S0      
+3270                C24   -1   M      A01X+019250Y+031800X0400Y0540R180 S1      
+3170                VIA   -    MD0100PA00X+017600Y+032450X0200Y         S0      
+3270                U1    -28         A01X+017141Y+032407X0120Y0610R270 S1      
+3270                C21   -1   M      A04X+016550Y+030650X0400Y0540R180 S2      
+3270                C22   -1   M      A04X+016550Y+029800X0400Y0540R180 S2      
+3270                C35   -1   M      A04X+016715Y+031450X0320Y0320R180 S2      
+3270                C38   -1   M      A04X+016715Y+029100X0320Y0320R180 S2      
+3270                R25   -1   M      A04X+016715Y+028250X0320Y0320R180 S2      
+3170                VIA   -    MD0100PA00X+015100Y+028600X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+028600X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+028600X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+029050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+029050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+029050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+029550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+029550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+029550X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+030050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+030050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+030050X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+030500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+030500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+030500X0200Y         S0      
+3170                VIA   -    MD0100PA00X+016100Y+030900X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015600Y+030900X0200Y         S0      
+3170                VIA   -    MD0100PA00X+015100Y+030900X0200Y         S0      
+3270                U1    -57  M      A01X+015650Y+029750X1420Y2500     S1      
+3170                VIA   -    MD0100PA00X+015150Y+026450X0200Y         S0      
+3270                C69   -1   M      A01X+014835Y+026450X0320Y0320R180 S1      
+3270                C13   -1   M      A04X+015180Y+027500X0500Y0680     S2      
+3170                VIA   -    MD0100PA00X+020555Y+028845X0200Y         S0      
+3270                U2    -1          A01X+020857Y+028845X0217Y0138     S1      
+3170                VIA   -    MD0100PA00X+021090Y+031250X0200Y         S0      
+3270                C57   -1   M      A01X+021450Y+031250X0400Y0540     S1      
+3170                VIA   -    MD0100PA00X+021200Y+032000X0200Y         S0      
+3270                C67   -1   M      A01X+021565Y+032000X0320Y0320     S1      
+3170                VIA   -    MD0100PA00X+021050Y+032750X0200Y         S0      
+3270                C61   -2   M      A01X+021450Y+032750X0400Y0540R180 S1      
+3170                VIA   -    MD0100PA00X+033670Y+037730X0200Y         S0      
+3270                P2    -1   M      A01X+034174Y+037730X0250Y0670R270 S1      
+3170                VIA   -    MD0100PA00X+030300Y+034450X0200Y         S0      
+3170                VIA   -    MD0100PA00X+029950Y+034450X0200Y         S0      
+3170                VIA   -    MD0100PA00X+029400Y+034450X0200Y         S0      
+3170                VIA   -    MD0100PA00X+029100Y+034450X0200Y         S0      
+3170                VIA   -    MD0100PA00X+030600Y+034800X0200Y         S0      
+3270                C58   -1   M      A01X+030100Y+034800X0400Y0540R090 S1      
+3270                C59   -1   M      A01X+029250Y+034800X0400Y0540R090 S1      
+3270                U15   -12         A01X+027515Y+034789X0550Y0110R180 S1      
+3270                C65   -1   M      A01X+028500Y+034765X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+031235Y+033315X0200Y         S0      
+3270                C51   -1   M      A01X+030900Y+033315X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+029600Y+032350X0200Y         S0      
+3270                C79   -1   M      A01X+029235Y+032350X0320Y0320R180 S1      
+3170                VIA   -    MD0100PA00X+030137Y+032663X0200Y         S0      
+3270                Y1    -2   M      A01X+030137Y+033028X0709Y0472     S1      
+3170                VIA   -    MD0100PA00X+028000Y+034050X0200Y         S0      
+3270                Y1    -4   M      A01X+028563Y+033972X0709Y0472     S1      
+3170                VIA   -    MD0100PA00X+027600Y+037800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+027600Y+038150X0200Y         S0      
+3270                C56   -2   M      A01X+027200Y+038000X0400Y0540     S1      
+3270                C64   -1   M      A01X+027085Y+037250X0320Y0320R180 S1      
+3170                VIA   -    MD0100PA00X+024150Y+038650X0200Y         S0      
+3270                C60   -2   M      A01X+024150Y+038300X0400Y0540R090 S1      
+3170                VIA   -    MD0100PA00X+023400Y+038450X0200Y         S0      
+3270                C62   -1   M      A01X+023400Y+038135X0320Y0320R270 S1      
+3170                VIA   -    MD0100PA00X+022650Y+038650X0200Y         S0      
+3270                C81   -1   M      A01X+022650Y+038250X0400Y0540R270 S1      
+3170                VIA   -    MD0100PA00X+023550Y+024100X0200Y         S0      
+3170                VIA   -    MD0100PA00X+023550Y+024350X0200Y         S0      
+3170                VIA   -    MD0100PA00X+023550Y+023800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+022900Y+025550X0200Y         S0      
+3270                C32   -1   M      A01X+022900Y+025150X0400Y0540R180 S1      
+3170                VIA   -    MD0100PA00X+022900Y+026450X0200Y         S0      
+3270                C31   -1   M      A01X+022900Y+026000X0400Y0540R180 S1      
+3170                VIA   -    MD0100PA00X+022050Y+026800X0200Y         S0      
+3270                C6    -2   M      A01X+021700Y+026800X0400Y0540     S1      
+3170                VIA   -    MD0100PA00X+021850Y+027550X0200Y         S0      
+3270                C10   -1   M      A01X+021535Y+027550X0320Y0320R180 S1      
+3170                VIA   -    MD0100PA00X+019950Y+028250X0200Y         S0      
+3270                R21   -1   M      A01X+019335Y+027850X0320Y0320R180 S1      
+3270                C66   -2   M      A01X+019950Y+027885X0320Y0320R090 S1      
+3270                R22   -1   M      A01X+019335Y+026050X0320Y0320R180 S1      
+3170                VIA   -    MD0100PA00X+019700Y+026650X0200Y         S0      
+3270                C68   -2   M      A01X+019335Y+026650X0320Y0320     S1      
+3170                VIA   -    MD0100PA00X+018950Y+024750X0200Y         S0      
+3270                C1    -1   M      A04X+018950Y+024300X0400Y0540     S2      
+3170                VIA   -    MD0100PA00X+019350Y+025150X0200Y         S0      
+3270                D4    -A   M      A04X+019053Y+025150X0320Y0360R090 S2      
+3170                VIA   -    MD0100PA00X+026800Y+029950X0200Y         S0      
+3270                C63   -1   M      A01X+026800Y+030365X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+027550Y+029900X0200Y         S0      
+3270                C83   -1   M      A01X+027550Y+030300X0400Y0540R090 S1      
+3170                VIA   -    MD0100PA00X+026385Y+029715X0200Y         S0      
+3270                R49   -1   M      A01X+026000Y+029715X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+029635Y+030065X0200Y         S0      
+3270                D8    -K   M      A01X+029200Y+030065X0433Y0394R270 S1      
+3170                VIA   -    MD0100PA00X+031000Y+032350X0200Y         S0      
+3270                U3    -2   M      A01X+031369Y+032328X0351Y0138     S1      
+3170                VIA   -    MD0100PA00X+026450Y+031350X0200Y         S0      
+3270                U15   -63         A01X+026580Y+031885X0550Y0110R270 S1      
+3170                VIA   -    MD0100PA00X+024338Y+040488X0200Y         S0      
+3270                P1    -4   M      A01X+024338Y+039824X0250Y0670     S1      
+3170                VIA   -    MD0100PA00X+025615Y+041585X0200Y         S0      
+3270                R15   -2   M      A01X+025950Y+041585X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+026365Y+041585X0200Y         S0      
+3270                R16   -2   M      A01X+026700Y+041585X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+027065Y+041585X0200Y         S0      
+3270                R14   -2   M      A01X+027450Y+041585X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+027015Y+033165X0200Y         S0      
+3270                C78   -1   M      A04X+027550Y+033165X0320Y0320R270 S2      
+3170                VIA   -    MD0100PA00X+033600Y+025000X0200Y         S0      
+3270                P5    -3   M      A01X+034224Y+025000X0250Y0670R270 S1      
+3170                VIA   -    MD0100PA00X+031890Y+022710X0200Y         S0      
+3170                VIA   -    MD0100PA00X+033300Y+026750X0200Y         S0      
+3270                C12   -1   M      A01X+032850Y+026815X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+032850Y+026350X0200Y         S0      
+3270                C9    -1   M      A04X+032850Y+026750X0400Y0540R270 S2      
+3170                VIA   -    MD0100PA00X+032200Y+026500X0200Y         S0      
+3270                C11   -1   M      A01X+032200Y+026815X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+030750Y+030800X0200Y         S0      
+3170                VIA   -    MD0100PA00X+030400Y+030800X0200Y         S0      
+3270                C8    -2   M      A04X+030600Y+031150X0400Y0540R090 S2      
+3170                VIA   -    MD0100PA00X+031300Y+031000X0200Y         S0      
+3270                C72   -1   M      A04X+031400Y+031315X0320Y0320R270 S2      
+3170                VIA   -    MD0100PA00X+031700Y+030600X0200Y         S0      
+3270                C7    -2   M      A01X+031700Y+031050X0400Y0540R180 S1      
+3170                VIA   -    MD0100PA00X+031950Y+031850X0200Y         S0      
+3170                VIA   -    MD0100PA00X+031950Y+032550X0200Y         S0      
+3270                U3    -9   M      A01X+031950Y+032200X0950Y0450R270 S1      
+3170                VIA   -    MD0100PA00X+031950Y+032200X0200Y         S0      
+3170                VIA   -    MD0100PA00X+032531Y+032831X0200Y         S0      
+3270                U3    -8   M      A01X+032531Y+032584X0351Y0138R180 S1      
+3170                VIA   -    MD0100PA00X+033712Y+032988X0200Y         S0      
+3270                P6    -1   M      A01X+034224Y+032988X0250Y0670R270 S1      
+3170                VIA   -    MD0100PA00X+033235Y+029385X0200Y         S0      
+3270                C4    -1   M      A01X+033235Y+029050X0320Y0320R180 S1      
+3170                VIA   -    MD0100PA00X+033712Y+029238X0200Y         S0      
+3270                P4    -1   M      A01X+034224Y+029238X0250Y0670R270 S1      
+3170                VIA   -    MD0100PA00X+029962Y+039312X0200Y         S0      
+3270                P3    -3   M      A01X+029962Y+039824X0250Y0670     S1      
+3170                VIA   -    MD0100PA00X+033200Y+034500X0200Y         S0      
+3270                C3    -2   M      A01X+033200Y+034865X0320Y0320R270 S1      
+3170                VIA   -    MD0100PA00X+019350Y+030050X0200Y         S0      
+3270                R26   -1   M      A04X+018935Y+030300X0320Y0320     S2      
+3170                VIA   -    MD0100PA00X+021625Y+027925X0200Y         S0      
+3270                U2    -7          A01X+021497Y+028206X0217Y0138R090 S1      
+3170                VIA   -    MD0100PA00X+021300Y+027900X0200Y         S0      
+3270                U2    -6          A01X+021300Y+028206X0217Y0138R090 S1      
+3170                VIA   -    MD0100PA00X+023000Y+029100X0200Y         S0      
+3270                C5    -2   M      A01X+022550Y+029100X0400Y0540R090 S1      
+3170                VIA   -    MD0100PA00X+017950Y+033215X0200Y         S0      
+3270                C2    -1   M      A01X+017600Y+033215X0320Y0320R090 S1      
+3170                VIA   -    MD0100PA00X+017985Y+034565X0200Y         S0      
+3270                C73   -1   M      A01X+017600Y+034565X0320Y0320R090 S1      
+C                                                                               
+C  ****************************************                                     
+C      DUMMY NET PINS & VIAS ON THE BOARD                                       
+C  ****************************************                                     
+C                                                                               
+317N/C                    -     D1250UA00X+034870Y+041118X1200Y         S3      
+317N/C                    -     D1250UA00X+034870Y+021465X1200Y         S3      
+317N/C                    -     D1250UA00X-001500Y+021465X1200Y         S3      
+327N/C                    -           A04X-001750Y+023300X0400Y         S2      
+327N/C                    -           A04X+032750Y+021450X0400Y         S2      
+327N/C                    -           A04X+034000Y+039350X0400Y         S2      
+327N/C                    -           A01X-001750Y+023300X0400Y         S1      
+327N/C                    -           A01X+032750Y+021450X0400Y         S1      
+327N/C                    -           A01X+034000Y+039350X0400Y         S1      
+327N/C              U4    -13         A01X+030232Y+028626X0320Y1100     S1      
+327N/C              U4    -10         A01X+031128Y+026608X0320Y1100R270 S1      
+327N/C              U4    -9          A01X+031128Y+026175X0320Y1100R270 S1      
+327N/C              U4    -6          A01X+031128Y+024876X0320Y1100R270 S1      
+327N/C              U4    -5          A01X+031128Y+024443X0320Y1100R270 S1      
+327N/C              U4    -4          A01X+031128Y+024009X0320Y1100R270 S1      
+327N/C              U4    -3          A01X+031128Y+023576X0320Y1100R270 S1      
+327N/C              U4    -2          A01X+031128Y+023143X0320Y1100R270 S1      
+327N/C              U4    -36         A01X+024572Y+022710X0320Y1100R090 S1      
+327N/C              U4    -35         A01X+024572Y+023143X0320Y1100R090 S1      
+327N/C              U4    -34         A01X+024572Y+023576X0320Y1100R090 S1      
+327N/C              U4    -33         A01X+024572Y+024009X0320Y1100R090 S1      
+327N/C              U4    -30         A01X+024572Y+025309X0320Y1100R090 S1      
+327N/C              U4    -29         A01X+024572Y+025742X0320Y1100R090 S1      
+327N/C              U4    -28         A01X+024572Y+026175X0320Y1100R090 S1      
+327N/C              U4    -27         A01X+024572Y+026608X0320Y1100R090 S1      
+327N/C              U4    -26         A01X+024572Y+027041X0320Y1100R090 S1      
+327N/C              U4    -25         A01X+024572Y+027474X0320Y1100R090 S1      
+327N/C              U4    -24         A01X+025468Y+028626X0320Y1100     S1      
+327N/C              U4    -23         A01X+025901Y+028626X0320Y1100     S1      
+327N/C              U4    -22         A01X+026334Y+028626X0320Y1100     S1      
+327N/C              U4    -21         A01X+026767Y+028626X0320Y1100     S1      
+327N/C              U4    -20         A01X+027200Y+028626X0320Y1100     S1      
+327N/C              U4    -19         A01X+027633Y+028626X0320Y1100     S1      
+327N/C              U4    -18         A01X+028067Y+028626X0320Y1100     S1      
+327N/C              U4    -14         A01X+029799Y+028626X0320Y1100     S1      
+327N/C              U4    -7          A01X+031128Y+025309X0320Y1100R270 S1      
+327N/C              U4    -8          A01X+031128Y+025742X0320Y1100R270 S1      
+327N/C              U2    -11         A01X+021743Y+028845X0217Y0138     S1      
+327N/C              U2    -10         A01X+021743Y+028648X0217Y0138     S1      
+327N/C              U2    -9          A01X+021743Y+028452X0217Y0138     S1      
+327N/C              U2    -4          A01X+020857Y+028255X0217Y0138     S1      
+327N/C              U2    -2          A01X+020857Y+028648X0217Y0138     S1      
+327N/C              U2    -3          A01X+020857Y+028452X0217Y0138     S1      
+327N/C              U15   -4          A01X+027515Y+033214X0550Y0110R180 S1      
+327N/C              U15   -3          A01X+027515Y+033017X0550Y0110R180 S1      
+327N/C              U9    -4          A01X+000720Y+037834X0500Y0160     S1      
+327N/C              U11   -4          A01X+000670Y+024016X0500Y0160     S1      
+327N/C              U10   -4          A01X+000670Y+030916X0500Y0160     S1      
+327N/C              U1    -26         A01X+017141Y+032014X0120Y0610R270 S1      
+327N/C              U1    -25         A01X+017141Y+031817X0120Y0610R270 S1      
+327N/C              U1    -4          A01X+017141Y+027683X0120Y0610R270 S1      
+327N/C              U1    -5          A01X+017141Y+027880X0120Y0610R270 S1      
+327N/C              U1    -12         A01X+017141Y+029258X0120Y0610R270 S1      
+C                                                                               
+C  ****************************************                                     
+C      TOOLING HOLE PINS ON THE BOARD                                           
+C  ****************************************                                     
+C                                                                               
+367                       -           A01X+028249Y+041143X0400Y1100     S3      
+017                       -           A04X+028249Y+041143X0620Y         S3      
+017                       -     D0320PA00X+028249Y+041143                       
+367                       -           A01X+033151Y+041143X0400Y1100     S3      
+017                       -           A04X+033151Y+041143X0620Y         S3      
+017                       -     D0320PA00X+033151Y+041143                       
+367                       -           A01X+035493Y+038459X0400Y1100R270 S3      
+017                       -           A04X+035493Y+038459X0620Y    R270 S3      
+017                       -     D0320PA00X+035493Y+038459                       
+367                       -           A01X+035493Y+034541X0400Y1100R270 S3      
+017                       -           A04X+035493Y+034541X0620Y    R270 S3      
+017                       -     D0320PA00X+035493Y+034541                       
+367                       -           A01X+035543Y+033717X0400Y1100R270 S3      
+017                       -           A04X+035543Y+033717X0620Y    R270 S3      
+017                       -     D0320PA00X+035543Y+033717                       
+367                       -           A01X+035543Y+030783X0400Y1100R270 S3      
+017                       -           A04X+035543Y+030783X0620Y    R270 S3      
+017                       -     D0320PA00X+035543Y+030783                       
+367                       -           A01X+022133Y+041143X0400Y1100     S3      
+017                       -           A04X+022133Y+041143X0620Y         S3      
+017                       -     D0320PA00X+022133Y+041143                       
+367                       -           A01X+025067Y+041143X0400Y1100     S3      
+017                       -           A04X+025067Y+041143X0620Y         S3      
+017                       -     D0320PA00X+025067Y+041143                       
+367                       -           A01X+035543Y+026713X0400Y1100R270 S3      
+017                       -           A04X+035543Y+026713X0620Y    R270 S3      
+017                       -     D0320PA00X+035543Y+026713                       
+367                       -           A01X+035543Y+023287X0400Y1100R270 S3      
+017                       -           A04X+035543Y+023287X0620Y    R270 S3      
+017                       -     D0320PA00X+035543Y+023287                       
+367                       -           A01X+035543Y+029967X0400Y1100R270 S3      
+017                       -           A04X+035543Y+029967X0620Y    R270 S3      
+017                       -     D0320PA00X+035543Y+029967                       
+367                       -           A01X+035543Y+027526X0400Y1100R270 S3      
+017                       -           A04X+035543Y+027526X0620Y    R270 S3      
+017                       -     D0320PA00X+035543Y+027526                       
+C                                                                               
+C  End-of-Job                                                                   
+C                                                                               
+999                                                                             

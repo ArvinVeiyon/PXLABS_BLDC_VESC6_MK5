@@ -1,0 +1,195 @@
+Date and Time : 10/27/25 20:59:59
+
+--------------------------------------------------
+Checking Schematic: H-Bridge
+--------------------------------------------------
+Checking Electrical Rules 
+ERROR(ORCAP-1628): Possible pin type conflict SL_A  Output Port Connected to Power
+                    H-Bridge, PAGE4  (96.52, 81.28) 
+ERROR(ORCAP-1628): Possible pin type conflict SL_B  Output Port Connected to Power
+                    H-Bridge, PAGE4  (200.66, 82.55) 
+ERROR(ORCAP-1628): Possible pin type conflict SL_C  Output Port Connected to Power
+                    H-Bridge, PAGE4  (308.61, 82.55) 
+
+Checking For Single Node Nets
+
+Checking For Unconnected Bus Nets
+
+Checking Off-Page Connections
+
+Checking Pin to Port Connections
+
+--------------------------------------------------
+Checking Schematic: Driver
+--------------------------------------------------
+Checking Electrical Rules 
+
+Checking For Single Node Nets
+
+Checking For Unconnected Bus Nets
+
+Checking Off-Page Connections
+
+Checking Pin to Port Connections
+
+--------------------------------------------------
+Checking Schematic: BLE/CAN/MAG
+--------------------------------------------------
+Checking Electrical Rules 
+
+Checking For Single Node Nets
+
+Checking For Unconnected Bus Nets
+
+Checking Off-Page Connections
+
+Checking Pin to Port Connections
+
+--------------------------------------------------
+Checking Schematic: Block
+--------------------------------------------------
+Checking Electrical Rules 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,SL_C  Output Connected to Output
+                    Block, PAGE1  (457.20, 166.37) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,GH_C  Output Connected to Output
+                    Block, PAGE1  (457.20, 158.75) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,GL_B  Output Connected to Output
+                    Block, PAGE1  (457.20, 146.05) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,GL_C  Output Connected to Output
+                    Block, PAGE1  (457.20, 163.83) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,SL_A  Output Connected to Output
+                    Block, PAGE1  (457.20, 130.81) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,SH_C  Output Connected to Output
+                    Block, PAGE1  (457.20, 161.29) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,GH_A  Output Connected to Output
+                    Block, PAGE1  (457.20, 123.19) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,SL_B  Output Connected to Output
+                    Block, PAGE1  (457.20, 148.59) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,GL_A  Output Connected to Output
+                    Block, PAGE1  (457.20, 128.27) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,SH_B  Output Connected to Output
+                    Block, PAGE1  (457.20, 143.51) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,GH_B  Output Connected to Output
+                    Block, PAGE1  (457.20, 140.97) 
+ERROR(ORCAP-1628): Possible pin type conflict H-DRIVER,SH_A  Output Connected to Output
+                    Block, PAGE1  (457.20, 125.73) 
+
+Checking For Single Node Nets
+
+Checking For Unconnected Bus Nets
+
+Checking Off-Page Connections
+
+Checking Pin to Port Connections
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,GL_A 
+                    Block, PAGE1  (490.22, 128.27) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,SH_A 
+                    Block, PAGE1  (490.22, 125.73) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,SL_A 
+                    Block, PAGE1  (490.22, 130.81) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,SH_B 
+                    Block, PAGE1  (490.22, 143.51) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,GL_B 
+                    Block, PAGE1  (490.22, 146.05) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,SL_B 
+                    Block, PAGE1  (490.22, 148.59) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,SH_C 
+                    Block, PAGE1  (490.22, 161.29) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,GH_C 
+                    Block, PAGE1  (490.22, 158.75) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,SL_C 
+                    Block, PAGE1  (490.22, 166.37) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,GL_C 
+                    Block, PAGE1  (490.22, 163.83) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,GH_B 
+                    Block, PAGE1  (490.22, 140.97) 
+WARNING(ORCAP-1629): Multiple Hierarchical Ports of same name exist across Hierarchical Blocks. H-BRIDGE,GH_A 
+                    Block, PAGE1  (490.22, 123.19) 
+
+--------------------------------------------------
+Checking Schematic: MCU
+--------------------------------------------------
+Checking Electrical Rules 
+
+Checking For Single Node Nets
+
+Checking For Unconnected Bus Nets
+
+Checking Off-Page Connections
+
+Checking Pin to Port Connections
+
+Checking Physical Rules 
+
+
+Checking Pins and Pin Connections
+
+--------------------------------------------------
+Checking Schematic: H-Bridge
+--------------------------------------------------
+
+INFO(ORCAP-2242): Checking Incorrect Pin Group Assignment
+
+Report for Invalid References
+
+Report for Duplicate References
+
+--------------------------------------------------
+Checking Schematic: Driver
+--------------------------------------------------
+
+INFO(ORCAP-2242): Checking Incorrect Pin Group Assignment
+
+Report for Invalid References
+
+Report for Duplicate References
+
+--------------------------------------------------
+Checking Schematic: BLE/CAN/MAG
+--------------------------------------------------
+
+INFO(ORCAP-2242): Checking Incorrect Pin Group Assignment
+
+Report for Invalid References
+
+Report for Duplicate References
+
+--------------------------------------------------
+Checking Schematic: Block
+--------------------------------------------------
+
+INFO(ORCAP-2242): Checking Incorrect Pin Group Assignment
+
+Report for Invalid References
+
+Report for Duplicate References
+
+--------------------------------------------------
+Checking Schematic: MCU
+--------------------------------------------------
+
+INFO(ORCAP-2242): Checking Incorrect Pin Group Assignment
+
+Report for Invalid References
+
+Report for Duplicate References
+
+--------------------------------------------------
+Checking Entire Design: VESC_6_MK5_SCH_24_OCT_25_MP1 
+--------------------------------------------------
+
+Checking Power Pin Visibility  
+
+Checking Normal Convert View Sync  
+INFO(ORCAP-36105): Checking Missing Pin Numbers  
+
+Checking Device with Zero pins  
+INFO(ORCAP-36101): Checking Missing PCB Footprint Property  
+
+INFO(ORCAP-2211): Check High Speed Properties Syntax
+
+INFO(ORCAP-2212): Check Power Ground Mismatch
+
+Reporting Unused Refdes in multiple part packages
+Part	                       Quantity	                       Reference
+-----------------------------------------------------------------------------------------

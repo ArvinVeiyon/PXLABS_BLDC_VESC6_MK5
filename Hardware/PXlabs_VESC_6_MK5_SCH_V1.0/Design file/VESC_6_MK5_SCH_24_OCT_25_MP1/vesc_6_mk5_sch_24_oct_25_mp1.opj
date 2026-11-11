@@ -1,0 +1,145 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[10/27/25]")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\vesc_6_mk5_sch_24_oct_25_mp1.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (DRC_Scope "0")
+    (DRC_Action "0")
+    (DRC_Create_Warnings "FALSE")
+    (DRC_View_Output "FALSE")
+    (DRC_Run_Electrical_Rules "TRUE")
+    (DRC_Run_Physical_Rules "TRUE")
+    (DRC_Report_File
+       "C:\USERS\VINOTH PANDIYAN\ONEDRIVE\DOCUMENTS\GITHUB\UBUNTU-SERVER\BLDC MOTOR DRIVER\PXLABS_VESC_6_MK5_SCH_08_OCT_25_HR4\DESIGN FILE\VESC_6_MK5_SCH_24_OCT_25_MP1\VESC_6_MK5_SCH_24_OCT_25_MP1.DRC")
+    (DRC_Check_Ports "TRUE")
+    (DRC_Check_Off-Page_Connectors "TRUE")
+    (DRC_Report_Ports_and_Off-page_Connectors "FALSE")
+    (DRC_SDT_Compatibility "FALSE")
+    (DRC_Report_Off-grid_Objects "FALSE")
+    (DRC_Check_Unconnected_Nets "TRUE")
+    (DRC_Check_for_Misleading_TAP "FALSE")
+    (DRC_Report_Netnames "FALSE")
+    (DRC_Check_Single_Node_Nets "FALSE")
+    (DRC_Check_No_Driving_Source "TRUE")
+    (DRC_Check_Duplicate_NetNames "TRUE")
+    (DRC_Check_Floating_Pins "TRUE")
+    (DRC_Check_Physical_Power_Pins_Visibility "TRUE")
+    (DRC_Check_PCB_Footprint_Property "TRUE")
+    (DRC_Check_Normal_Convert_View_Sync "TRUE")
+    (DRC_Check_Incorrect_PinGroup_Assignment "TRUE")
+    (DRC_Check_High_Speed_Props_Syntax "TRUE")
+    (DRC_Check_Missing_Pin_Numbers "TRUE")
+    (DRC_Check_Device_With_No_Pins "TRUE")
+    (DRC_Check_Power_Ground_Short "TRUE")
+    (DRC_Identical_References "TRUE")
+    (DRC_Type_Mismatch "TRUE")
+    (DRC_Visible_Power_pins "FALSE")
+    (DRC_Report_Unused_Part_Packages "TRUE")
+    (DRC_Check_Name_Prop_For_HierBlocks "FALSE")
+    (NoModify)
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (Display_Online_DRC_Results "FALSE"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\vesc_6_mk5_sch_24_oct_25_mp1.drc"
+      (Type "Report")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector)
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\vesc_6_mk5_sch_24_oct_25_mp1.dsn")
+      (Path "Design Resources" ".\vesc_6_mk5_sch_24_oct_25_mp1.dsn" "Block")
+      (Path "Design Resources" ".\vesc_6_mk5_sch_24_oct_25_mp1.dsn"
+         "BLE/CAN/MAG")
+      (Path "Design Resources" ".\vesc_6_mk5_sch_24_oct_25_mp1.dsn" "Driver")
+      (Path "Design Resources" ".\vesc_6_mk5_sch_24_oct_25_mp1.dsn" "H-Bridge")
+      (Path "Design Resources" ".\vesc_6_mk5_sch_24_oct_25_mp1.dsn" "MCU")
+      (Path "Outputs")
+      (Select "Design Resources" ".\vesc_6_mk5_sch_24_oct_25_mp1.dsn"
+         "BLE/CAN/MAG" "PAGE2"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 0 0 0 200 0 413"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 24 5 1393 24 921")
+        (Scroll "-47 17")
+        (Zoom "54")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\VINOTH PANDIYAN\ONEDRIVE\DOCUMENTS\GITHUB\UBUNTU-SERVER\BLDC MOTOR DRIVER\PXLABS_VESC_6_MK5_SCH_08_OCT_25_HR4\DESIGN FILE\VESC_6_MK5_SCH_24_OCT_25_MP1\VESC_6_MK5_SCH_24_OCT_25_MP1.DSN")
+      (Schematic "Block")
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1393 24 921")
+        (Scroll "0 95")
+        (Zoom "100"))
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1393 24 921")
+        (Scroll "0 0")
+        (Zoom "100"))
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1393 24 921")
+        (Scroll "154 90")
+        (Zoom "100")
+        (Occurrence "/BLE/MAG/CAN"))
+      (Path
+         "C:\USERS\VINOTH PANDIYAN\ONEDRIVE\DOCUMENTS\GITHUB\UBUNTU-SERVER\BLDC MOTOR DRIVER\PXLABS_VESC_6_MK5_SCH_08_OCT_25_HR4\DESIGN FILE\VESC_6_MK5_SCH_24_OCT_25_MP1\VESC_6_MK5_SCH_24_OCT_25_MP1.DSN")
+      (Schematic "BLE/CAN/MAG")
+      (Page "PAGE2"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1393 24 921")
+        (Scroll "52 67")
+        (Zoom "100")
+        (Occurrence "/H-DRIVER"))
+      (Path
+         "C:\USERS\VINOTH PANDIYAN\ONEDRIVE\DOCUMENTS\GITHUB\UBUNTU-SERVER\BLDC MOTOR DRIVER\PXLABS_VESC_6_MK5_SCH_08_OCT_25_HR4\DESIGN FILE\VESC_6_MK5_SCH_24_OCT_25_MP1\VESC_6_MK5_SCH_24_OCT_25_MP1.DSN")
+      (Schematic "Driver")
+      (Page "PAGE3"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1393 24 921")
+        (Scroll "81 0")
+        (Zoom "100")
+        (Occurrence "/MCU"))
+      (Path
+         "C:\USERS\VINOTH PANDIYAN\ONEDRIVE\DOCUMENTS\GITHUB\UBUNTU-SERVER\BLDC MOTOR DRIVER\PXLABS_VESC_6_MK5_SCH_08_OCT_25_HR4\DESIGN FILE\VESC_6_MK5_SCH_24_OCT_25_MP1\VESC_6_MK5_SCH_24_OCT_25_MP1.DSN")
+      (Schematic "MCU")
+      (Page "PAGE5"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 24 5 1393 24 921")
+        (Scroll "-50 0")
+        (Zoom "76")
+        (Occurrence "/H-BRIDGE"))
+      (Path
+         "C:\USERS\VINOTH PANDIYAN\ONEDRIVE\DOCUMENTS\GITHUB\UBUNTU-SERVER\BLDC MOTOR DRIVER\PXLABS_VESC_6_MK5_SCH_08_OCT_25_HR4\DESIGN FILE\VESC_6_MK5_SCH_24_OCT_25_MP1\VESC_6_MK5_SCH_24_OCT_25_MP1.DSN")
+      (Schematic "H-Bridge")
+      (Page "PAGE4")))
+  (MPSSessionName "Vinoth Pandiyan")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (Folder "Logs"))
